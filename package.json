@@ -1,0 +1,42 @@
+{
+	"name": "ml-interview-docs",
+	"version": "1.0.0",
+	"description": "Документация по machine learning для подготовки к собеседованиям",
+	"license": "MIT",
+	"type": "module",
+	"packageManager": "yarn@1.22.19",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"predev": "yarn sync:meta",
+		"dev": "vitepress dev",
+		"prebuild": "yarn sync:meta",
+		"build": "vitepress build",
+		"preview": "vitepress preview",
+		"type-check": "tsc --noEmit",
+		"sync:frontmatter": "node scripts/sync-frontmatter.mjs",
+		"generate:content-index": "node scripts/generate-content-index.mjs",
+		"generate:sidebar": "node scripts/generate-sidebar.mjs",
+		"sync:meta": "yarn sync:frontmatter && yarn generate:content-index && yarn generate:sidebar",
+		"check:generated": "yarn sync:meta && git diff --exit-code docs .vitepress/sidebar.generated.ts .vitepress/theme/generated/content-index.ts",
+		"validate-content": "node scripts/validate-content.mjs",
+		"validate-links": "node scripts/validate-links.mjs",
+		"validate-routes": "node scripts/validate-routes.mjs",
+		"report:stale": "node scripts/report-stale-content.mjs",
+		"lint:md": "npx --yes markdownlint-cli2 \"docs/**/*.md\" \"README.md\"",
+		"test:mobile": "playwright test --config=playwright.mobile.config.ts",
+		"lint": "eslint .vitepress --ext .ts,.vue --fix",
+		"format": "prettier --write \"**/*.{ts,js,json,md,vue,css}\""
+	},
+	"devDependencies": {
+		"@playwright/test": "1.51.1",
+		"@typescript-eslint/eslint-plugin": "^7.0.0",
+		"@typescript-eslint/parser": "^7.0.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-vue": "^9.24.0",
+		"prettier": "^3.2.5",
+		"typescript": "^5.4.0",
+		"vitepress": "^1.6.0"
+	}
+}

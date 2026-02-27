@@ -1,0 +1,235 @@
+:root {
+	--vp-sidebar-width: 320px;
+}
+
+/* Keep nested sidebar levels readable without overriding VitePress behavior. */
+.VPSidebarItem .items {
+	padding-inline-start: 0.875rem;
+}
+
+.VPSidebarItem .items .items {
+	padding-inline-start: 1.25rem;
+}
+
+/* Brand color for site title in the top nav. */
+.VPNavBarTitle .title {
+	color: var(--vp-c-brand-1);
+	transition:
+		color 0.2s ease,
+		opacity 0.2s ease;
+}
+
+.VPNavBarTitle .title:hover {
+	opacity: 0.85;
+}
+
+/* Home page */
+.home-header {
+	text-align: center;
+	padding: 2rem 1rem 0;
+}
+
+.home-title {
+	margin: 0 0 0.5rem;
+	font-size: clamp(1.75rem, 3.8vw, 2.5rem);
+	line-height: 1.2;
+	color: var(--vp-c-brand-1);
+}
+
+.home-subtitle {
+	margin: 0 0 0.5rem;
+	font-size: clamp(1rem, 2.1vw, 1.2rem);
+	line-height: 1.4;
+	color: var(--vp-c-text-1);
+}
+
+.home-description {
+	margin: 0 0 1.5rem;
+	font-size: clamp(0.85rem, 1.7vw, 0.95rem);
+	line-height: 1.55;
+	color: var(--vp-c-text-2);
+}
+
+.home-cta-button {
+	display: inline-block;
+	padding: 0.6rem 1.2rem;
+	border-radius: 8px;
+	background: var(--vp-button-brand-bg);
+	color: var(--vp-button-brand-text);
+	text-decoration: none;
+	font-weight: 600;
+	transition:
+		transform 0.2s ease,
+		opacity 0.2s ease;
+}
+
+.home-cta-button:hover {
+	transform: translateY(-1px);
+	opacity: 0.9;
+}
+
+.home-divider {
+	max-width: 800px;
+	margin: 2rem auto 0;
+	padding: 0 1rem;
+}
+
+.home-divider hr {
+	border: 0;
+	border-top: 1px solid var(--vp-c-divider);
+	margin: 0;
+}
+
+.home-sections {
+	margin-top: 2rem;
+	padding: 0 1rem;
+}
+
+.home-sections-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.home-section-card {
+	padding: 1rem;
+	border: 1px solid var(--vp-c-divider);
+	border-radius: 10px;
+	background: var(--vp-c-bg-soft);
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.home-section-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.home-section-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.1rem;
+	line-height: 1.4;
+}
+
+.home-section-link {
+	color: var(--vp-c-brand-1);
+	text-decoration: none;
+}
+
+.home-section-link:hover {
+	text-decoration: underline;
+}
+
+.home-section-description {
+	margin: 0;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: var(--vp-c-text-2);
+}
+
+/* Right aside support block */
+.VPDocAside .aside-support-footer {
+	margin-top: 12px;
+	padding: 10px 12px;
+	border: 1px solid var(--vp-c-divider);
+	border-radius: 10px;
+	background: var(--vp-c-bg-soft);
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+.VPDocAside .aside-support-footer__year {
+	margin-bottom: 6px;
+	color: var(--vp-c-text-2);
+}
+
+.VPDocAside .aside-support-footer__link {
+	display: inline-block;
+	color: var(--vp-c-brand-1);
+	text-decoration: none;
+}
+
+.VPDocAside .aside-support-footer__link:hover {
+	color: var(--vp-c-brand-2);
+	text-decoration: underline;
+}
+
+/* Reusable doc blocks */
+.official-docs {
+	margin-top: 2rem;
+}
+
+.official-docs__list {
+	margin: 0.75rem 0 0;
+	padding-left: 1.25rem;
+}
+
+.official-docs__list li {
+	margin: 0.25rem 0;
+}
+
+.related-topics {
+	margin-top: 1rem;
+}
+
+.auto-related-topics {
+	margin-top: 1.5rem;
+}
+
+.auto-related-topics__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin: 0 0 0.65rem;
+}
+
+.auto-related-topics__tags span {
+	padding: 0.1rem 0.45rem;
+	border-radius: 999px;
+	background: var(--vp-c-bg-soft);
+	border: 1px solid var(--vp-c-divider);
+	font-size: 0.75rem;
+	line-height: 1.2;
+}
+
+@media (max-width: 1023px) {
+	.home-sections-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 767px) {
+	.home-header {
+		padding-top: 1.5rem;
+	}
+
+	.home-divider {
+		margin-top: 1.5rem;
+		padding: 0 0.75rem;
+	}
+
+	.home-sections {
+		margin-top: 1.5rem;
+		padding: 0 0.75rem;
+	}
+
+	.home-sections-grid {
+		grid-template-columns: 1fr;
+		gap: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	.home-section-card {
+		padding: 0.875rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.home-cta-button {
+		width: 100%;
+		max-width: 280px;
+		font-size: 0.85rem;
+	}
+}

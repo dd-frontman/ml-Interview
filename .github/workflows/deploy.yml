@@ -1,0 +1,88 @@
+name: Deploy ML VitePress site to Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "yarn"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check generated metadata
+        run: yarn check:generated
+
+      - name: Type check
+        run: yarn type-check
+
+      - name: Validate content quality
+        run: yarn validate-content
+
+      - name: Lint markdown
+        run: yarn lint:md
+
+      - name: Validate links
+        run: yarn validate-links
+
+      - name: Validate routes
+        run: yarn validate-routes
+
+      - name: Stale content report
+        run: yarn report:stale
+
+      - name: Install Playwright browser
+        run: yarn playwright install --with-deps webkit
+
+      - name: Mobile smoke tests
+        run: yarn test:mobile
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+          if-no-files-found: ignore
+
+      - name: Build with VitePress
+        run: yarn build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

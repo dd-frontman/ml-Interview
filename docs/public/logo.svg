@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Фон как на главной странице VitePress (темная тема: #1e1e20) -->
+  <rect width="100" height="100" rx="8" fill="#1e1e20"/>
+  
+  <!-- Буквы WD цветом как заголовок в VitePress (светло-фиолетовый/лавандовый: #aac8e4 или #c9cbff) -->
+  <text x="50" y="65" 
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif" 
+        font-size="50" 
+        font-weight="700" 
+        fill="#c9cbff" 
+        text-anchor="middle" 
+        letter-spacing="-5">WD</text>
+</svg>
