@@ -235,6 +235,7 @@ function compactTitle(title) {
 }
 
 const GROUP_TITLE_OVERRIDES = {
+	"/python/1-core": "1 Core",
 	"/vue/ref-and-reactive": "Ref & reactive",
 	"/vue/story": "Сторы",
 	"/vue/zadachi": "Задачи",

@@ -57,7 +57,17 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsible: true,
 		collapsed: true,
 		items: [
-			{ text: "NumPy и Pandas", link: "/python/numpy-i-pandas-dlya-ml" }
+			{ text: "Введение в Python", link: "/python/vvedenie-v-python" },
+			{ text: "NumPy и Pandas", link: "/python/numpy-i-pandas-dlya-ml" },
+			{
+				text: "1 Core",
+				collapsible: true,
+				collapsed: true,
+				items: [
+					{ text: "Типы данных изменяемость", link: "/python/1-core/tipy-dannykh-izmenyaemost-i-ssylki-na-obekty" },
+					{ text: "Python Core функции", link: "/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" }
+				],
+			}
 		],
 	}
 ];
