@@ -2,31 +2,32 @@
 
 ## Цель
 
-Обновить существующий раздел `docs/ml/obuchenie-s-uchitelem.md` так, чтобы он соответствовал текущей инфраструктуре проекта и новым требованиям к глубине: понятная инженерная логика, воспроизводимый код, типичные ошибки, cheat-sheet и официальные источники.
+Обновить страницу `docs/python/vvedenie-v-python.md` до уровня инженерного onboarding-документа для ML: дать понятную картину роли Python, показать data/training/inference flow, добавить воспроизводимые примеры, типичные ошибки, cheat-sheet и официальные источники.
 
 ## Аудитория
 
 - Мидл frontend-разработчик.
-- Понимает HTTP/REST/CI/CD и архитектуру приложений.
-- Начинающий в ML, нужен мост между веб-инженерией и ML-практикой.
+- Хорошо понимает HTTP/REST/CI/CD и архитектурные паттерны.
+- Начинает путь в ML и нуждается в практичном переходе от web-инженерии к data/ML workflow.
 
 ## Scope
 
-- В рамках текущей структуры проекта.
-- Без изменения URL/slug страницы.
-- Без добавления новых верхнеуровневых разделов.
-- С фокусом на binary classification как наиболее понятный supervised-кейс.
+- Только обновление существующей страницы `/python/vvedenie-v-python`.
+- Без изменения URL и позиции в sidebar.
+- Без создания новых верхнеуровневых разделов.
+- Сфокусироваться на Python как «клее» между данными, обучением модели и inference в проде.
 
-## Как встраивается в структуру
+## Как документ встраивается в текущую структуру
 
-- Раздел: `Machine Learning` -> страница `/ml/obuchenie-s-uchitelem`.
-- Навигация не ломается: существующий путь и позиция в sidebar сохраняются.
+- Раздел: `Python` -> `Введение в Python`.
+- Документ становится entry-point в Python-ветку перед углублением в `1-core` и `NumPy/Pandas`.
 
 ## Связанные документы
 
-- `docs/ml/obuchenie-bez-uchitelya.md` (контраст supervised vs unsupervised).
-- `docs/mlops/feature-engineering-i-validatsiya.md` (валидация и leakage).
-- `docs/math/veroyatnost-i-statistika-dlya-ml.md` (метрики и статистическая интерпретация).
+- `docs/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md`
+- `docs/python/1-core/tipy-dannykh/obshaya-informatsiya.md`
+- `docs/python/numpy-i-pandas-dlya-ml.md`
+- `docs/ml/obuchenie-s-uchitelem.md`
 
 ## Оглавление обновляемого документа
 
@@ -41,11 +42,10 @@
 
 ## Definition of Done
 
-- Страница обновлена без изменения роута.
-- Есть оба уровня примеров: минимальный и практический.
-- Добавлены разделы "Типичные ошибки" и cheat-sheet таблица.
-- Добавлены ссылки на официальную документацию через `<OfficialDocsLinks />`.
-- Добавлены связанные темы через `<RelatedTopics />` без конфликтов с валидацией.
+- Сохранен текущий route: `/python/vvedenie-v-python`.
+- Добавлены обязательные секции (включая «Типичные ошибки», cheat-sheet, official docs).
+- Есть минимум один «быстрый» и один «практический» Python-пример.
+- Добавлены релевантные внутренние связи через `<RelatedTopics />`.
 - Проходят проверки:
   - `yarn validate-content`
   - `yarn validate-links`

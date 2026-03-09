@@ -64,8 +64,18 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				collapsible: true,
 				collapsed: true,
 				items: [
-					{ text: "Типы данных изменяемость", link: "/python/1-core/tipy-dannykh-izmenyaemost-i-ssylki-na-obekty" },
-					{ text: "Python Core функции", link: "/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" }
+					{ text: "Логические и побитовые", link: "/python/1-core/logicheskie-i-pobitovye-operatory" },
+					{ text: "Функции классы модули", link: "/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
+					{
+						text: "Типы данных",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Общая информация", link: "/python/1-core/tipy-dannykh/obshaya-informatsiya" },
+							{ text: "Изменяемые типы", link: "/python/1-core/tipy-dannykh/izmenyaemye-tipy" },
+							{ text: "Неизменяемые типы", link: "/python/1-core/tipy-dannykh/neizmenyaemye-tipy" }
+						],
+					}
 				],
 			}
 		],

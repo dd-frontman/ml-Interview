@@ -1,6 +1,6 @@
 ---
-title: "Типы данных, изменяемость и ссылки на объекты"
-description: "Подробный разбор Python-типов, mutability и модели ссылок на объекты: что происходит в памяти и как избежать частых багов."
+title: "Общая информация"
+description: "Что такое изменяемые и неизменяемые типы в Python, как работают ссылки на объекты, сравнение, копирование и типичные источники багов."
 tags:
   - "python"
   - "core"
@@ -8,7 +8,7 @@ tags:
   - "mutability"
 updatedAt: "2026-02-27"
 ---
-## Зачем это знать Python-разработчику
+## Зачем это знать
 
 Большая часть "странных" багов в Python связана не с синтаксисом, а с моделью объектов:
 
@@ -22,19 +22,23 @@ updatedAt: "2026-02-27"
 - почему `copy()` иногда не спасает;
 - откуда берется эффект с изменяемыми аргументами по умолчанию.
 
-## Базовые типы и изменяемость
+## Что разбираем
 
-### Неизменяемые типы (`immutable`)
+Всего в теме: `12` типов и групп типов.
 
-- `int` `42`
-- `float` `3.14`
-- `bool` `True`
-- `str` `"python"`
-- `tuple` (если внутри нет изменяемых объектов) `(1, "ml", 2.5)`
-- `frozenset` `frozenset({"python", "ml"})`
-- `bytes` `b"hello"`
+- Неизменяемые типы (`7`):
+  `int`, `float`, `bool`, `str`, `tuple`, `frozenset`, `bytes`
+- Изменяемые типы (`5`):
+  `list`, `dict`, `set`, `bytearray`, пользовательские объекты классов
 
-Смысл: после создания объект нельзя изменить "на месте". Любая модификация = новый объект.
+Подробные страницы:
+
+- [Неизменяемые типы](./neizmenyaemye-tipy.md)
+- [Изменяемые типы](./izmenyaemye-tipy.md)
+
+## Что такое immutable и mutable
+
+`Immutable` значит: после создания объект нельзя изменить "на месте". Если значение меняется, создается новый объект.
 
 ```python
 s = "ml"
@@ -45,15 +49,7 @@ new_id = id(s)
 print(old_id == new_id)  # False
 ```
 
-### Изменяемые типы (`mutable`)
-
-- `list`
-- `dict`
-- `set`
-- `bytearray`
-- пользовательские объекты классов (обычно)
-
-Смысл: объект можно менять без создания нового.
+`Mutable` значит: объект можно менять без создания нового.
 
 ```python
 items = [1, 2]
@@ -78,10 +74,10 @@ print(a)  # [1, 2, 3, 4]
 
 `a` и `b` ссылаются на один и тот же список.
 
-### `is` и `==`
+## `is` и `==`
 
-- `==` сравнивает значения.
-- `is` проверяет, один и тот же объект или нет.
+- `==` сравнивает значения
+- `is` проверяет, один и тот же объект или нет
 
 ```python
 x = [1, 2]
@@ -91,7 +87,7 @@ print(x == y)  # True
 print(x is y)  # False
 ```
 
-Для `None` всегда использовать `is`:
+Для `None` почти всегда использовать `is`:
 
 ```python
 if value is None:
@@ -111,7 +107,7 @@ src = {"user": {"name": "Alice"}, "roles": ["admin"]}
 clone = copy.copy(src)
 
 clone["roles"].append("editor")
-print(src["roles"])  # ['admin', 'editor'] -> общий вложенный список
+print(src["roles"])  # ['admin', 'editor']
 ```
 
 ### Глубокая копия (`deep copy`)
@@ -164,7 +160,6 @@ base_payload = {
 }
 
 def build_payload(user_id: int, template: dict) -> dict:
-    # Важно: берем deep copy, чтобы не менять template "по ссылке"
     payload = deepcopy(template)
     payload["user_id"] = user_id
     payload["tags"].append("scored")
@@ -182,39 +177,26 @@ print(base_payload)  # template не изменился
 
 1. Путать присваивание и копирование.
    Симптом: изменение в одной переменной "внезапно" влияет на другую.
-   Решение: явно использовать `copy()`/`deepcopy()` в нужных местах.
+   Решение: явно использовать `copy()`/`deepcopy()`.
 
 2. Использовать `is` для сравнения строк, чисел, списков.
    Симптом: нестабильные проверки.
-   Решение: для значений использовать `==`, `is` только для identity (`None`, singleton-паттерны).
+   Решение: для значений использовать `==`, `is` только для identity.
 
-3. Считать, что `tuple` всегда полностью неизменяемый.
-   Симптом: внутри `tuple` меняются вложенные `list/dict`.
-   Решение: помнить, что неизменяемость `tuple` не "замораживает" вложенные mutable-объекты.
-
-4. Делать только `copy.copy` для сложной вложенной структуры.
+3. Делать только `copy.copy` для сложной вложенной структуры.
    Симптом: вложенные поля все еще общие.
-   Решение: использовать `deepcopy` или проектировать data model без shared mutable state.
+   Решение: использовать `deepcopy`.
 
-5. Использовать mutable default arguments.
+4. Использовать mutable default arguments.
    Симптом: данные "накапливаются" между вызовами функции.
    Решение: паттерн `None -> create new object`.
 
 ## Cheat-sheet
 
-| Тип | Mutable | Пример операции | Создает новый объект |
-| --- | --- | --- | --- |
-| `int` | Нет | `x += 1` | Да |
-| `str` | Нет | `s += "a"` | Да |
-| `tuple` | Нет (контейнер) | `t + (1,)` | Да |
-| `list` | Да | `lst.append(1)` | Нет |
-| `dict` | Да | `d["k"] = 1` | Нет |
-| `set` | Да | `s.add(1)` | Нет |
-
 | Сценарий | Что использовать |
 | --- | --- |
-| Проверка равенства значений | `==` |
-| Проверка identity (`None`) | `is` |
+| Сравнить значения | `==` |
+| Проверить identity | `is` |
 | Копия 1-го уровня | `copy.copy(obj)` / `obj.copy()` |
 | Копия всей вложенной структуры | `copy.deepcopy(obj)` |
 | Безопасный default-параметр | `arg=None` + создание внутри функции |
@@ -232,8 +214,8 @@ print(base_payload)  # template не изменился
 
 <RelatedTopics
 	:items="[
-		{ title: 'Python Core: функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-		{ title: 'Введение в Python', href: '/python/vvedenie-v-python' },
-		{ title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
+		{ title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
+		{ title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
+		{ title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
 	]"
 />

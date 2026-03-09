@@ -236,6 +236,7 @@ function compactTitle(title) {
 
 const GROUP_TITLE_OVERRIDES = {
 	"/python/1-core": "1 Core",
+	"/python/1-core/tipy-dannykh": "Типы данных",
 	"/vue/ref-and-reactive": "Ref & reactive",
 	"/vue/story": "Сторы",
 	"/vue/zadachi": "Задачи",
@@ -249,6 +250,10 @@ const GROUP_TITLE_OVERRIDES = {
 	"/typescript/zadachi": "Задачи",
 	"/sborschiki/vite": "Vite",
 	"/zadachi/yandeks": "Яндекс",
+};
+
+const ITEM_ORDER_OVERRIDES = {
+	"/python/1-core/tipy-dannykh/obshaya-informatsiya": -100,
 };
 
 function toPublicRoute(route) {
@@ -433,7 +438,14 @@ function toSidebarItems(entries) {
 	}
 
 	function sortLeafItems(items) {
-		return items.sort((a, b) => a.text.localeCompare(b.text, "ru"));
+		return items.sort((a, b) => {
+			const aPriority = ITEM_ORDER_OVERRIDES[a.link] ?? 0;
+			const bPriority = ITEM_ORDER_OVERRIDES[b.link] ?? 0;
+			if (aPriority !== bPriority) {
+				return aPriority - bPriority;
+			}
+			return a.text.localeCompare(b.text, "ru");
+		});
 	}
 
 	function renderGroup(group) {
