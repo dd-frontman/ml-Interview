@@ -124,19 +124,19 @@ updatedAt: "2026-02-27"
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
-		{ title: 'Numeric types', href: 'https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex' },
-		{ title: 'Boolean operations and bool', href: 'https://docs.python.org/3/library/stdtypes.html#boolean-type-bool' },
-		{ title: 'Text sequence type str', href: 'https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' },
-		{ title: 'Binary sequence types', href: 'https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview' },
-	]"
+    :links="[
+        { title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
+        { title: 'Numeric types', href: 'https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex' },
+        { title: 'Boolean operations and bool', href: 'https://docs.python.org/3/library/stdtypes.html#boolean-type-bool' },
+        { title: 'Text sequence type str', href: 'https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' },
+        { title: 'Binary sequence types', href: 'https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-		{ title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
-		{ title: 'Логические и побитовые операторы: and, or, &, |', href: '/python/1-core/logicheskie-i-pobitovye-operatory' },
-	]"
+    :items="[
+        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
+        { title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
+        { title: 'Логические и побитовые операторы: and, or, &, |', href: '/python/1-core/logicheskie-i-pobitovye-operatory' },
+    ]"
 />

@@ -209,19 +209,19 @@ print(user)
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Python Tutorial', href: 'https://docs.python.org/3/tutorial/' },
-		{ title: 'Python: Classes', href: 'https://docs.python.org/3/tutorial/classes.html' },
-		{ title: 'Python: Modules', href: 'https://docs.python.org/3/tutorial/modules.html' },
-		{ title: 'Python: venv', href: 'https://docs.python.org/3/library/venv.html' },
-		{ title: 'pip User Guide', href: 'https://pip.pypa.io/en/stable/user_guide/' },
-	]"
+    :links="[
+        { title: 'Python Tutorial', href: 'https://docs.python.org/3/tutorial/' },
+        { title: 'Python: Classes', href: 'https://docs.python.org/3/tutorial/classes.html' },
+        { title: 'Python: Modules', href: 'https://docs.python.org/3/tutorial/modules.html' },
+        { title: 'Python: venv', href: 'https://docs.python.org/3/library/venv.html' },
+        { title: 'pip User Guide', href: 'https://pip.pypa.io/en/stable/user_guide/' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Введение в Python', href: '/python/vvedenie-v-python' },
-		{ title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
-		{ title: 'Обучение с учителем', href: '/ml/obuchenie-s-uchitelem' },
-	]"
+    :items="[
+        { title: 'Введение в Python', href: '/python/vvedenie-v-python' },
+        { title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
+        { title: 'Обучение с учителем', href: '/ml/obuchenie-s-uchitelem' },
+    ]"
 />

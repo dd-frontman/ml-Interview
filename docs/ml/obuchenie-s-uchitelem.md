@@ -222,19 +222,19 @@ print(f"Chosen threshold: {threshold:.2f}")
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Scikit-learn: Supervised learning', href: 'https://scikit-learn.org/stable/supervised_learning.html' },
-		{ title: 'Scikit-learn: Pipelines and composite estimators', href: 'https://scikit-learn.org/stable/modules/compose.html' },
-		{ title: 'Scikit-learn: Cross-validation', href: 'https://scikit-learn.org/stable/modules/cross_validation.html' },
-		{ title: 'Scikit-learn: Model evaluation', href: 'https://scikit-learn.org/stable/modules/model_evaluation.html' },
-		{ title: 'Pandas: User guide', href: 'https://pandas.pydata.org/docs/user_guide/index.html' },
-	]"
+    :links="[
+        { title: 'Scikit-learn: Supervised learning', href: 'https://scikit-learn.org/stable/supervised_learning.html' },
+        { title: 'Scikit-learn: Pipelines and composite estimators', href: 'https://scikit-learn.org/stable/modules/compose.html' },
+        { title: 'Scikit-learn: Cross-validation', href: 'https://scikit-learn.org/stable/modules/cross_validation.html' },
+        { title: 'Scikit-learn: Model evaluation', href: 'https://scikit-learn.org/stable/modules/model_evaluation.html' },
+        { title: 'Pandas: User guide', href: 'https://pandas.pydata.org/docs/user_guide/index.html' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Обучение без учителя', href: '/ml/obuchenie-bez-uchitelya' },
-		{ title: 'Feature engineering и валидация', href: '/mlops/feature-engineering-i-validatsiya' },
-		{ title: 'Вероятность и статистика для ML', href: '/math/veroyatnost-i-statistika-dlya-ml' },
-	]"
+    :items="[
+        { title: 'Обучение без учителя', href: '/ml/obuchenie-bez-uchitelya' },
+        { title: 'Feature engineering и валидация', href: '/mlops/feature-engineering-i-validatsiya' },
+        { title: 'Вероятность и статистика для ML', href: '/math/veroyatnost-i-statistika-dlya-ml' },
+    ]"
 />

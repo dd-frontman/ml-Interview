@@ -285,22 +285,22 @@ print("Полнота (recall):", round(recall, 3))
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Python Tutorial', href: 'https://docs.python.org/3/tutorial/' },
-		{ title: 'Python: dataclasses', href: 'https://docs.python.org/3/library/dataclasses.html' },
-		{ title: 'Python: typing', href: 'https://docs.python.org/3/library/typing.html' },
-		{ title: 'Python: venv', href: 'https://docs.python.org/3/library/venv.html' },
-		{ title: 'pip User Guide', href: 'https://pip.pypa.io/en/stable/user_guide/' },
-		{ title: 'Scikit-learn User Guide', href: 'https://scikit-learn.org/stable/user_guide.html' },
-		{ title: 'Pandas User Guide', href: 'https://pandas.pydata.org/docs/user_guide/index.html' },
-	]"
+    :links="[
+        { title: 'Python Tutorial', href: 'https://docs.python.org/3/tutorial/' },
+        { title: 'Python: dataclasses', href: 'https://docs.python.org/3/library/dataclasses.html' },
+        { title: 'Python: typing', href: 'https://docs.python.org/3/library/typing.html' },
+        { title: 'Python: venv', href: 'https://docs.python.org/3/library/venv.html' },
+        { title: 'pip User Guide', href: 'https://pip.pypa.io/en/stable/user_guide/' },
+        { title: 'Scikit-learn User Guide', href: 'https://scikit-learn.org/stable/user_guide.html' },
+        { title: 'Pandas User Guide', href: 'https://pandas.pydata.org/docs/user_guide/index.html' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-		{ title: 'Общая информация по типам данных', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-		{ title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
-		{ title: 'Обучение с учителем', href: '/ml/obuchenie-s-uchitelem' },
-	]"
+    :items="[
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Общая информация по типам данных', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
+        { title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
+        { title: 'Обучение с учителем', href: '/ml/obuchenie-s-uchitelem' },
+    ]"
 />

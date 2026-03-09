@@ -126,19 +126,19 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
-		{ title: 'Lists', href: 'https://docs.python.org/3/tutorial/datastructures.html' },
-		{ title: 'Dictionaries', href: 'https://docs.python.org/3/tutorial/datastructures.html#dictionaries' },
-		{ title: 'Sets', href: 'https://docs.python.org/3/tutorial/datastructures.html#sets' },
-		{ title: 'Binary sequence types', href: 'https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview' },
-	]"
+    :links="[
+        { title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
+        { title: 'Lists', href: 'https://docs.python.org/3/tutorial/datastructures.html' },
+        { title: 'Dictionaries', href: 'https://docs.python.org/3/tutorial/datastructures.html#dictionaries' },
+        { title: 'Sets', href: 'https://docs.python.org/3/tutorial/datastructures.html#sets' },
+        { title: 'Binary sequence types', href: 'https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-		{ title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
-		{ title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-	]"
+    :items="[
+        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
+        { title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+    ]"
 />

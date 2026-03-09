@@ -204,18 +204,18 @@ print(base_payload)  # template не изменился
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Python Data Model', href: 'https://docs.python.org/3/reference/datamodel.html' },
-		{ title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
-		{ title: 'copy module', href: 'https://docs.python.org/3/library/copy.html' },
-		{ title: 'Functions and default arguments', href: 'https://docs.python.org/3/tutorial/controlflow.html#default-argument-values' },
-	]"
+    :links="[
+        { title: 'Python Data Model', href: 'https://docs.python.org/3/reference/datamodel.html' },
+        { title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
+        { title: 'copy module', href: 'https://docs.python.org/3/library/copy.html' },
+        { title: 'Functions and default arguments', href: 'https://docs.python.org/3/tutorial/controlflow.html#default-argument-values' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
-		{ title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
-		{ title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-	]"
+    :items="[
+        { title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
+        { title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+    ]"
 />

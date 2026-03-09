@@ -117,7 +117,7 @@ True | False  # True
 | `and` | Логика условий | Да | Один из операндов |
 | `or` | Логика условий | Да | Один из операндов |
 | `&` | Побитовые операции | Нет | Число или bool |
-| `|` | Побитовые операции | Нет | Число или bool |
+| `pipe` (побитовое ИЛИ) | Побитовые операции | Нет | Число или bool |
 
 ## Практический пример
 
@@ -173,7 +173,7 @@ print(bool(can_write))  # True
 | Проверка одного из условий | `or` |
 | Инверсия булевого значения | `not` |
 | Побитовое И | `&` |
-| Побитовое ИЛИ | `|` |
+| Побитовое ИЛИ | `pipe` |
 | Проверка битовой маски | `value & FLAG` |
 
 | Выражение | Результат |
@@ -183,23 +183,23 @@ print(bool(can_write))  # True
 | `1 and 2` | `2` |
 | `0 or 2` | `2` |
 | `5 & 2` | `0` |
-| `5 | 2` | `7` |
+| `bitwise_or(5, 2)` | `7` |
 
 ## Official docs
 
 <OfficialDocsLinks
-	:links="[
-		{ title: 'Python: Boolean operations', href: 'https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not' },
-		{ title: 'Python: Truth value testing', href: 'https://docs.python.org/3/library/stdtypes.html#truth-value-testing' },
-		{ title: 'Python: Bitwise operations on integer types', href: 'https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types' },
-		{ title: 'Python language reference: operator precedence', href: 'https://docs.python.org/3/reference/expressions.html#operator-precedence' },
-	]"
+    :links="[
+        { title: 'Python: Boolean operations', href: 'https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not' },
+        { title: 'Python: Truth value testing', href: 'https://docs.python.org/3/library/stdtypes.html#truth-value-testing' },
+        { title: 'Python: Bitwise operations on integer types', href: 'https://docs.python.org/3/library/stdtypes.html#bitwise-operations-on-integer-types' },
+        { title: 'Python language reference: operator precedence', href: 'https://docs.python.org/3/reference/expressions.html#operator-precedence' },
+    ]"
 />
 
 <RelatedTopics
-	:items="[
-		{ title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-		{ title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-		{ title: 'Введение в Python', href: '/python/vvedenie-v-python' },
-	]"
+    :items="[
+        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Введение в Python', href: '/python/vvedenie-v-python' },
+    ]"
 />
