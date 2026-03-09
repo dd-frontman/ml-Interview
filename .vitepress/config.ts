@@ -2,8 +2,10 @@ import { defineConfig } from "vitepress";
 import { sidebar } from "./sidebar";
 
 const fallbackRepoName = "ml-interview";
+const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process
+	?.env;
 const repoName =
-	process.env.REPO_NAME ?? process.env.GITHUB_REPOSITORY?.split("/")[1] ?? fallbackRepoName;
+	env?.REPO_NAME ?? env?.GITHUB_REPOSITORY?.split("/")[1] ?? fallbackRepoName;
 const siteBase = `/${repoName}/`;
 
 export default defineConfig({
