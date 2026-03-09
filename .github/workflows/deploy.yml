@@ -76,6 +76,8 @@ jobs:
           if-no-files-found: ignore
 
       - name: Build with VitePress
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
         run: yarn build
 
       - name: Upload artifact

@@ -1,7 +1,10 @@
 import { defineConfig } from "vitepress";
 import { sidebar } from "./sidebar";
 
-const siteBase = "/ml-interview/";
+const fallbackRepoName = "ml-interview";
+const repoName =
+	process.env.REPO_NAME ?? process.env.GITHUB_REPOSITORY?.split("/")[1] ?? fallbackRepoName;
+const siteBase = `/${repoName}/`;
 
 export default defineConfig({
 	title: "ML Interview Documentation",
@@ -12,9 +15,8 @@ export default defineConfig({
 		["link", { rel: "shortcut icon", href: `${siteBase}favicon.svg` }],
 	],
 
-	// Настройка для деплоя на GitHub Pages
-	// Репозиторий называется "ml-interview", поэтому используем base: '/ml-interview/'
-	// В локальной разработке тоже нужно использовать этот base - открывайте http://localhost:5173/ml-interview/
+	// База для GitHub Pages вычисляется из имени репозитория.
+	// В CI используется имя из GitHub context, локально — fallbackRepoName.
 	base: siteBase,
 
 	// Чистые URL без .html
