@@ -2,25 +2,28 @@
 
 ## 1) Структура проекта
 
-- Формат: VitePress (`srcDir: docs`) с автогенерацией навигации и индекса.
+- Формат: VitePress (`srcDir: docs`) с markdown-контентом и встраиваемыми Vue-компонентами.
+- Контентный объем на момент анализа:
+  - 17 markdown-страниц в `docs/`;
+  - 6 верхнеуровневых доменов: `math`, `ml`, `deep-learning`, `mlops`, `python`, `interview-prep`;
+  - 1 home-страница `docs/index.md`;
+  - 2 статических ассета в `docs/public`.
 - Source of truth:
-  - контент: `docs/**/*.md`;
-  - frontmatter в самих markdown-файлах;
-  - generated-артефакты: `.vitepress/sidebar.generated.ts`, `.vitepress/theme/generated/content-index.ts`.
-- Ключевые разделы первого уровня:
-  - `docs/math`
-  - `docs/ml`
-  - `docs/deep-learning`
-  - `docs/mlops`
-  - `docs/python`
-  - `docs/interview-prep`
+  - основной контент и структура маршрутов живут в `docs/**/*.md`;
+  - метаданные хранятся в frontmatter самих страниц;
+  - `.vitepress/sidebar.generated.ts` и `.vitepress/theme/generated/content-index.ts` являются производными артефактами, а не редактируемым источником истины.
 - Навигация:
   - sidebar полностью генерируется `scripts/generate-sidebar.mjs`;
-  - карточки home заданы вручную в `docs/index.md`;
-  - cross-linking через `<RelatedTopics />`.
-- UI-компоненты документации:
-  - `<OfficialDocsLinks />` для ссылок на первоисточники;
-  - `<RelatedTopics />` для внутренних связей.
+  - карточки home задаются вручную в `docs/index.md`;
+  - ручные внутренние связи делаются через `<RelatedTopics />`;
+  - если ручного блока нет, `<AutoRelatedTopics />` подбирает материалы по общим тегам из content index.
+- Формат страниц:
+  - обычные статьи оформлены как markdown;
+  - home-страница использует гибридный формат: frontmatter + `<script setup>` + HTML/Vue-разметку внутри markdown.
+- Диаграммы:
+  - синтаксис `mermaid` и другие встроенные диаграммы в текущем контенте не используются.
+- CI/CD и quality gates:
+  - GitHub Actions прогоняет `check:generated`, `type-check`, markdown lint, валидации контента/ссылок/роутов, stale-report, mobile smoke tests и build.
 
 ## 2) Правила оформления и стандарты
 
@@ -29,6 +32,15 @@
 - Naming conventions:
   - маршруты и slug только `kebab-case` и lower-case латиница (`validate-routes.mjs`);
   - root-ссылки вида `/section/page`.
+- Правила языка и контента:
+  - основной язык документации русский;
+  - английский допускается для кода, названий технологий и терминов без точного русского эквивалента;
+  - запрещены Obsidian-артефакты, assistant boilerplate и незакрытые code fences (`validate-content.mjs`).
+- Навигационные и UI-стандарты:
+  - generated-файлы не редактируются вручную;
+  - для первоисточников используется `<OfficialDocsLinks />`;
+  - для внутренних связей используется `<RelatedTopics />`, иначе включается авто-подбор по тегам;
+  - для длинных страниц допускается `search: false`; в текущем репозитории это используется только у `docs/python/vvedenie-v-python.md`.
 - Встроенные проверки качества:
   - `yarn validate-content` (frontmatter, недопустимые артефакты, code fences);
   - `yarn validate-links` (внутренние ссылки, `RelatedTopics`, orphan pages);
@@ -40,9 +52,15 @@
 - Язык: русский.
 - Тон: инженерный, прикладной, без академического перегруза.
 - Формат: короткие секции, списки, код-блоки и таблицы.
+- Явного markdown-шаблона в отдельном файле нет, но есть де-факто шаблон зрелых страниц.
+- Текущий уровень зрелости шаблона по фактическому покрытию:
+  - `## Big Picture` есть только у 2 страниц;
+  - `## Official docs` есть у 7 страниц;
+  - ручной `<RelatedTopics />` есть у 8 страниц;
+  - наиболее зрелая ветка: `docs/python/1-core/*`, `docs/python/vvedenie-v-python.md`, `docs/ml/obuchenie-s-uchitelem.md`.
 - Наблюдаемая глубина неоднородна:
-  - части `docs/python/1-core/*` и `docs/ml/obuchenie-s-uchitelem.md` уже в формате «практический гайд»;
-  - ряд страниц (`math/*`, `deep-learning/*`, часть `mlops/*`, `docs/python/numpy-i-pandas-dlya-ml.md`) остаются краткими конспектами.
+  - часть Python- и supervised-материалов уже читается как практический onboarding;
+  - `math/*`, `deep-learning/*`, часть `mlops/*`, `docs/ml/obuchenie-bez-uchitelya.md`, `docs/python/numpy-i-pandas-dlya-ml.md` пока ближе к кратким конспектам.
 
 ## 4) Что уже описано
 
@@ -62,7 +80,8 @@
 - Неполное выравнивание страниц по единому шаблону:
   - не везде есть «Практический пример», «Типичные ошибки», «Cheat-sheet», «Official docs».
 - Не у всех тем явно разложены data/training/inference flow.
-- Часть страниц слабо связана через `RelatedTopics`.
+- Часть страниц слабо связана через ручные `RelatedTopics`, хотя авто-связи по тегам уже есть.
+- В разделах `math`, `deep-learning`, `mlops` и `unsupervised ML` пока нет визуальных схем/диаграмм, хотя тематика этому способствует.
 
 ### Потенциальное дублирование
 
@@ -73,6 +92,7 @@
 
 - Инфраструктура качества зрелая (генераторы, валидаторы, компоненты), но глубина контента по разделам пока неравномерна.
 - Home-страница позиционирует документацию как комплексную базу, но часть статей пока ближе к «шпаргалке».
+- Автогенерация sidebar работает стабильно, но алгоритм сокращения заголовков иногда дает неудачные названия пунктов вроде `Линейная алгебра для` или `Feature engineering и`.
 
 ## 6) Рекомендации
 
@@ -87,3 +107,4 @@
   7. Cheat-sheet
   8. Official docs
 - При обновлении вводных страниц делать явные ссылки на более глубокие разделы, чтобы избегать дублирования.
+- Следующая полезная инфраструктурная доработка: добавить более управляемый механизм коротких sidebar-title, чтобы не полагаться только на автоматическое усечение заголовков.

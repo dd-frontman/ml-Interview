@@ -16,6 +16,7 @@
 - Без изменения URL и позиции в sidebar.
 - Без создания новых верхнеуровневых разделов.
 - Сфокусироваться на Python как «клее» между данными, обучением модели и inference в проде.
+- Привести home-навигацию в соответствие с новым entry-point раздела Python.
 
 ## Как документ встраивается в текущую структуру
 
@@ -24,6 +25,7 @@
 
 ## Связанные документы
 
+- `docs/index.md`
 - `docs/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md`
 - `docs/python/1-core/tipy-dannykh/obshaya-informatsiya.md`
 - `docs/python/numpy-i-pandas-dlya-ml.md`
@@ -46,6 +48,7 @@
 - Добавлены обязательные секции (включая «Типичные ошибки», cheat-sheet, official docs).
 - Есть минимум один «быстрый» и один «практический» Python-пример.
 - Добавлены релевантные внутренние связи через `<RelatedTopics />`.
+- Карточка Python на `docs/index.md` ведет на `/python/vvedenie-v-python`.
 - Проходят проверки:
   - `yarn validate-content`
   - `yarn validate-links`
