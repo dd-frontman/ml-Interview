@@ -11,34 +11,7 @@ import {
 const cwd = process.cwd();
 const outputPath = path.join(cwd, ".vitepress", "sidebar.generated.ts");
 
-const SECTION_ORDER = [
-	"interview-prep",
-	"math",
-	"ml",
-	"deep-learning",
-	"mlops",
-	"python",
-	"vue",
-	"react",
-	"arkhitektura",
-	"javascript",
-	"html",
-	"css",
-	"typescript",
-	"nuxt",
-	"brauzery",
-	"bezopasnost-prilozhenii",
-	"avtorizatsiya",
-	"algoritmy",
-	"oop",
-	"npm-tools",
-	"pixi-po-temam",
-	"printsipy-programmirovaniya",
-	"keshirovanie",
-	"zadachi",
-	"sborschiki",
-	"testirovanie",
-];
+const SECTION_ORDER = ["interview-prep", "math", "ml", "deep-learning", "mlops", "python", "vue"];
 
 const SECTION_TITLES = {
 	"interview-prep": "Подготовка к интервью",
@@ -48,133 +21,39 @@ const SECTION_TITLES = {
 	mlops: "MLOps",
 	python: "Python",
 	vue: "Vue",
-	react: "React",
-	arkhitektura: "Архитектура",
-	javascript: "JavaScript",
-	html: "HTML",
-	css: "CSS",
-	typescript: "TypeScript",
-	nuxt: "Nuxt",
-	brauzery: "Браузеры",
-	"bezopasnost-prilozhenii": "Безопасность",
-	avtorizatsiya: "Авторизация",
-	algoritmy: "Алгоритмы",
-	oop: "ООП",
-	"npm-tools": "npm tools",
-	"pixi-po-temam": "Pixi",
-	"printsipy-programmirovaniya": "Принципы программирования",
-	keshirovanie: "Кэширование",
-	zadachi: "Задачи",
-	sborschiki: "Сборщики",
-	testirovanie: "Тестирование",
 };
 
 const TITLE_OVERRIDES = {
-	"/algoritmy/2-struktury-dannykh": "Структуры данных",
-	"/algoritmy/algoritmy": "Алгоритмы",
-	"/algoritmy/karta-po-algosam": "Карта по алгосам",
-	"/arkhitektura/mikrofrontend": "Микрофронтенд",
-	"/arkhitektura/mikroservisy": "Микросервисы",
-	"/arkhitektura/monolit": "Монолит",
-	"/avtorizatsiya/avtorizatsiya": "Авторизация",
-	"/avtorizatsiya/cookie-sessiya-vs-jwt": "Cookie-сессия vs JWT",
-	"/avtorizatsiya/jwt": "JWT",
-	"/bezopasnost-prilozhenii/csp-content-security-policy": "CSP — Content Security Policy",
-	"/brauzery/garbage-collector/1-sborschik-musora": "Сборщик мусора",
-	"/brauzery/garbage-collector/2-utechki-pamyati": "Утечки памяти",
-	"/brauzery/crp/critical-render-path": "Critical Render Path (CRP): полный разбор",
-	"/brauzery/crp/oshibki-critical-render-path": "Типичные ошибки в CRP",
-	"/brauzery/lcp-inp-tti": "LCP, INP, TTI",
-	"/css/pozitsionirovanie-v-css": "Позиционирование в CSS",
-	"/css/tsentrirovanie-v-css": "Центрирование в CSS",
-	"/css/will-change": "will-change",
-	"/css/z-index-i-stacking-context": "z-index и stacking context",
-	"/html/semanticheskie-tegi": "Семантические теги",
-	"/html/shadow-dom": "Shadow DOM",
-	"/javascript/chto-takoe-zamykanie": "Что такое замыкание",
-	"/javascript/event-bubbling": "Event Bubbling",
-	"/javascript/event-loop": "Event Loop",
-	"/javascript/kollektsii-dannykh/map": "Map",
-	"/javascript/kollektsii-dannykh/set": "Set",
-	"/javascript/kollektsii-dannykh/weakmap": "WeakMap",
-	"/javascript/kollektsii-dannykh/weakset": "WeakSet",
-	"/javascript/metody-massivov": "Методы массивов",
-	"/javascript/object-freeze": "Object.freeze()",
-	"/javascript/operatory": "Операторы",
-	"/javascript/promise": "Promise",
-	"/javascript/tipy-dannykh/object": "Object",
-	"/javascript/tipy-dannykh/tipy-dannykh": "Типы данных",
-	"/javascript/tipy-funktsii": "Типы функций",
-	"/javascript/uslovnye-operatory": "Условные операторы",
-	"/keshirovanie/kesh": "Кэш",
-	"/npm-tools/naiveui": "NaiveUI",
-	"/npm-tools/nx-i-turborepo": "Nx и Turborepo",
-	"/nuxt/rezhimy-rendera/ssr-server-side-rendering": "SSR (Server-Side Rendering)",
-	"/nuxt/rezhimy-rendera/isr-incremental-static-regeneration": "ISR (Incremental Static Regeneration)",
-	"/nuxt/rezhimy-rendera/ssg-static-site-generation": "SSG (Static Site Generation)",
-	"/nuxt/rezhimy-rendera/hydration": "Hydration",
-	"/nuxt/nitro": "Nitro",
-	"/nuxt/nuxt-vs-vue": "Nuxt vs Vue",
-	"/nuxt/nuxt2-vs-nuxt3": "Nuxt2 vs Nuxt3",
-	"/oop/porazhdayuschie-patterny": "Пораждающие паттерны",
-	"/oop/printsipy-oop": "Принципы",
-	"/pixi-po-temam": "Pixi по темам",
-	"/pixi-po-temam/1-glubokoe-ponimanie-pixijs": "Глубокое понимание PixiJS",
-	"/pixi-po-temam/2-vue-3-plus-pixi-patterny-integratsii": "Vue 3 + Pixi: паттерны интеграции",
-	"/pixi-po-temam/3-typescript-first": "TypeScript-first в Pixi",
-	"/pixi-po-temam/4-proizvoditelnost-i-otladka": "Производительность и отладка Pixi",
-	"/pixi-po-temam/karta-po-pixi": "Карта по Pixi",
-	"/pixi-po-temam/pixi": "Pixi",
-	"/podgotovka-k-sobesedovaniyu": "🎯 Подготовка к собеседованию",
-	"/printsipy-programmirovaniya/solid": "SOLID",
-	"/printsipy-programmirovaniya/malenkie-printsipy": "Маленькие принципы",
-	"/react/khuki/usecontext": "useContext",
-	"/react/khuki/useeffect": "useEffect",
-	"/react/khuki/usestate": "useState",
-	"/react/khuki/osnovnye-khuki-v-react": "Основные хуки React",
-	"/react": "React",
-	"/react/jsx-i-ego-alternativy": "JSX и его альтернативы",
-	"/react/lokalnoe-sostoyanie-reaktivnost": "Локальное состояние в React",
-	"/react/usestate-podrobno": "UseState подробно",
-	"/sborschiki/vite/vite": "Vite",
-	"/testirovanie/vitest": "Vitest",
-	"/typescript": "TypeScript",
-	"/typescript/as-const-v-typescript": "as const в TypeScript",
-	"/typescript/assert-v-typescript": "assert в TypeScript",
-	"/typescript/satisfies-v-typescript": "satisfies в TypeScript",
-	"/typescript/shpory-ts": "Шпоры TS",
-	"/typescript/taypguardy-v-typescript": "Type Guards: виды и примеры",
-	"/typescript/zadachi/zadacha-realizovat-pick-svoimi-silami": "Задача: реализовать Pick",
-	"/typescript/utilitarnye-tipy": "Утилитарные типы",
-	"/vue": "Vue",
-	"/vue/defineexpose": "defineExpose()",
-	"/vue/direktivy-vue": "Директивы Vue",
-	"/vue/story/pinia": "Pinia",
-	"/vue/story/pinia-vs-vuex": "Pinia vs Vuex",
-	"/vue/story/vuex": "Vuex",
-	"/vue/scheduler": "Scheduler",
-	"/vue/watch-i-watcheffect": "watch vs watchEffect",
-	"/vue/podkapotnye-temy-vo-vue-js": "Подкапотные темы Vue.js",
-	"/vue/template-pod-kapotom": "Template под капотом",
-	"/vue/ref-and-reactive/reactive": "reactive",
-	"/vue/ref-and-reactive/shallowref": "shallowRef",
-	"/vue/ref-and-reactive/ref-vs-reactive": "ref vs reactive",
-	"/vue/ref-and-reactive/shallowreactive": "shallowReactive",
-	"/vue/vue2-vs-vue3": "Vue2 vs Vue3",
-	"/vue/render-funktsii": "Рендер-функции",
-	"/vue/suspense": "Suspense",
-	"/vue/tree-shaking": "Tree-Shaking",
-	"/vue/virtual-dom": "Virtual DOM",
-	"/vue/provide-i-inject": "provide и inject",
-	"/vue/zadachi/dvustoronnee-svyazyvanie-cherez-v-model": "Двустороннее связывание через v-model",
-	"/vue/zadachi/propsy-emity": "Props и Emits",
-	"/zadachi/yandeks/1-etap": "1 этап",
-	"/brauzery/seti-http-i-cors": "Сети, HTTP и CORS",
-	"/brauzery/a11y-accessibility": "A11y (Accessibility)",
-	"/brauzery/versii-http/http-1-1": "HTTP/1.1",
-	"/brauzery/versii-http/http-2": "HTTP/2",
-	"/brauzery/versii-http/http-3": "HTTP/3",
-	"/brauzery/versii-http/sravnenie-http-versii": "Сравнение HTTP версий",
+	"/math/veroyatnost-i-statistika-dlya-ml": "Вероятность и статистика",
+	"/math/lineynaya-algebra-dlya-ml": "Линейная алгебра",
+	"/mlops/deploy-i-monitoring": "Deploy и мониторинг",
+	"/mlops/feature-engineering-i-validatsiya": "Признаки и валидация",
+	"/python": "Обзор",
+	"/python/ekosistema-python/zagruzka-dannykh-i-formaty": "Загрузка данных",
+	"/python/ekosistema-python/numpy-i-pandas-dlya-ml": "NumPy и Pandas",
+	"/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov": "Logging и CLI",
+	"/python/ekosistema-python/jupyter-workflow": "Jupyter workflow",
+	"/python/ekosistema-python/sql-iz-python": "SQL из Python",
+	"/python/ekosistema-python/prodvinutyy-preprocessing": "Продвинутый preprocessing",
+	"/python/ekosistema-python/experiment-tracking": "Experiment tracking",
+	"/python/ekosistema-python/pytorch-basics": "PyTorch basics",
+	"/python/ekosistema-python/artefakty-modeli-i-inference": "Артефакты и inference",
+	"/python/yazyk-python/isklyucheniya-context-managers-i-fayly": "Исключения и файлы",
+	"/python/yazyk-python/iteratory-generatory-i-comprehensions": "Итераторы и генераторы",
+	"/python/yazyk-python/typing-dlya-python-i-ml": "Typing для ML",
+	"/python/yazyk-python/datetime-i-timezone": "Datetime и timezone",
+	"/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory": "Логические и побитовые",
+	"/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip": "Core обзор",
+	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": "Синтаксис и переменные",
+	"/python/yazyk-python/1-core/osnovnye-funktsii": "Основные функции",
+	"/python/yazyk-python/1-core/arifmeticheskie-operatory": "Арифметические операторы",
+	"/python/yazyk-python/1-core/operatory-sravneniya": "Операторы сравнения",
+	"/python/yazyk-python/1-core/boolean-i-usloviya": "Boolean и условия",
+	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
+	"/python/yazyk-python/1-core/klassy-v-python": "Классы",
+	"/python/yazyk-python/1-core/moduli-venv-i-pip": "Модули и окружение",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Операции со строками",
+	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": "Списки базовые операции",
 };
 
 const WEAK_HEADINGS = new Set([
@@ -184,18 +63,7 @@ const WEAK_HEADINGS = new Set([
 	"пример использования",
 ]);
 
-const TITLE_REPLACEMENTS = [
-	[/Critical\s+Rendering?\s+Path/gi, "CRP"],
-	[/Content\s+Security\s+Policy/gi, "CSP"],
-	[/Cross[-\s]Site\s+Request\s+Forgery/gi, "CSRF"],
-	[/Cross[-\s]Site\s+Scripting/gi, "XSS"],
-	[/Server[-\s]Sent\s+Events?/gi, "SSE"],
-	[/Server[-\s]Side\s+Rendering/gi, "SSR"],
-	[/Static\s+Site\s+Generation/gi, "SSG"],
-	[/Incremental\s+Static\s+Regeneration/gi, "ISR"],
-	[/JavaScript/gi, "JS"],
-	[/TypeScript/gi, "TS"],
-];
+const TITLE_REPLACEMENTS = [];
 
 function compactTitle(title) {
 	let value = title
@@ -217,43 +85,62 @@ function compactTitle(title) {
 	}
 
 	return value
-		.replace(/\bJs\b/g, "JS")
-		.replace(/\bTs\b/g, "TS")
-		.replace(/\bJwt\b/g, "JWT")
 		.replace(/\bHttp\b/g, "HTTP")
-		.replace(/\bCss\b/g, "CSS")
-		.replace(/\bHtml\b/g, "HTML")
 		.replace(/\bApi\b/g, "API")
-		.replace(/\bCrp\b/g, "CRP")
-		.replace(/\bCsp\b/g, "CSP")
-		.replace(/\bCsrf\b/g, "CSRF")
-		.replace(/\bXss\b/g, "XSS")
-		.replace(/\bSsr\b/g, "SSR")
-		.replace(/\bSsg\b/g, "SSG")
-		.replace(/\bIsr\b/g, "ISR")
+		.replace(/\bMl\b/g, "ML")
+		.replace(/\bMlops\b/g, "MLOps")
+		.replace(/\bNumpy\b/g, "NumPy")
+		.replace(/\bPandas\b/g, "Pandas")
 		.trim();
 }
 
 const GROUP_TITLE_OVERRIDES = {
-	"/python/1-core": "1 Core",
-	"/python/1-core/tipy-dannykh": "Типы данных",
-	"/vue/ref-and-reactive": "Ref & reactive",
-	"/vue/story": "Сторы",
-	"/vue/zadachi": "Задачи",
-	"/react/khuki": "Хуки",
-	"/javascript/tipy-dannykh": "Типы данных",
-	"/javascript/kollektsii-dannykh": "Коллекции данных",
-	"/nuxt/rezhimy-rendera": "Режимы рендера",
-	"/brauzery/garbage-collector": "Garbage Collector",
-	"/brauzery/crp": "CRP",
-	"/brauzery/versii-http": "Версии HTTP",
-	"/typescript/zadachi": "Задачи",
-	"/sborschiki/vite": "Vite",
-	"/zadachi/yandeks": "Яндекс",
+	"/python/yazyk-python": "Язык Python",
+	"/python/yazyk-python/1-core": "Core",
+	"/python/yazyk-python/tipy-dannykh": "Типы данных",
+	"/python/ekosistema-python": "Экосистема Python",
+	"/vue/global-state": "Глобальное состояние",
+};
+
+const GROUP_ORDER_OVERRIDES = {
+	"/python/yazyk-python": -200,
+	"/python/yazyk-python/1-core": -200,
+	"/python/yazyk-python/tipy-dannykh": -100,
+	"/python/ekosistema-python": -100,
 };
 
 const ITEM_ORDER_OVERRIDES = {
-	"/python/1-core/tipy-dannykh/obshaya-informatsiya": -100,
+	"/python/yazyk-python/vvedenie-v-python": -800,
+	"/python/yazyk-python/isklyucheniya-context-managers-i-fayly": -700,
+	"/python/yazyk-python/iteratory-generatory-i-comprehensions": -600,
+	"/python/yazyk-python/typing-dlya-python-i-ml": -500,
+	"/python/yazyk-python/datetime-i-timezone": -400,
+	"/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip": -900,
+	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": -800,
+	"/python/yazyk-python/1-core/osnovnye-funktsii": -750,
+	"/python/yazyk-python/1-core/arifmeticheskie-operatory": -725,
+	"/python/yazyk-python/1-core/operatory-sravneniya": -720,
+	"/python/yazyk-python/1-core/boolean-i-usloviya": -710,
+	"/python/yazyk-python/1-core/funktsii-v-python": -700,
+	"/python/yazyk-python/1-core/klassy-v-python": -600,
+	"/python/yazyk-python/1-core/moduli-venv-i-pip": -500,
+	"/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory": -400,
+	"/python/yazyk-python/tipy-dannykh/tipy-glavnaya": -100,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
+	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": -80,
+	"/python/ekosistema-python/zagruzka-dannykh-i-formaty": -1200,
+	"/python/ekosistema-python/sql-iz-python": -1100,
+	"/python/ekosistema-python/numpy-i-pandas-dlya-ml": -1000,
+	"/python/ekosistema-python/eda-i-vizualizatsiya": -900,
+	"/python/ekosistema-python/scikit-learn-i-pipeline": -800,
+	"/python/ekosistema-python/prodvinutyy-preprocessing": -700,
+	"/python/ekosistema-python/vosproizvodimost-ml-koda": -600,
+	"/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov": -500,
+	"/python/ekosistema-python/jupyter-workflow": -400,
+	"/python/ekosistema-python/experiment-tracking": -300,
+	"/python/ekosistema-python/artefakty-modeli-i-inference": -200,
+	"/python/ekosistema-python/testirovanie-i-validatsiya-dannykh": -100,
+	"/python/ekosistema-python/pytorch-basics": 100,
 };
 
 function toPublicRoute(route) {
@@ -333,12 +220,6 @@ function extractBestCyrillicHeading(body) {
 }
 
 function resolveSection(route) {
-	if (route === "/podgotovka-k-sobesedovaniyu" || route.startsWith("/zadachi/")) {
-		return "zadachi";
-	}
-	if (route === "/vue") {
-		return "vue";
-	}
 	return route.replace(/^\//, "").split("/")[0];
 }
 
@@ -448,10 +329,19 @@ function toSidebarItems(entries) {
 		});
 	}
 
+	function sortGroups(groups) {
+		return groups.sort((a, b) => {
+			const aPriority = GROUP_ORDER_OVERRIDES[a.key] ?? 0;
+			const bPriority = GROUP_ORDER_OVERRIDES[b.key] ?? 0;
+			if (aPriority !== bPriority) {
+				return aPriority - bPriority;
+			}
+			return a.text.localeCompare(b.text, "ru");
+		});
+	}
+
 	function renderGroup(group) {
-		const childGroups = Array.from(group.children.values())
-			.sort((a, b) => a.text.localeCompare(b.text, "ru"))
-			.map(renderGroup);
+		const childGroups = sortGroups(Array.from(group.children.values())).map(renderGroup);
 		const leafItems = sortLeafItems(group.items).map((item) => ({
 			text: item.text,
 			link: item.link,
@@ -465,9 +355,7 @@ function toSidebarItems(entries) {
 		};
 	}
 
-	const renderedGroups = Array.from(topLevelGroups.values())
-		.sort((a, b) => a.text.localeCompare(b.text, "ru"))
-		.map(renderGroup);
+	const renderedGroups = sortGroups(Array.from(topLevelGroups.values())).map(renderGroup);
 
 	const renderedRootItems = sortLeafItems(rootItems);
 	const renderedTopLevelItems = sortLeafItems(topLevelItems);

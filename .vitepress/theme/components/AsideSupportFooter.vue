@@ -7,7 +7,7 @@ const currentYear = new Date().getFullYear();
 		<div class="aside-support-footer__year">© {{ currentYear }} by DK</div>
 		<a
 			class="aside-support-footer__link"
-			href="https://github.com/dd-frontman/web-interview"
+			href="https://github.com/dd-frontman/ml-Interview"
 			target="_blank"
 			rel="noopener noreferrer"
 		>

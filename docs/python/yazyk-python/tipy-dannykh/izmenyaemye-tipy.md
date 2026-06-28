@@ -32,13 +32,15 @@ updatedAt: "2026-02-27"
   Пример: `[10, 20, 30, 40][1:3] -> [20, 30]`
 - Может хранить значения разных типов, но в прикладном коде лучше держать один тип элементов
 - Поиск элемента через `in` работает линейно, поэтому для частых membership-checks `set` обычно лучше
-  ```python
-  values_list = [1, 2, 3, 4, 5]
-  values_set = {1, 2, 3, 4, 5}
 
-  5 in values_list  # True
-  5 in values_set   # True
-  ```
+```python
+values_list = [1, 2, 3, 4, 5]
+values_set = {1, 2, 3, 4, 5}
+
+5 in values_list  # True
+5 in values_set   # True
+```
+
 - Копия через `items[:]` или `items.copy()` поверхностная, вложенные объекты останутся общими
 - Частая ошибка после JS: `list` не имеет методов `map` и `filter` как у массива, вместо этого используют list comprehension
 - `list` хорошо подходит для последовательностей, очередей на простом уровне, batch-данных
@@ -137,8 +139,9 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 
 <RelatedTopics
     :items="[
-        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-        { title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
+        { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
+        { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
     ]"
 />

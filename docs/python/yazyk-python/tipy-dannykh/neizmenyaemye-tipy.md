@@ -6,7 +6,7 @@ tags:
   - "core"
   - "data-types"
   - "immutable"
-updatedAt: "2026-02-27"
+updatedAt: "2026-06-23"
 ---
 ## Что входит в группу
 
@@ -59,7 +59,7 @@ updatedAt: "2026-02-27"
 - `bool` связан с `int`: `True == 1`, `False == 0`
 - Логические операторы: `and`, `or`, `not`
 - `and` и `or` работают с short-circuit: если левая часть уже определяет результат, правая не вычисляется
-- Подробнее: [Логические и побитовые операторы: and, or, &, |](../logicheskie-i-pobitovye-operatory.md)
+- Подробнее: [Логические и побитовые операторы: and, or, &, |](../1-core/logicheskie-i-pobitovye-operatory.md)
 - Это неизменяемый тип
 
 ## Str
@@ -69,6 +69,7 @@ updatedAt: "2026-02-27"
 - `str` хранит текст
 - Это последовательность символов, по которой можно ходить по индексу: `"ml"[0] == "m"`
 - Конкатенация создает новую строку: `"py" + "thon" == "python"`
+- Подробнее про индексы, срезы, методы и f-строки: [Операции со строками](./operatsii-so-strokami.md)
 - Это неизменяемый тип
 
 ## Tuple
@@ -135,8 +136,9 @@ updatedAt: "2026-02-27"
 
 <RelatedTopics
     :items="[
-        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-        { title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
-        { title: 'Логические и побитовые операторы: and, or, &, |', href: '/python/1-core/logicheskie-i-pobitovye-operatory' },
+        { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
+        { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
+        { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
+        { title: 'Логические и побитовые операторы: and, or, &, |', href: '/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory' },
     ]"
 />

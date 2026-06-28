@@ -3,7 +3,7 @@
 ## Что обновлено
 
 - Выполнен полный цикл Фаз 0-5 для обновления Python entry-point документа:
-  - `docs/python/vvedenie-v-python.md`
+  - `docs/python/yazyk-python/vvedenie-v-python.md`
 - Навигация главной страницы приведена в соответствие с новым entry-point:
   - `docs/index.md`
 - Обновлены процессные артефакты:
@@ -52,6 +52,6 @@
 - Риск: формат страниц в проекте все еще неоднороден (часть разделов остаются краткими конспектами).
 - Риск: автосокращение заголовков в sidebar местами дает неудачные короткие названия.
 - Следующая приоритетная итерация:
-  - `docs/python/numpy-i-pandas-dlya-ml.md`
+  - `docs/python/ekosistema-python/numpy-i-pandas-dlya-ml.md`
   - `docs/ml/obuchenie-bez-uchitelya.md`
   - `docs/mlops/deploy-i-monitoring.md`

@@ -43,7 +43,7 @@ import { withBase } from 'vitepress'
 </div>
 
 <div class="home-section-card">
-  <h3 class="home-section-title"><a :href="withBase('/python/vvedenie-v-python')" class="home-section-link">Python Stack</a></h3>
+  <h3 class="home-section-title"><a :href="withBase('/python')" class="home-section-link">Python Stack</a></h3>
   <p class="home-section-description">Python как инженерная база для data, training и inference flow</p>
 </div>
 

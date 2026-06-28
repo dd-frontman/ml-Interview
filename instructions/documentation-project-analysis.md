@@ -40,7 +40,7 @@
   - generated-файлы не редактируются вручную;
   - для первоисточников используется `<OfficialDocsLinks />`;
   - для внутренних связей используется `<RelatedTopics />`, иначе включается авто-подбор по тегам;
-  - для длинных страниц допускается `search: false`; в текущем репозитории это используется только у `docs/python/vvedenie-v-python.md`.
+  - для длинных страниц допускается `search: false`; в текущем репозитории это используется только у `docs/python/yazyk-python/vvedenie-v-python.md`.
 - Встроенные проверки качества:
   - `yarn validate-content` (frontmatter, недопустимые артефакты, code fences);
   - `yarn validate-links` (внутренние ссылки, `RelatedTopics`, orphan pages);
@@ -57,10 +57,10 @@
   - `## Big Picture` есть только у 2 страниц;
   - `## Official docs` есть у 7 страниц;
   - ручной `<RelatedTopics />` есть у 8 страниц;
-  - наиболее зрелая ветка: `docs/python/1-core/*`, `docs/python/vvedenie-v-python.md`, `docs/ml/obuchenie-s-uchitelem.md`.
+  - наиболее зрелая ветка: `docs/python/yazyk-python/1-core/*`, `docs/python/yazyk-python/vvedenie-v-python.md`, `docs/ml/obuchenie-s-uchitelem.md`.
 - Наблюдаемая глубина неоднородна:
   - часть Python- и supervised-материалов уже читается как практический onboarding;
-  - `math/*`, `deep-learning/*`, часть `mlops/*`, `docs/ml/obuchenie-bez-uchitelya.md`, `docs/python/numpy-i-pandas-dlya-ml.md` пока ближе к кратким конспектам.
+  - `math/*`, `deep-learning/*`, часть `mlops/*`, `docs/ml/obuchenie-bez-uchitelya.md`, `docs/python/ekosistema-python/numpy-i-pandas-dlya-ml.md` пока ближе к кратким конспектам.
 
 ## 4) Что уже описано
 
@@ -86,7 +86,7 @@
 ### Потенциальное дублирование
 
 - `docs/ml/obuchenie-s-uchitelem.md` и `docs/mlops/feature-engineering-i-validatsiya.md` пересекаются в leakage/валидации.
-- `docs/python/vvedenie-v-python.md` и `docs/python/1-core/*` частично покрывают одинаковый вводный материал (typing, venv, testing).
+- `docs/python/yazyk-python/vvedenie-v-python.md` и `docs/python/yazyk-python/1-core/*` частично покрывают одинаковый вводный материал (typing, venv, testing).
 
 ### Противоречия
 

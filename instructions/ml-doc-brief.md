@@ -2,7 +2,7 @@
 
 ## Цель
 
-Обновить страницу `docs/python/vvedenie-v-python.md` до уровня инженерного onboarding-документа для ML: дать понятную картину роли Python, показать data/training/inference flow, добавить воспроизводимые примеры, типичные ошибки, cheat-sheet и официальные источники.
+Обновить страницу `docs/python/yazyk-python/vvedenie-v-python.md` до уровня инженерного onboarding-документа для ML: дать понятную картину роли Python, показать data/training/inference flow, добавить воспроизводимые примеры, типичные ошибки, cheat-sheet и официальные источники.
 
 ## Аудитория
 
@@ -12,7 +12,7 @@
 
 ## Scope
 
-- Только обновление существующей страницы `/python/vvedenie-v-python`.
+- Только обновление существующей страницы `/python/yazyk-python/vvedenie-v-python`.
 - Без изменения URL и позиции в sidebar.
 - Без создания новых верхнеуровневых разделов.
 - Сфокусироваться на Python как «клее» между данными, обучением модели и inference в проде.
@@ -26,9 +26,9 @@
 ## Связанные документы
 
 - `docs/index.md`
-- `docs/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md`
-- `docs/python/1-core/tipy-dannykh/obshaya-informatsiya.md`
-- `docs/python/numpy-i-pandas-dlya-ml.md`
+- `docs/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md`
+- `docs/python/yazyk-python/tipy-dannykh/tipy-glavnaya.md`
+- `docs/python/ekosistema-python/numpy-i-pandas-dlya-ml.md`
 - `docs/ml/obuchenie-s-uchitelem.md`
 
 ## Оглавление обновляемого документа
@@ -44,11 +44,11 @@
 
 ## Definition of Done
 
-- Сохранен текущий route: `/python/vvedenie-v-python`.
+- Сохранен текущий route: `/python/yazyk-python/vvedenie-v-python`.
 - Добавлены обязательные секции (включая «Типичные ошибки», cheat-sheet, official docs).
 - Есть минимум один «быстрый» и один «практический» Python-пример.
 - Добавлены релевантные внутренние связи через `<RelatedTopics />`.
-- Карточка Python на `docs/index.md` ведет на `/python/vvedenie-v-python`.
+- Карточка Python на `docs/index.md` ведет на `/python`.
 - Проходят проверки:
   - `yarn validate-content`
   - `yarn validate-links`

@@ -42,22 +42,14 @@ export default defineConfig({
 		},
 
 		// Социальные ссылки (опционально)
-		socialLinks: [
-			// { icon: 'github', link: 'https://github.com/yourusername/web-interview' }
-		],
+		socialLinks: [],
 
 		// Футер (опционально)
 		footer: {
 			message:
-				'Документация по machine learning · <a href="https://github.com/dd-frontman/ml-interview" target="_blank" rel="noreferrer">поставь звезду на GitHub, если понравилось</a>',
+				'Документация по machine learning · <a href="https://github.com/dd-frontman/ml-Interview" target="_blank" rel="noreferrer">поставь звезду на GitHub, если понравилось</a>',
 			copyright: "Copyright © 2024",
 		},
-
-		// Настройки редактирования (опционально)
-		// editLink: {
-		// 	pattern: 'https://github.com/yourusername/web-interview/edit/main/docs/:path',
-		// 	text: 'Редактировать эту страницу на GitHub'
-		// },
 	},
 
 	// Указываем, что исходные файлы находятся в папке docs

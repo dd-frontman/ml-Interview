@@ -45,3 +45,7 @@ Thumbs.db
 # Temporary files
 .temp/
 .tmp/
+
+.cursor
+.github
+.history

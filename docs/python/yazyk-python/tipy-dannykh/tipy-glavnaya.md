@@ -1,12 +1,12 @@
 ---
-title: "Общая информация"
+title: "Типы главная"
 description: "Что такое изменяемые и неизменяемые типы в Python, как работают ссылки на объекты, сравнение, копирование и типичные источники багов."
 tags:
   - "python"
   - "core"
   - "data-types"
   - "mutability"
-updatedAt: "2026-02-27"
+updatedAt: "2026-06-23"
 ---
 ## Зачем это знать
 
@@ -33,6 +33,9 @@ updatedAt: "2026-02-27"
 
 Подробные страницы:
 
+- [Операции со строками](./operatsii-so-strokami.md)
+- [Списки: базовые операции](./spiski-bazovye-operatsii.md)
+- [Методы типов данных](./metody-tipov-dannykh.md)
 - [Неизменяемые типы](./neizmenyaemye-tipy.md)
 - [Изменяемые типы](./izmenyaemye-tipy.md)
 
@@ -214,8 +217,11 @@ print(base_payload)  # template не изменился
 
 <RelatedTopics
     :items="[
-        { title: 'Изменяемые типы', href: '/python/1-core/tipy-dannykh/izmenyaemye-tipy' },
-        { title: 'Неизменяемые типы', href: '/python/1-core/tipy-dannykh/neizmenyaemye-tipy' },
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
+        { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
+        { title: 'Методы типов данных', href: '/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh' },
+        { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
+        { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
     ]"
 />

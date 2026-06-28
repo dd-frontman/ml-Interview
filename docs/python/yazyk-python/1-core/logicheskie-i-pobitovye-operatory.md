@@ -117,7 +117,7 @@ True | False  # True
 | `and` | Логика условий | Да | Один из операндов |
 | `or` | Логика условий | Да | Один из операндов |
 | `&` | Побитовые операции | Нет | Число или bool |
-| `pipe` (побитовое ИЛИ) | Побитовые операции | Нет | Число или bool |
+| `\|` (побитовое ИЛИ) | Побитовые операции | Нет | Число или bool |
 
 ## Практический пример
 
@@ -173,7 +173,7 @@ print(bool(can_write))  # True
 | Проверка одного из условий | `or` |
 | Инверсия булевого значения | `not` |
 | Побитовое И | `&` |
-| Побитовое ИЛИ | `pipe` |
+| Побитовое ИЛИ | `\|` |
 | Проверка битовой маски | `value & FLAG` |
 
 | Выражение | Результат |
@@ -183,7 +183,7 @@ print(bool(can_write))  # True
 | `1 and 2` | `2` |
 | `0 or 2` | `2` |
 | `5 & 2` | `0` |
-| `bitwise_or(5, 2)` | `7` |
+| `5 \| 2` | `7` |
 
 ## Official docs
 
@@ -198,8 +198,10 @@ print(bool(can_write))  # True
 
 <RelatedTopics
     :items="[
-        { title: 'Общая информация', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-        { title: 'Введение в Python', href: '/python/vvedenie-v-python' },
+        { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
+        { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
+        { title: 'Арифметические операторы', href: '/python/yazyk-python/1-core/arifmeticheskie-operatory' },
+        { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
     ]"
 />

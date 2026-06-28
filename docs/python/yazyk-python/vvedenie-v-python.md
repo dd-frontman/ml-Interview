@@ -298,9 +298,9 @@ print("Полнота (recall):", round(recall, 3))
 
 <RelatedTopics
     :items="[
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
-        { title: 'Общая информация по типам данных', href: '/python/1-core/tipy-dannykh/obshaya-informatsiya' },
-        { title: 'NumPy и Pandas для ML', href: '/python/numpy-i-pandas-dlya-ml' },
+        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
+        { title: 'NumPy и Pandas для ML', href: '/python/ekosistema-python/numpy-i-pandas-dlya-ml' },
         { title: 'Обучение с учителем', href: '/ml/obuchenie-s-uchitelem' },
     ]"
 />

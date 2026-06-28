@@ -22,7 +22,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsed: true,
 		items: [
 			{ text: "Вероятность и статистика", link: "/math/veroyatnost-i-statistika-dlya-ml" },
-			{ text: "Линейная алгебра для", link: "/math/lineynaya-algebra-dlya-ml" }
+			{ text: "Линейная алгебра", link: "/math/lineynaya-algebra-dlya-ml" }
 		],
 	},
 	{
@@ -48,8 +48,8 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsible: true,
 		collapsed: true,
 		items: [
-			{ text: "Deploy и мониторинг", link: "/mlops/deploy-i-monitoring" },
-			{ text: "Feature engineering и", link: "/mlops/feature-engineering-i-validatsiya" }
+			{ text: "Признаки и валидация", link: "/mlops/feature-engineering-i-validatsiya" },
+			{ text: "Deploy и мониторинг", link: "/mlops/deploy-i-monitoring" }
 		],
 	},
 	{
@@ -57,25 +57,67 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsible: true,
 		collapsed: true,
 		items: [
-			{ text: "Введение в Python", link: "/python/vvedenie-v-python" },
-			{ text: "NumPy и Pandas", link: "/python/numpy-i-pandas-dlya-ml" },
+			{ text: "Обзор", link: "/python" },
 			{
-				text: "1 Core",
+				text: "Язык Python",
 				collapsible: true,
 				collapsed: true,
 				items: [
-					{ text: "Логические и побитовые", link: "/python/1-core/logicheskie-i-pobitovye-operatory" },
-					{ text: "Функции классы модули", link: "/python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
+					{ text: "Введение в Python", link: "/python/yazyk-python/vvedenie-v-python" },
+					{ text: "Исключения и файлы", link: "/python/yazyk-python/isklyucheniya-context-managers-i-fayly" },
+					{ text: "Итераторы и генераторы", link: "/python/yazyk-python/iteratory-generatory-i-comprehensions" },
+					{ text: "Typing для ML", link: "/python/yazyk-python/typing-dlya-python-i-ml" },
+					{ text: "Datetime и timezone", link: "/python/yazyk-python/datetime-i-timezone" },
+					{
+						text: "Core",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Core обзор", link: "/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
+							{ text: "Синтаксис и переменные", link: "/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye" },
+							{ text: "Основные функции", link: "/python/yazyk-python/1-core/osnovnye-funktsii" },
+							{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
+							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
+							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
+							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
+							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
+							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
+							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }
+						],
+					},
 					{
 						text: "Типы данных",
 						collapsible: true,
 						collapsed: true,
 						items: [
-							{ text: "Общая информация", link: "/python/1-core/tipy-dannykh/obshaya-informatsiya" },
-							{ text: "Изменяемые типы", link: "/python/1-core/tipy-dannykh/izmenyaemye-tipy" },
-							{ text: "Неизменяемые типы", link: "/python/1-core/tipy-dannykh/neizmenyaemye-tipy" }
+							{ text: "Типы главная", link: "/python/yazyk-python/tipy-dannykh/tipy-glavnaya" },
+							{ text: "Операции со строками", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami" },
+							{ text: "Списки базовые операции", link: "/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii" },
+							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
+							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
+							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" }
 						],
 					}
+				],
+			},
+			{
+				text: "Экосистема Python",
+				collapsible: true,
+				collapsed: true,
+				items: [
+					{ text: "Загрузка данных", link: "/python/ekosistema-python/zagruzka-dannykh-i-formaty" },
+					{ text: "SQL из Python", link: "/python/ekosistema-python/sql-iz-python" },
+					{ text: "NumPy и Pandas", link: "/python/ekosistema-python/numpy-i-pandas-dlya-ml" },
+					{ text: "EDA и визуализация", link: "/python/ekosistema-python/eda-i-vizualizatsiya" },
+					{ text: "Scikit-learn и pipeline", link: "/python/ekosistema-python/scikit-learn-i-pipeline" },
+					{ text: "Продвинутый preprocessing", link: "/python/ekosistema-python/prodvinutyy-preprocessing" },
+					{ text: "Воспроизводимость ML-кода", link: "/python/ekosistema-python/vosproizvodimost-ml-koda" },
+					{ text: "Logging и CLI", link: "/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov" },
+					{ text: "Jupyter workflow", link: "/python/ekosistema-python/jupyter-workflow" },
+					{ text: "Experiment tracking", link: "/python/ekosistema-python/experiment-tracking" },
+					{ text: "Артефакты и inference", link: "/python/ekosistema-python/artefakty-modeli-i-inference" },
+					{ text: "Тестирование и валидация", link: "/python/ekosistema-python/testirovanie-i-validatsiya-dannykh" },
+					{ text: "PyTorch basics", link: "/python/ekosistema-python/pytorch-basics" }
 				],
 			}
 		],
