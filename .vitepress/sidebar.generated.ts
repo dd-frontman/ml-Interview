@@ -79,6 +79,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
 							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
 							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
+							{ text: "For и range", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
 							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
 							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
 							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
@@ -93,6 +94,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Типы главная", link: "/python/yazyk-python/tipy-dannykh/tipy-glavnaya" },
 							{ text: "Операции со строками", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami" },
 							{ text: "Списки базовые операции", link: "/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii" },
+							{ text: "Индексы и срезы", link: "/python/yazyk-python/tipy-dannykh/indeksy-i-srezy" },
 							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
 							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
 							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" }

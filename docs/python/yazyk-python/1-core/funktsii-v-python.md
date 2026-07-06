@@ -1,172 +1,380 @@
 ---
 title: "Функции в Python"
-description: "Как писать функции в Python: параметры, return, type hints, edge-case проверки и типичные ошибки проектирования."
+description: "Конспект по функциям в Python: def, параметры, return, None, pass, позиционные и именованные аргументы, keyword-only параметры, значения по умолчанию и локальные переменные."
 tags:
   - "python"
   - "core"
   - "functions"
-updatedAt: "2026-06-18"
+updatedAt: "2026-07-06"
 ---
 ## Зачем нужны функции
 
-Функция - это изолированный блок логики с входом и выходом. Она нужна, когда код должен быть:
+Функция - это именованный блок кода, который можно вызывать много раз.
 
-- переиспользуемым;
-- читаемым;
-- тестируемым;
-- понятным по контракту входных и выходных данных.
+Она нужна, чтобы:
 
-## Базовый пример
+- не повторять один и тот же код;
+- давать логике понятное имя;
+- передавать входные данные через параметры;
+- возвращать результат через `return`;
+- разбивать программу на маленькие понятные части.
+
+## Проблема повторения кода
+
+Без функции одинаковая логика копируется.
 
 ```python
-def normalize_email(email: str) -> str:
-    value = email.strip().lower()
-    if "@" not in value:
-        raise ValueError("Invalid email")
-    return value
+numbers_1 = [1, 2, 3, 4, 5]
+average_1 = sum(numbers_1) / len(numbers_1)
+print(average_1)  # 3.0
+
+numbers_2 = [6, 7, 8, 9, 10]
+average_2 = sum(numbers_2) / len(numbers_2)
+print(average_2)  # 8.0
+```
+
+Формула одна и та же:
+
+```python
+sum(numbers) / len(numbers)
+```
+
+Лучше вынести её в функцию.
+
+## `def`
+
+Функция объявляется через `def`.
+
+```python
+def find_average(numbers):
+    average = sum(numbers) / len(numbers)
+    return average
 ```
 
 Что здесь происходит:
 
 - `def` объявляет функцию;
-- `email` - параметр;
-- `email: str` - ожидаемый тип параметра;
-- `-> str` - ожидаемый тип результата;
-- `return` возвращает значение из функции;
-- `raise ValueError` явно сообщает об ошибочном входе.
+- `find_average` - имя функции;
+- `numbers` - параметр;
+- тело функции пишется с отступом;
+- `return average` возвращает результат.
 
-## Обязательны ли type hints
-
-Нет, `: str` и `-> str` писать не обязательно. Python выполнит функцию и без аннотаций.
+Функцию можно вызвать несколько раз с разными списками.
 
 ```python
-def normalize_email(email):
-    return email.strip().lower()
+numbers_1 = [1, 2, 3, 4, 5]
+numbers_2 = [6, 7, 8, 9, 10]
+
+average_1 = find_average(numbers_1)
+average_2 = find_average(numbers_2)
+
+print(average_1, average_2)  # 3.0 8.0
 ```
 
-Но аннотации делают контракт функции явным:
+## Параметры
+
+Параметр - это переменная, которую функция получает при вызове.
 
 ```python
-def normalize_email(email: str) -> str:
-    return email.strip().lower()
+def count_vowels(string):
+    vowels = "aeiouyAEIOUY"
+    count = 0
+
+    for char in string:
+        if char in vowels:
+            count += 1
+
+    return count
+```
+
+Здесь `string` - параметр. При вызове функции в него попадает конкретная строка.
+
+```python
+print(count_vowels("Hello, World!"))  # 3
+print(count_vowels("Python is a very powerful language."))  # 13
+```
+
+## `return`
+
+`return` возвращает значение из функции и завершает её выполнение.
+
+```python
+def find_average(numbers):
+    return sum(numbers) / len(numbers)
+```
+
+Результат можно сохранить в переменную.
+
+```python
+average = find_average([1, 2, 3])
+print(average)  # 2.0
+```
+
+Если функция должна что-то посчитать и отдать наружу, нужен `return`.
+
+## Функция без `return`
+
+Если в функции нет `return`, она возвращает `None`.
+
+```python
+def nothing():
+    print("This function does nothing.")
+
+
+result = nothing()
+print(result)  # None
+```
+
+`print()` внутри функции просто выводит текст в консоль. Это не то же самое, что вернуть значение.
+
+## `pass`
+
+`pass` используется как пустое тело функции.
+
+```python
+def nothing():
+    pass
+```
+
+Такая функция ничего не делает и тоже возвращает `None`.
+
+```python
+my_variable = nothing()
+
+print(my_variable)  # None
+print(nothing())    # None
+```
+
+`pass` полезен как временная заглушка, когда функция уже нужна по структуре, но логика ещё не написана.
+
+## Позиционные аргументы
+
+Аргументы можно передавать по позиции.
+
+```python
+def format_date(day, month):
+    return f"The date is {day} of {month}."
+
+
+print(format_date(15, "October"))
+# The date is 15 of October.
+```
+
+Порядок важен.
+
+```python
+print(format_date("January", 1))
+# The date is January of 1.
+```
+
+Python не понимает смысл аргументов, если они переданы позиционно. Он просто кладет первый аргумент в `day`, второй - в `month`.
+
+## Именованные аргументы
+
+Чтобы явно указать, какой аргумент куда идет, можно использовать имена параметров.
+
+```python
+print(format_date(day=15, month="October"))
+# The date is 15 of October.
+```
+
+Такой вызов читается понятнее и снижает риск перепутать порядок.
+
+## Keyword-only параметры
+
+Можно запретить позиционные аргументы и заставить вызывать функцию только по именам.
+
+```python
+def format_date(*, day: int, month: str) -> str:
+    return f"The date is {day} of {month}."
+
+
+print(format_date(day=15, month="October"))
+```
+
+Звездочка `*` означает: все параметры после неё нужно передавать только по имени.
+
+Такой вызов будет ошибкой:
+
+```python
+format_date(15, "October")  # TypeError
+```
+
+Это полезно, когда порядок аргументов легко перепутать.
+
+## Значения по умолчанию
+
+У параметра может быть значение по умолчанию.
+
+```python
+def custom_greeting(*, name: str, greeting: str = "Hello") -> str:
+    return f"{greeting}, {name}"
+```
+
+Если `greeting` не передать, Python возьмет `"Hello"`.
+
+```python
+print(custom_greeting(name="John"))
+# Hello, John
+```
+
+Если передать `greeting`, значение по умолчанию заменится.
+
+```python
+print(custom_greeting(name="John", greeting="Good morning"))
+# Good morning, John
+```
+
+## Type hints
+
+Аннотации типов показывают ожидаемые типы параметров и результата.
+
+```python
+def custom_greeting(*, name: str, greeting: str = "Hello") -> str:
+    return f"{greeting}, {name}"
 ```
 
 В этой записи:
 
-- `email: str` означает, что параметр `email` ожидается как строка;
-- `-> str` означает, что функция должна вернуть строку;
-- последнее `:` после скобок - обязательная часть синтаксиса функции.
+- `name: str` означает, что `name` ожидается строкой;
+- `greeting: str = "Hello"` означает строковый параметр со значением по умолчанию;
+- `-> str` означает, что функция должна вернуть строку.
 
-Важно: type hints сами по себе не проверяют данные в runtime. Они помогают IDE, ревью кода и статическим анализаторам, но `str` не остановит неправильный вызов без отдельной проверки.
+Важно: type hints сами по себе не проверяют типы во время выполнения.
 
 ```python
 def double(value: int) -> int:
     return value * 2
 
+
 print(double("x"))  # xx
 ```
 
-Практическое правило: в маленьких учебных примерах можно писать без типов. В коде проекта, API, ML-pipeline и переиспользуемых функциях типы лучше добавлять.
+Аннотации помогают IDE, чтению кода и статическим анализаторам, но критичные входные данные всё равно нужно проверять кодом.
 
-## Параметры и значения по умолчанию
+## Локальные переменные
 
-Параметры по умолчанию удобны, когда у функции есть частый сценарий использования.
-
-```python
-def apply_threshold(score: float, threshold: float = 0.5) -> int:
-    return int(score >= threshold)
-
-print(apply_threshold(0.7))        # 1
-print(apply_threshold(0.7, 0.8))   # 0
-```
-
-Для изменяемых значений не используй `[]` или `{}` как default.
+Переменная, созданная внутри функции, называется локальной.
 
 ```python
-def add_event(event: str, bucket: list[str] | None = None) -> list[str]:
-    if bucket is None:
-        bucket = []
-    bucket.append(event)
-    return bucket
+def my_function() -> str:
+    local_var = "Local variable"
+    return local_var
+
+
+print(my_function())
 ```
 
-## Практический пример
-
-Функция должна прятать повторяющуюся проверку и возвращать предсказуемый результат.
+`local_var` существует внутри функции. Снаружи она недоступна напрямую.
 
 ```python
-def ensure_positive(value: int) -> int:
-    if value <= 0:
-        raise ValueError("Value must be > 0")
-    return value
+def my_function() -> str:
+    local_var = "Local variable"
+    return local_var
 
 
-def user_label(user_id: int, name: str) -> str:
-    safe_id = ensure_positive(user_id)
-    clean_name = name.strip()
-    if not clean_name:
-        raise ValueError("Name must not be empty")
-    return f"{safe_id}:{clean_name}"
-
-
-print(user_label(1, "Alice"))
+print(local_var)  # NameError
 ```
 
-Что это дает:
+Чтобы получить значение наружу, его нужно вернуть через `return`.
 
-- проверка id не размазана по коду;
-- ошибка входных данных видна сразу;
-- функцию проще переиспользовать в модуле, API или тесте.
+## `print()` или `return`
 
-## Типичные ошибки
+`print()` выводит значение в консоль.
 
-1. Делать функцию слишком большой.
-   Проблема: внутри смешиваются чтение данных, бизнес-логика и вывод результата.
-   Решение: выносить отдельные шаги в маленькие функции.
+```python
+def show_average(numbers):
+    print(sum(numbers) / len(numbers))
+```
 
-2. Возвращать разные типы без необходимости.
-   Проблема: вызывающий код становится хрупким.
-   Решение: держать стабильный тип результата или явно описывать `T | None`.
+`return` отдает значение вызывающему коду.
 
-3. Игнорировать edge cases.
-   Проблема: пустая строка, `None` или отрицательное число ломают код позже.
-   Решение: проверять вход рядом с началом функции.
+```python
+def find_average(numbers):
+    return sum(numbers) / len(numbers)
+```
 
-4. Считать type hints runtime-валидацией.
-   Проблема: аннотации сами не остановят неправильный тип.
-   Решение: критичные данные валидировать кодом.
+Если результат нужно дальше использовать в программе, обычно нужен `return`.
 
-5. Использовать mutable default arguments.
-   Проблема: данные "накапливаются" между вызовами.
-   Решение: паттерн `None -> create new object`.
+```python
+average = find_average([1, 2, 3])
+print(average + 10)
+```
+
+Если нужно только показать значение человеку, можно использовать `print()`.
+
+## Частые ошибки
+
+1. Забыть вызвать функцию.
+   Проблема: `find_average` - это сама функция, а `find_average(...)` - её вызов.
+   Решение: писать скобки при вызове.
+
+2. Печатать значение вместо возврата.
+   Проблема: `print()` не возвращает результат для дальнейших вычислений.
+   Решение: если результат нужен дальше, использовать `return`.
+
+3. Ожидать результат от функции без `return`.
+   Проблема: такая функция возвращает `None`.
+   Решение: явно писать `return value`.
+
+4. Путать порядок позиционных аргументов.
+   Проблема: `format_date("January", 1)` работает синтаксически, но смысл неверный.
+   Решение: использовать именованные аргументы или keyword-only параметры.
+
+5. Считать type hints runtime-проверкой.
+   Проблема: аннотации не остановят неправильный тип сами.
+   Решение: проверять критичные данные кодом.
+
+6. Пытаться использовать локальную переменную снаружи функции.
+   Проблема: локальная переменная живет только внутри функции.
+   Решение: возвращать значение через `return`.
+
+7. Не обрабатывать пустой список при среднем значении.
+   Проблема: `sum(numbers) / len(numbers)` упадет с `ZeroDivisionError`, если список пустой.
+   Решение: заранее проверить вход.
+
+```python
+def find_average(numbers):
+    if len(numbers) == 0:
+        return 0
+
+    return sum(numbers) / len(numbers)
+```
 
 ## Cheat-sheet
 
-| Сценарий | Как писать |
+| Синтаксис | Что делает |
 | --- | --- |
-| Простая функция | `def name(arg): ...` |
-| Явный контракт | `def name(arg: str) -> str: ...` |
-| Значение по умолчанию | `threshold: float = 0.5` |
-| Ошибочный вход | `raise ValueError(...)` |
-| Нет полезного результата | `-> None` |
-| Mutable default | `arg: list[T] | None = None` |
+| `def name():` | Объявляет функцию |
+| `def name(value):` | Функция с параметром |
+| `name(10)` | Вызов функции |
+| `return value` | Вернуть результат |
+| `pass` | Пустое тело функции |
+| `None` | Отсутствие полезного результата |
+| `func(a, b)` | Позиционные аргументы |
+| `func(day=15, month="October")` | Именованные аргументы |
+| `def func(*, arg):` | Keyword-only параметр |
+| `arg="default"` | Значение по умолчанию |
+| `arg: str` | Аннотация типа параметра |
+| `-> str` | Аннотация типа результата |
 
 ## Official docs
 
 <OfficialDocsLinks
     :links="[
-        { title: 'Python: Defining functions', href: 'https://docs.python.org/3/tutorial/controlflow.html#defining-functions' },
-        { title: 'Python: Default argument values', href: 'https://docs.python.org/3/tutorial/controlflow.html#default-argument-values' },
-        { title: 'Python: Function definitions', href: 'https://docs.python.org/3/reference/compound_stmts.html#function-definitions' },
-        { title: 'Python typing', href: 'https://docs.python.org/3/library/typing.html' },
+        { title: 'Python Tutorial: Defining functions', href: 'https://docs.python.org/3/tutorial/controlflow.html#defining-functions' },
+        { title: 'Python Tutorial: Default argument values', href: 'https://docs.python.org/3/tutorial/controlflow.html#default-argument-values' },
+        { title: 'Python Tutorial: Keyword arguments', href: 'https://docs.python.org/3/tutorial/controlflow.html#keyword-arguments' },
+        { title: 'Python Reference: Function definitions', href: 'https://docs.python.org/3/reference/compound_stmts.html#function-definitions' },
+        { title: 'Python Built-in constants: None', href: 'https://docs.python.org/3/library/constants.html#None' },
     ]"
 />
 
 <RelatedTopics
     :items="[
-        { title: 'Основы синтаксиса и переменные', href: '/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye' },
-        { title: 'Typing для Python и ML', href: '/python/yazyk-python/typing-dlya-python-i-ml' },
-        { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
-        { title: 'Модули, venv и pip', href: '/python/yazyk-python/1-core/moduli-venv-i-pip' },
+        { title: 'Основные функции', href: '/python/yazyk-python/1-core/osnovnye-funktsii' },
+        { title: 'Циклы for и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
+        { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
+        { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
     ]"
 />
