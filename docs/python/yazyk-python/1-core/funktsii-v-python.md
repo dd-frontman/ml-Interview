@@ -372,9 +372,9 @@ def find_average(numbers):
 
 <RelatedTopics
     :items="[
+        { title: 'Область видимости переменных', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh' },
         { title: 'Основные функции', href: '/python/yazyk-python/1-core/osnovnye-funktsii' },
         { title: 'Циклы for и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
-        { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
     ]"
 />

@@ -81,6 +81,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
 							{ text: "For и range", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
 							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
+							{ text: "Область видимости", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh" },
 							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
 							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
 							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }

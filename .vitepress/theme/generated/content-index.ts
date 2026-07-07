@@ -305,6 +305,16 @@ export const contentIndex: ContentIndexItem[] = [
 		source: "docs/python/yazyk-python/1-core/moduli-venv-i-pip.md",
 	},
 	{
+		route: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh",
+		title: "Область видимости переменных",
+		description: "Конспект по области видимости переменных в Python: локальные и глобальные переменные, переменная цикла, shadowing, global, константы и безопасная передача данных через параметры и return.",
+		tags: ["python", "core", "scope", "functions"],
+		updatedAt: "2026-07-07",
+		hasManualRelated: true,
+		search: true,
+		source: "docs/python/yazyk-python/1-core/oblast-vidimosti-peremennyh.md",
+	},
+	{
 		route: "/python/yazyk-python/1-core/operatory-sravneniya",
 		title: "Операторы сравнения",
 		description: "Операторы сравнения в Python: равно, не равно, больше, меньше, больше либо равно, меньше либо равно, цепочки сравнений и типичные ошибки.",
