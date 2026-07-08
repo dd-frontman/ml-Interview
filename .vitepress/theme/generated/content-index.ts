@@ -355,6 +355,16 @@ export const contentIndex: ContentIndexItem[] = [
 		source: "docs/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md",
 	},
 	{
+		route: "/python/yazyk-python/1-core/tsikl-while",
+		title: "Цикл while",
+		description: "Конспект по циклу while в Python: условие продолжения, счетчик, truthy/falsy коллекции, бесконечный цикл, break и практическая симуляция со ставками.",
+		tags: ["python", "core", "loops", "while"],
+		updatedAt: "2026-07-08",
+		hasManualRelated: true,
+		search: true,
+		source: "docs/python/yazyk-python/1-core/tsikl-while.md",
+	},
+	{
 		route: "/python/yazyk-python/1-core/tsikly-for-i-range",
 		title: "Циклы for и range",
 		description: "Базовый конспект по циклу for и range в Python: перебор списков и строк, вложенные циклы, continue, break, изменение списка по индексам и поиск индексов символа.",

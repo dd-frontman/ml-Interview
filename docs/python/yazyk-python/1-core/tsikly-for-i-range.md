@@ -362,9 +362,9 @@ for i in range(len(numbers)):
 
 <RelatedTopics
     :items="[
+        { title: 'Цикл while', href: '/python/yazyk-python/1-core/tsikl-while' },
         { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
         { title: 'Индексы и срезы', href: '/python/yazyk-python/tipy-dannykh/indeksy-i-srezy' },
-        { title: 'Итераторы, генераторы и comprehensions', href: '/python/yazyk-python/iteratory-generatory-i-comprehensions' },
     ]"
 />

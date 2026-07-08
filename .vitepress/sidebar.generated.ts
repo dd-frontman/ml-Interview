@@ -80,6 +80,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
 							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
 							{ text: "For и range", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
+							{ text: "Цикл while", link: "/python/yazyk-python/1-core/tsikl-while" },
 							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
 							{ text: "Область видимости", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh" },
 							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
