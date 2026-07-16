@@ -52,12 +52,15 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/1-core/tsikly-for-i-range": "For и range",
 	"/python/yazyk-python/1-core/tsikl-while": "Цикл while",
 	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
+	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": "Args и kwargs",
 	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": "Область видимости",
 	"/python/yazyk-python/1-core/klassy-v-python": "Классы",
 	"/python/yazyk-python/1-core/moduli-venv-i-pip": "Модули и окружение",
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Операции со строками",
 	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": "Списки базовые операции",
 	"/python/yazyk-python/tipy-dannykh/indeksy-i-srezy": "Индексы и срезы",
+	"/python/yazyk-python/tipy-dannykh/kortezhi-tuple": "Кортежи tuple",
+	"/python/yazyk-python/tipy-dannykh/slovari-dict": "Словари dict",
 };
 
 const WEAK_HEADINGS = new Set([
@@ -128,6 +131,7 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/tsikly-for-i-range": -705,
 	"/python/yazyk-python/1-core/tsikl-while": -704,
 	"/python/yazyk-python/1-core/funktsii-v-python": -700,
+	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": -698,
 	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": -695,
 	"/python/yazyk-python/1-core/klassy-v-python": -600,
 	"/python/yazyk-python/1-core/moduli-venv-i-pip": -500,
@@ -136,6 +140,8 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
 	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": -80,
 	"/python/yazyk-python/tipy-dannykh/indeksy-i-srezy": -70,
+	"/python/yazyk-python/tipy-dannykh/kortezhi-tuple": -60,
+	"/python/yazyk-python/tipy-dannykh/slovari-dict": -50,
 	"/python/ekosistema-python/zagruzka-dannykh-i-formaty": -1200,
 	"/python/ekosistema-python/sql-iz-python": -1100,
 	"/python/ekosistema-python/numpy-i-pandas-dlya-ml": -1000,

@@ -139,9 +139,9 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 
 <RelatedTopics
     :items="[
+        { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
         { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
     ]"
 />

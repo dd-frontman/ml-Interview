@@ -136,9 +136,9 @@ updatedAt: "2026-06-23"
 
 <RelatedTopics
     :items="[
+        { title: 'Кортежи tuple', href: '/python/yazyk-python/tipy-dannykh/kortezhi-tuple' },
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
-        { title: 'Логические и побитовые операторы: and, or, &, |', href: '/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory' },
     ]"
 />
