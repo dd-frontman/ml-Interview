@@ -85,7 +85,9 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Args и kwargs", link: "/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs" },
 							{ text: "Область видимости", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh" },
 							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
+							{ text: "Импорты и модули", link: "/python/yazyk-python/1-core/importy-i-moduli" },
 							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
+							{ text: "Comprehensions", link: "/python/yazyk-python/1-core/comprehensions-v-python" },
 							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }
 						],
 					},
@@ -100,6 +102,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Индексы и срезы", link: "/python/yazyk-python/tipy-dannykh/indeksy-i-srezy" },
 							{ text: "Кортежи tuple", link: "/python/yazyk-python/tipy-dannykh/kortezhi-tuple" },
 							{ text: "Словари dict", link: "/python/yazyk-python/tipy-dannykh/slovari-dict" },
+							{ text: "Байты bytes", link: "/python/yazyk-python/tipy-dannykh/bayty-bytes" },
 							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
 							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
 							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" }
@@ -112,6 +115,8 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				collapsible: true,
 				collapsed: true,
 				items: [
+					{ text: "JSON и сериализация", link: "/python/ekosistema-python/json-i-serializatsiya" },
+					{ text: "HTTP-запросы requests", link: "/python/ekosistema-python/http-zaprosy-requests" },
 					{ text: "Загрузка данных", link: "/python/ekosistema-python/zagruzka-dannykh-i-formaty" },
 					{ text: "SQL из Python", link: "/python/ekosistema-python/sql-iz-python" },
 					{ text: "NumPy и Pandas", link: "/python/ekosistema-python/numpy-i-pandas-dlya-ml" },

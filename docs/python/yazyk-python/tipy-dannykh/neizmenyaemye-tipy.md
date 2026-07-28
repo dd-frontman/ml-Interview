@@ -95,6 +95,7 @@ updatedAt: "2026-06-23"
 - `bytes` хранит последовательность байтов
 - Обычно нужен для работы с файлами, сетью, бинарными протоколами, изображениями
 - Это неизменяемый тип
+- Подробнее: [Байты bytes](./bayty-bytes.md)
 
 ## Типичные ошибки
 
@@ -138,6 +139,7 @@ updatedAt: "2026-06-23"
     :items="[
         { title: 'Кортежи tuple', href: '/python/yazyk-python/tipy-dannykh/kortezhi-tuple' },
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
+        { title: 'Байты bytes', href: '/python/yazyk-python/tipy-dannykh/bayty-bytes' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
     ]"

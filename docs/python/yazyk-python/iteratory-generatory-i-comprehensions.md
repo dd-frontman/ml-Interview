@@ -125,6 +125,7 @@ for batch in iter_batches(rows=[{"id": 1}, {"id": 2}, {"id": 3}], batch_size=2):
 
 <RelatedTopics
     :items="[
+        { title: 'Comprehensions в Python', href: '/python/yazyk-python/1-core/comprehensions-v-python' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
         { title: 'Методы типов данных', href: '/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh' },
         { title: 'Загрузка данных и форматы', href: '/python/ekosistema-python/zagruzka-dannykh-i-formaty' },

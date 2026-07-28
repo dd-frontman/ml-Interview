@@ -35,6 +35,7 @@ updatedAt: "2026-06-23"
 
 - [Операции со строками](./operatsii-so-strokami.md)
 - [Списки: базовые операции](./spiski-bazovye-operatsii.md)
+- [Байты bytes](./bayty-bytes.md)
 - [Методы типов данных](./metody-tipov-dannykh.md)
 - [Неизменяемые типы](./neizmenyaemye-tipy.md)
 - [Изменяемые типы](./izmenyaemye-tipy.md)

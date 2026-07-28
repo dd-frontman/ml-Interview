@@ -139,6 +139,32 @@ introduce(name="John", age=30, city="New York")
 - передать параметры дальше;
 - обработать данные, где набор ключей может отличаться.
 
+Пример: функция обновляет профиль пользователя, но заранее неизвестно, какие поля придут.
+
+```python
+def update_user(user: dict, **kwargs) -> dict:
+    for key, value in kwargs.items():
+        user[key] = value
+
+    return user
+
+
+user = {
+    "name": "John",
+    "age": 30,
+}
+
+update_user(user, city="New York")
+print(user)
+# {"name": "John", "age": 30, "city": "New York"}
+
+update_user(user, age=31, job="Engineer")
+print(user)
+# {"name": "John", "age": 31, "city": "New York", "job": "Engineer"}
+```
+
+Здесь `**kwargs` нужен потому, что в одном вызове приходит `city`, а в другом - `age` и `job`.
+
 Но если параметры известны заранее, лучше объявлять их явно.
 
 ```python

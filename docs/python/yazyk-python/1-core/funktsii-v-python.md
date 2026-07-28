@@ -280,18 +280,15 @@ print(local_var)  # NameError
 
 ## `print()` или `return`
 
-`print()` выводит значение в консоль.
+`print()` выводит значение в консоль, но не передает его вызывающему коду.
 
 ```python
 def show_average(numbers):
     print(sum(numbers) / len(numbers))
-```
 
-`return` отдает значение вызывающему коду.
 
-```python
-def find_average(numbers):
-    return sum(numbers) / len(numbers)
+result = show_average([1, 2, 3])
+print(result)  # None
 ```
 
 Если результат нужно дальше использовать в программе, обычно нужен `return`.
@@ -301,7 +298,7 @@ average = find_average([1, 2, 3])
 print(average + 10)
 ```
 
-Если нужно только показать значение человеку, можно использовать `print()`.
+`print()` лучше оставлять для учебного вывода, отладки или простого CLI-вывода.
 
 ## Частые ошибки
 
