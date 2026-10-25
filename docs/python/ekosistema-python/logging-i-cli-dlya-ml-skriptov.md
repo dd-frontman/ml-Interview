@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 ML-скрипт должен запускаться воспроизводимо и оставлять понятный след:
 
@@ -20,7 +20,7 @@ ML-скрипт должен запускаться воспроизводимо
 
 Для этого достаточно `argparse` и `logging` из стандартной библиотеки.
 
-## CLI через `argparse`
+## CLI через `argparse` {#cli-cherez-argparse}
 
 ```python
 import argparse
@@ -36,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 
 Такой скрипт можно запускать из терминала, CI или cron-like процесса.
 
-## Logging
+## Logging {#logging}
 
 ```python
 import logging
@@ -53,7 +53,7 @@ logger.info("Training started")
 
 В ML-коде лучше не использовать `print` для рабочих событий. `logging` позволяет управлять уровнем детализации.
 
-## Практический скелет
+## Практический скелет {#prakticheskiy-skelet}
 
 ```python
 import argparse
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     main()
 ```
 
-## `python -m`
+## `python -m` {#python-m}
 
 Для модульного запуска структура может быть такой:
 
@@ -99,7 +99,7 @@ src/
 python -m ml_project.train --data-path data/train.parquet --model-path models/model.joblib
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Хардкодить пути внутри скрипта.
    Проблема: скрипт нельзя переиспользовать.
@@ -117,7 +117,7 @@ python -m ml_project.train --data-path data/train.parquet --model-path models/mo
    Проблема: модуль нельзя безопасно импортировать.
    Решение: использовать `main()` и `if __name__ == "__main__"`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Инструмент |
 | --- | --- |
@@ -127,7 +127,7 @@ python -m ml_project.train --data-path data/train.parquet --model-path models/mo
 | Ошибка со stack trace | `logging.exception` |
 | Запуск модуля | `python -m package.module` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

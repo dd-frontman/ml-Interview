@@ -8,7 +8,7 @@ tags:
   - "conditions"
 updatedAt: "2026-06-21"
 ---
-## Что такое `bool`
+## Что такое `bool` {#chto-takoe-bool}
 
 `bool` - это булевый тип данных. У него только два значения:
 
@@ -34,7 +34,7 @@ is_adult = age >= 18
 print(is_adult)  # True
 ```
 
-## `if`
+## `if` {#if}
 
 `if` выполняет блок кода, только если условие истинное.
 
@@ -56,7 +56,7 @@ print("outside if")
 
 Строка с отступом относится к `if`. Строка без отступа выполнится в любом случае.
 
-## `else`
+## `else` {#else}
 
 `else` выполняется, если условие в `if` ложное.
 
@@ -71,7 +71,7 @@ else:
 
 `else` не принимает отдельное условие. Он означает "во всех остальных случаях".
 
-## `elif`
+## `elif` {#elif}
 
 `elif` нужен, когда вариантов больше двух.
 
@@ -92,7 +92,7 @@ Python проверяет условия сверху вниз и выполня
 
 Если `score = 0.72`, выполнится блок `score >= 0.7`, а до следующих проверок Python уже не пойдет.
 
-## Truthy и falsy значения
+## Truthy и falsy значения {#truthy-i-falsy-znacheniya}
 
 В `if` можно писать не только готовый `bool`. Python сам приводит значение к логическому смыслу.
 
@@ -127,7 +127,7 @@ if items:
     print("list is not empty")
 ```
 
-## `not`
+## `not` {#not}
 
 `not` переворачивает логическое значение.
 
@@ -156,7 +156,7 @@ if value is not None:
     print("value exists")
 ```
 
-## `and` и `or`
+## `and` и `or` {#and-i-or}
 
 `and` требует, чтобы оба условия были истинными.
 
@@ -189,7 +189,7 @@ if (
     print("can enter")
 ```
 
-## Вложенные условия
+## Вложенные условия {#vlozhennye-usloviya}
 
 Условия можно вкладывать друг в друга.
 
@@ -209,7 +209,7 @@ if age >= 18 and has_ticket:
     print("can enter")
 ```
 
-## Тернарное выражение
+## Тернарное выражение {#ternarnoe-vyrazhenie}
 
 Если нужно выбрать одно из двух значений, можно использовать короткую форму:
 
@@ -223,7 +223,7 @@ print(status)
 
 Это выражение удобно для простых случаев. Если логика сложная, лучше писать обычный `if / else`.
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 ```python
 def get_access_message(age: int, has_ticket: bool, is_blocked: bool) -> str:
@@ -241,7 +241,7 @@ def get_access_message(age: int, has_ticket: bool, is_blocked: bool) -> str:
 
 Здесь условия идут от запрещающих случаев к успешному результату. Такой код часто проще читать, чем один большой `if`.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Забыть двоеточие после `if`, `elif` или `else`.
    Проблема: Python не поймет, где начинается блок.
@@ -263,7 +263,7 @@ def get_access_message(age: int, has_ticket: bool, is_blocked: bool) -> str:
    Проблема: для `None` принято использовать проверку идентичности.
    Решение: писать `value is None` или `value is not None`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Синтаксис |
 | --- | --- |
@@ -279,7 +279,7 @@ def get_access_message(age: int, has_ticket: bool, is_blocked: bool) -> str:
 | Проверка на `None` | `value is None` |
 | Выбор значения в одну строку | `x if condition else y` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

@@ -53,6 +53,7 @@ yarn preview
 
 # Генерация метаданных
 yarn sync:frontmatter
+yarn sync:anchors
 yarn generate:content-index
 yarn generate:sidebar
 yarn sync:meta
@@ -61,6 +62,7 @@ yarn check:generated
 # Валидации
 yarn type-check
 yarn validate-content
+yarn validate-anchors
 yarn validate-links
 yarn validate-routes
 yarn report:stale

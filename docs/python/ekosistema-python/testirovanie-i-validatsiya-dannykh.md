@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 В ML тестируют не только функции. Нужно проверять:
 
@@ -21,7 +21,7 @@ updatedAt: "2026-06-13"
 
 Цель не в полном покрытии, а в раннем обнаружении ошибок, которые портят модель незаметно.
 
-## Schema-checks
+## Schema-checks {#schema-checks}
 
 ```python
 REQUIRED_COLUMNS = {
@@ -39,7 +39,7 @@ def validate_columns(columns: set[str]) -> None:
 
 Такая проверка должна падать раньше, чем обучение модели.
 
-## Shape-checks
+## Shape-checks {#shape-checks}
 
 ```python
 def validate_features(X, expected_features: int) -> None:
@@ -51,7 +51,7 @@ def validate_features(X, expected_features: int) -> None:
 
 Для ML shape - это часть контракта.
 
-## Smoke-test pipeline
+## Smoke-test pipeline {#smoke-test-pipeline}
 
 ```python
 def test_pipeline_smoke(model, train_df):
@@ -66,7 +66,7 @@ def test_pipeline_smoke(model, train_df):
 
 Smoke-test не доказывает качество модели, но быстро ловит сломанные импорты, несовместимые типы и ошибки preprocessing.
 
-## Edge cases
+## Edge cases {#edge-cases}
 
 Что стоит проверять отдельно:
 
@@ -78,7 +78,7 @@ Smoke-test не доказывает качество модели, но быс�
 - отрицательные значения там, где они невозможны;
 - неверный порядок признаков.
 
-## Data validation на уровне пайплайна
+## Data validation на уровне пайплайна {#data-validation-na-urovne-payplayna}
 
 Минимальный подход без тяжелых фреймворков:
 
@@ -98,7 +98,7 @@ def validate_training_frame(df) -> None:
 
 Эти проверки лучше держать рядом с кодом загрузки и feature engineering.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Тестировать только happy path.
    Проблема: production падает на пустых или неполных данных.
@@ -120,7 +120,7 @@ def validate_training_frame(df) -> None:
    Проблема: ошибка находится слишком поздно.
    Решение: schema/data checks до fit.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Что проверять | Где |
 | --- | --- |
@@ -131,7 +131,7 @@ def validate_training_frame(df) -> None:
 | Pipeline smoke-test | в CI или локальной проверке |
 | Inference payload | на границе сервиса |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

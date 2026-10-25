@@ -8,7 +8,7 @@ tags:
   - "mutable"
 updatedAt: "2026-02-27"
 ---
-## Что входит в группу
+## Что входит в группу {#chto-vkhodit-v-gruppu}
 
 В этом разделе: `5` изменяемых типов и групп типов.
 
@@ -20,7 +20,7 @@ updatedAt: "2026-02-27"
 
 Изменяемый тип значит: объект можно менять без создания нового.
 
-## List
+## List {#list}
 
 `[1, 2, 3]` Аналогия с JS: обычный массив `[]`
 
@@ -45,7 +45,7 @@ values_set = {1, 2, 3, 4, 5}
 - Частая ошибка после JS: `list` не имеет методов `map` и `filter` как у массива, вместо этого используют list comprehension
 - `list` хорошо подходит для последовательностей, очередей на простом уровне, batch-данных
 
-## Dict
+## Dict {#dict}
 
 `{"id": 42, "role": "admin"}` Аналогия с JS: обычный объект
 
@@ -58,7 +58,7 @@ values_set = {1, 2, 3, 4, 5}
 - Частая ошибка: путать `dict.get("x")` и `dict["x"]`; первое вернет `None` или default, второе может упасть с ошибкой
 - Для объединения словарей можно использовать `update()` или оператор `|`
 
-## Set
+## Set {#set}
 
 `{1, 2, 3}` Аналогия с JS: `new Set([1, 2, 3])`
 
@@ -69,15 +69,16 @@ values_set = {1, 2, 3, 4, 5}
 - Элементы тоже должны быть хешируемыми, поэтому `set([ [1, 2] ])` не сработает
 - Частая ошибка: ожидать индексный доступ как у `list`; у `set` нет `items[0]`
 - Практический кейс: быстро убрать дубликаты `list(set(values))`, но порядок при этом потеряется
+- Подробнее: [Множества set](./mnozhestva-set.md)
 
-## Bytearray
+## Bytearray {#bytearray}
 
 `bytearray(b"hello")` Аналогия с JS: изменяемый бинарный буфер, близкий по смыслу к работе с `Uint8Array`
 
 - Изменяемая версия `bytes`
 - Удобна, когда нужно менять бинарные данные по месту
 
-## Пользовательские объекты классов
+## Пользовательские объекты классов {#polzovatelskie-obekty-klassov}
 
 ```python
 class User:
@@ -90,7 +91,7 @@ class User:
 - Обычно объекты классов изменяемые: `user.name = "Bob"`
 - Это зависит от реализации класса
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 ```python
 user = {"id": 1, "roles": ["admin"]}
@@ -101,7 +102,7 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 
 Здесь меняется исходный объект, а не создается новый.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Думать, что копия `list.copy()` или `dict.copy()` полностью независимая.
    Решение: помнить, что это только поверхностная копия.
@@ -115,7 +116,7 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 4. Смешивать в `list` данные разного смысла и типа.
    Решение: для структуры данных лучше `dict`, `tuple`, `dataclass`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Тип | Пример | Особенность |
 | --- | --- | --- |
@@ -125,7 +126,7 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 | `bytearray` | `bytearray(b"abc")` | Изменяемые бинарные данные |
 | объект класса | `User("Alice")` | Изменяемость зависит от реализации |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[
@@ -139,6 +140,7 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
 
 <RelatedTopics
     :items="[
+        { title: 'Множества set', href: '/python/yazyk-python/tipy-dannykh/mnozhestva-set' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },

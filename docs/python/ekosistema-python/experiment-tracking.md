@@ -8,7 +8,7 @@ tags:
   - "mlops"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 Experiment tracking отвечает на вопросы:
 
@@ -20,7 +20,7 @@ Experiment tracking отвечает на вопросы:
 
 Начинать можно без тяжелой платформы: JSON/CSV логов достаточно для учебного проекта.
 
-## Минимальный локальный tracking
+## Минимальный локальный tracking {#minimalnyy-lokalnyy-tracking}
 
 ```python
 import json
@@ -44,7 +44,7 @@ run = {
 }
 ```
 
-## Что логировать
+## Что логировать {#chto-logirovat}
 
 - model type;
 - hyperparameters;
@@ -56,7 +56,7 @@ run = {
 - artifact paths;
 - git commit, если доступен.
 
-## Когда нужен MLflow/W&B
+## Когда нужен MLflow/W&B {#kogda-nuzhen-mlflow-w-and-b}
 
 Локального JSON хватает, пока экспериментов мало.
 
@@ -68,7 +68,7 @@ Tracking-платформа нужна, когда:
 - нужно хранить model registry;
 - нужно воспроизводить production-модель.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Логировать только метрику.
    Проблема: непонятно, чем был получен результат.
@@ -86,7 +86,7 @@ Tracking-платформа нужна, когда:
    Проблема: результат невозможно повторить.
    Решение: сохранять версию данных.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Что | Пример |
 | --- | --- |
@@ -96,7 +96,7 @@ Tracking-платформа нужна, когда:
 | Артефакты | model path, metadata path |
 | Идентификатор | `run_id` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

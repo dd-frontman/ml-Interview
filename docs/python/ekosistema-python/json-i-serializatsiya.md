@@ -8,7 +8,7 @@ tags:
   - "data"
 updatedAt: "2026-07-19"
 ---
-## Что такое JSON
+## Что такое JSON {#chto-takoe-json}
 
 JSON (JavaScript Object Notation) - текстовый формат для хранения и передачи структурированных данных.
 
@@ -21,7 +21,7 @@ JSON (JavaScript Object Notation) - текстовый формат для хр�
 
 JSON не является отдельным типом Python. После сериализации мы получаем строку `str`, а после десериализации - обычные объекты Python: словари, списки, строки и числа.
 
-## JSON и словарь Python
+## JSON и словарь Python {#json-i-slovar-python}
 
 Словарь Python и JSON-объект выглядят похоже, но это разные вещи.
 
@@ -47,7 +47,7 @@ JSON представляет те же данные текстом:
 
 В JSON имена полей и строки должны быть записаны в двойных кавычках. Одинарные кавычки, допустимые в Python, не соответствуют стандарту JSON.
 
-## Подключение модуля `json`
+## Подключение модуля `json` {#podklyuchenie-modulya-json}
 
 Для преобразования данных используется модуль `json` из стандартной библиотеки Python.
 
@@ -57,7 +57,7 @@ import json
 
 Устанавливать его через `pip` не нужно.
 
-## Сериализация через `json.dumps()`
+## Сериализация через `json.dumps()` {#serializatsiya-cherez-json-dumps}
 
 Сериализация - преобразование объекта Python в формат, который можно сохранить или передать.
 
@@ -89,7 +89,7 @@ print(json_string)
 
 Название `dumps` можно запомнить как dump string - сериализация в строку.
 
-## Десериализация через `json.loads()`
+## Десериализация через `json.loads()` {#deserializatsiya-cherez-json-loads}
 
 Десериализация - обратное преобразование: из JSON-строки в объекты Python.
 
@@ -108,7 +108,7 @@ print(book["title"])     # 1984
 
 Название `loads` можно запомнить как load string - чтение JSON из строки.
 
-## Соответствие типов
+## Соответствие типов {#sootvetstvie-tipov}
 
 При преобразовании модуль `json` сопоставляет типы JSON и Python.
 
@@ -154,7 +154,7 @@ print(json_string)
 }
 ```
 
-## Форматирование JSON
+## Форматирование JSON {#formatirovanie-json}
 
 По умолчанию `json.dumps()` создает компактную строку. Для чтения человеком можно добавить отступы.
 
@@ -177,7 +177,7 @@ print(json_string)
 
 Без `ensure_ascii=False` кириллические символы могут быть представлены escape-последовательностями вида `\u0410`.
 
-## `dump` и `load` для файлов
+## `dump` и `load` для файлов {#dump-i-load-dlya-faylov}
 
 Методы без буквы `s` работают с файловыми объектами.
 
@@ -211,7 +211,7 @@ print(loaded_book)
 | `json.dump()` | объект Python и файл | записывает JSON в файл |
 | `json.load()` | файл | читает JSON из файла |
 
-## Какие объекты нельзя сериализовать напрямую
+## Какие объекты нельзя сериализовать напрямую {#kakie-obekty-nelzya-serializovat-napryamuyu}
 
 Модуль `json` умеет работать не со всеми объектами Python.
 
@@ -232,9 +232,9 @@ json_string = json.dumps(list(numbers))
 
 То же относится к `datetime`, пользовательским классам и другим специальным объектам. Нужно заранее определить, как представить их стандартными типами JSON.
 
-## Частые ошибки
+## Частые ошибки {#chastye-oshibki}
 
-### Передать словарь в `json.loads()`
+### Передать словарь в `json.loads()` {#peredat-slovar-v-json-loads}
 
 `loads()` ожидает строку, байты или массив байтов, а не готовый словарь.
 
@@ -246,7 +246,7 @@ json.loads(data)  # TypeError
 
 Если данные уже находятся в словаре, десериализация не нужна.
 
-### Использовать одинарные кавычки в JSON
+### Использовать одинарные кавычки в JSON {#ispolzovat-odinarnye-kavychki-v-json}
 
 ```python
 json_string = "{'name': 'Alex'}"
@@ -259,11 +259,11 @@ json.loads(json_string)  # json.JSONDecodeError
 json_string = '{"name": "Alex"}'
 ```
 
-### Перепутать `dump` и `dumps`
+### Перепутать `dump` и `dumps` {#pereputat-dump-i-dumps}
 
 `dump()` записывает в файл и требует файловый объект. `dumps()` возвращает строку.
 
-### Сериализовать JSON повторно
+### Сериализовать JSON повторно {#serializovat-json-povtorno}
 
 ```python
 data = {"name": "Alex"}
@@ -276,7 +276,7 @@ print(double_json)  # "{\"name\": \"Alex\"}"
 
 Повторная сериализация превращает уже готовую JSON-строку в строковое значение внутри другого JSON.
 
-## Практическая задача
+## Практическая задача {#prakticheskaya-zadacha}
 
 Дан словарь с информацией о книге:
 
@@ -311,7 +311,7 @@ print(loaded_book["title"])
 print(loaded_book["genres"][0])
 ```
 
-## Краткая шпаргалка
+## Краткая шпаргалка {#kratkaya-shpargalka}
 
 ```python
 import json
@@ -338,7 +338,7 @@ with open("data.json", "r", encoding="utf-8") as file:
 строка JSON -> json.loads() -> объект Python
 ```
 
-## Официальная документация
+## Официальная документация {#ofitsialnaya-dokumentatsiya}
 
 <OfficialDocsLinks
     :links="[

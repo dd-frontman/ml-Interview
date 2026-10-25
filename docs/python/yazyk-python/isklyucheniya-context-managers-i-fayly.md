@@ -8,7 +8,7 @@ tags:
   - "files"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 В ML-коде ошибки часто возникают на границе с внешним миром: файл не найден, данные пустые, формат изменился, модельный артефакт поврежден.
 
@@ -19,7 +19,7 @@ updatedAt: "2026-06-13"
 - закрывать файлы и ресурсы через `with`;
 - оставлять понятное сообщение для отладки.
 
-## Исключения
+## Исключения {#isklyucheniya}
 
 ```python
 def read_threshold(value: str) -> float:
@@ -36,7 +36,7 @@ def read_threshold(value: str) -> float:
 
 Практическое правило: ловить только те ошибки, которые ты умеешь обработать или обогатить контекстом.
 
-## `try`, `except`, `else`, `finally`
+## `try`, `except`, `else`, `finally` {#try-except-else-finally}
 
 ```python
 try:
@@ -53,7 +53,7 @@ finally:
 - `else` - код без ошибки;
 - `finally` - код, который выполняется всегда.
 
-## `with` и context manager
+## `with` и context manager {#with-i-context-manager}
 
 `with` гарантирует закрытие ресурса.
 
@@ -68,7 +68,7 @@ with path.open("r", encoding="utf-8") as file:
 
 Для файлов, сетевых соединений, временных директорий и lock-файлов это безопаснее ручного `open`/`close`.
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 ```python
 import json
@@ -92,7 +92,7 @@ def load_metadata(path: Path) -> dict:
 
 Такой код падает рано и понятно, а не дает модели работать с неполным контрактом.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Ловить `Exception` и ничего не делать.
    Проблема: настоящая ошибка скрывается.
@@ -110,7 +110,7 @@ def load_metadata(path: Path) -> dict:
    Проблема: стек становится менее полезным.
    Решение: использовать `raise NewError(...) from error`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Инструмент |
 | --- | --- |
@@ -120,7 +120,7 @@ def load_metadata(path: Path) -> dict:
 | Безопасно открыть файл | `with path.open(...) as file` |
 | Выполнить cleanup | `finally` или context manager |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

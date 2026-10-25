@@ -7,24 +7,24 @@ tags:
   - "deployment"
 updatedAt: "2026-02-27"
 ---
-## Способы деплоя
+## Способы деплоя {#sposoby-deploya}
 
 - Batch inference.
 - Online inference (REST/gRPC).
 - Streaming inference.
 
-## Что мониторить
+## Что мониторить {#chto-monitorit}
 
 - Технические метрики: latency, error rate, throughput.
 - Data quality: пропуски, выбросы, сдвиг распределений.
 - Бизнес-метрики и online-качество модели.
 
-## Drift
+## Drift {#drift}
 
 - Data drift: изменилось входное распределение.
 - Concept drift: изменилась связь между `X` и `y`.
 
-## Реакция
+## Реакция {#reaktsiya}
 
 - Alerting и fallback-стратегия.
 - Переобучение по расписанию или по триггерам.

@@ -18,7 +18,7 @@ import { withBase } from 'vitepress'
 
 <div class="home-content home-sections">
 
-## Основные разделы
+## Основные разделы {#osnovnye-razdely}
 
 <div class="home-sections-grid">
 

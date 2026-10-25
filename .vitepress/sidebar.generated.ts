@@ -58,6 +58,89 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsed: true,
 		items: [
 			{ text: "Обзор", link: "/python" },
+			{ text: "Roadmap Python", link: "/python/roadmap-python-dlya-ml-inzhenera" },
+			{ text: "Алгоритмы на Python", link: "/python/roadmap-algoritmy-i-struktury-dannykh-na-python" },
+			{
+				text: "Алгоритмы",
+				collapsible: true,
+				collapsed: true,
+				items: [
+					{ text: "Обзор", link: "/python/algoritmy/algoritmy-glavnaya" },
+					{
+						text: "Этап 1. Основы",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-1-osnovy/glavnaya" },
+							{ text: "Big O", link: "/python/algoritmy/etap-1-osnovy/big-o-i-analiz-slozhnosti" },
+							{ text: "Сложность операций", link: "/python/algoritmy/etap-1-osnovy/slozhnost-operatsiy-python" },
+							{ text: "Массивы и строки", link: "/python/algoritmy/etap-1-osnovy/massivy-i-stroki" },
+							{ text: "Хеширование и сортировка", link: "/python/algoritmy/etap-1-osnovy/heshirovanie-i-sortirovka" }
+						],
+					},
+					{
+						text: "Этап 2. Паттерны",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-2-patterny/glavnaya" },
+							{ text: "4. Two Pointers", link: "/python/algoritmy/etap-2-patterny/nedelya-4-two-pointers" },
+							{ text: "5. Sliding Window", link: "/python/algoritmy/etap-2-patterny/nedelya-5-sliding-window" },
+							{ text: "6. Prefix Sum", link: "/python/algoritmy/etap-2-patterny/nedelya-6-prefix-sum" },
+							{ text: "7. Binary Search", link: "/python/algoritmy/etap-2-patterny/nedelya-7-binary-search" },
+							{ text: "8. Intervals", link: "/python/algoritmy/etap-2-patterny/nedelya-8-sorting-i-intervaly" }
+						],
+					},
+					{
+						text: "Этап 3. Структуры",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-3-lineynye-struktury/glavnaya" },
+							{ text: "9. Stack", link: "/python/algoritmy/etap-3-lineynye-struktury/nedelya-9-stack-i-monotonic-stack" },
+							{ text: "10. Queue", link: "/python/algoritmy/etap-3-lineynye-struktury/nedelya-10-queue-i-deque" },
+							{ text: "11. Linked List", link: "/python/algoritmy/etap-3-lineynye-struktury/nedelya-11-linked-list" }
+						],
+					},
+					{
+						text: "Этап 4. Обходы",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/glavnaya" },
+							{ text: "12. Recursion", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-12-recursion" },
+							{ text: "13. Binary Trees", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-13-binary-trees" },
+							{ text: "14. Grid Traversal", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-14-matritsy-i-grid-traversal" },
+							{ text: "15. Graphs", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-15-graphs" },
+							{ text: "16. Backtracking", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-16-backtracking" },
+							{ text: "17. Heap", link: "/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-17-heap-i-priority-queue" }
+						],
+					},
+					{
+						text: "Этап 5. DP",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-5-greedy-dp/glavnaya" },
+							{ text: "18. Greedy", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-18-greedy" },
+							{ text: "19. DP I", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-19-dynamic-programming-i" },
+							{ text: "20. DP II", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-20-dynamic-programming-ii" },
+							{ text: "21. Advanced", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek" }
+						],
+					},
+					{
+						text: "Этап 6. Интервью",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор этапа", link: "/python/algoritmy/etap-6-praktika-intervyu/glavnaya" },
+							{ text: "22. Mixed Problems", link: "/python/algoritmy/etap-6-praktika-intervyu/nedelya-22-mixed-problems" },
+							{ text: "23. Mock Interviews", link: "/python/algoritmy/etap-6-praktika-intervyu/nedelya-23-mock-interviews" },
+							{ text: "24. Диагностика", link: "/python/algoritmy/etap-6-praktika-intervyu/nedelya-24-finalnaya-diagnostika" }
+						],
+					}
+				],
+			},
 			{
 				text: "Язык Python",
 				collapsible: true,
@@ -65,9 +148,10 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				items: [
 					{ text: "Введение в Python", link: "/python/yazyk-python/vvedenie-v-python" },
 					{ text: "Исключения и файлы", link: "/python/yazyk-python/isklyucheniya-context-managers-i-fayly" },
-					{ text: "Итераторы и генераторы", link: "/python/yazyk-python/iteratory-generatory-i-comprehensions" },
+					{ text: "Итерация и comprehensions", link: "/python/yazyk-python/iteratory-generatory-i-comprehensions" },
+					{ text: "Asyncio и TaskGroup", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup" },
 					{ text: "Typing для ML", link: "/python/yazyk-python/typing-dlya-python-i-ml" },
-					{ text: "Datetime и timezone", link: "/python/yazyk-python/datetime-i-timezone" },
+					{ text: "Дата и время", link: "/python/yazyk-python/datetime-i-timezone" },
 					{
 						text: "Core",
 						collapsible: true,
@@ -84,11 +168,28 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
 							{ text: "Args и kwargs", link: "/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs" },
 							{ text: "Область видимости", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh" },
-							{ text: "Классы", link: "/python/yazyk-python/1-core/klassy-v-python" },
 							{ text: "Импорты и модули", link: "/python/yazyk-python/1-core/importy-i-moduli" },
 							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
 							{ text: "Comprehensions", link: "/python/yazyk-python/1-core/comprehensions-v-python" },
+							{ text: "Sorted и filter", link: "/python/yazyk-python/1-core/sorted-i-filter" },
+							{ text: "Lambda-функции", link: "/python/yazyk-python/1-core/lambda-funktsii" },
+							{ text: "Try и except", link: "/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except" },
+							{ text: "Декораторы", link: "/python/yazyk-python/1-core/dekoratory-v-python" },
+							{ text: "Файлы", link: "/python/yazyk-python/1-core/fayly-v-python" },
 							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }
+						],
+					},
+					{
+						text: "Классы",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор классов", link: "/python/yazyk-python/klassy/klassy-glavnaya" },
+							{ text: "Класс и экземпляр", link: "/python/yazyk-python/klassy/klass-i-ekzemplyar" },
+							{ text: "Инициализация и методы", link: "/python/yazyk-python/klassy/init-self-atributy-i-metody" },
+							{ text: "Наследование", link: "/python/yazyk-python/klassy/nasledovanie-i-polimorfizm" },
+							{ text: "Property и super", link: "/python/yazyk-python/klassy/property-super-i-pereopredelenie" },
+							{ text: "Практика ООП", link: "/python/yazyk-python/klassy/praktika-igrovye-personazhi" }
 						],
 					},
 					{
@@ -103,9 +204,26 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Кортежи tuple", link: "/python/yazyk-python/tipy-dannykh/kortezhi-tuple" },
 							{ text: "Словари dict", link: "/python/yazyk-python/tipy-dannykh/slovari-dict" },
 							{ text: "Байты bytes", link: "/python/yazyk-python/tipy-dannykh/bayty-bytes" },
+							{ text: "Множества set", link: "/python/yazyk-python/tipy-dannykh/mnozhestva-set" },
 							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
 							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
 							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" }
+						],
+					},
+					{
+						text: "Итераторы и генераторы",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор итераторов", link: "/python/yazyk-python/iteratory-i-generatory/iteratory-i-generatory-glavnaya" },
+							{ text: "Iterable и iterator", link: "/python/yazyk-python/iteratory-i-generatory/iterable-i-iterator" },
+							{ text: "Свой итератор", link: "/python/yazyk-python/iteratory-i-generatory/sobstvennyy-iterator" },
+							{ text: "Генераторы и yield", link: "/python/yazyk-python/iteratory-i-generatory/generatory-i-yield" },
+							{ text: "Генераторные выражения", link: "/python/yazyk-python/iteratory-i-generatory/generatornye-vyrazheniya" },
+							{ text: "Конвейеры yield from", link: "/python/yazyk-python/iteratory-i-generatory/yield-from-i-konveyery" },
+							{ text: "Управление генератором", link: "/python/yazyk-python/iteratory-i-generatory/upravlenie-generatorom-send-throw-close" },
+							{ text: "Модуль itertools", link: "/python/yazyk-python/iteratory-i-generatory/modul-itertools" },
+							{ text: "Многозадачность", link: "/python/yazyk-python/iteratory-i-generatory/generatory-kak-mnogozadachnost" }
 						],
 					}
 				],
@@ -117,6 +235,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				items: [
 					{ text: "JSON и сериализация", link: "/python/ekosistema-python/json-i-serializatsiya" },
 					{ text: "HTTP-запросы requests", link: "/python/ekosistema-python/http-zaprosy-requests" },
+					{ text: "Retry и погода", link: "/python/ekosistema-python/dekorator-retry-i-api-pogody" },
 					{ text: "Загрузка данных", link: "/python/ekosistema-python/zagruzka-dannykh-i-formaty" },
 					{ text: "SQL из Python", link: "/python/ekosistema-python/sql-iz-python" },
 					{ text: "NumPy и Pandas", link: "/python/ekosistema-python/numpy-i-pandas-dlya-ml" },

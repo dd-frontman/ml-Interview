@@ -8,7 +8,7 @@ tags:
   - "data"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 Во многих ML-задачах данные лежат не в CSV, а в базе или warehouse. Python-код должен уметь получить срез данных и превратить его в feature table.
 
@@ -19,7 +19,7 @@ updatedAt: "2026-06-13"
 - зафиксировать временной срез;
 - проверить shape и схему результата.
 
-## `read_sql`
+## `read_sql` {#read-sql}
 
 ```python
 import pandas as pd
@@ -36,7 +36,7 @@ df = pd.read_sql(query, con=connection, params={"snapshot_date": "2026-06-13"})
 
 Параметры запроса лучше передавать через `params`, а не собирать строку вручную.
 
-## Срез данных
+## Срез данных {#srez-dannykh}
 
 Для обучения важно понимать, на какой момент выгружены данные.
 
@@ -56,7 +56,7 @@ where snapshot_date = :snapshot_date
 
 Так можно повторить обучение на том же срезе.
 
-## Что проверять после SQL
+## Что проверять после SQL {#chto-proveryat-posle-sql}
 
 ```python
 required_columns = {"user_id", "sessions_7d", "avg_session_min", "converted"}
@@ -68,7 +68,7 @@ if df.empty:
     raise ValueError("Training query returned no rows")
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Делать `select *`.
    Проблема: схема меняется незаметно.
@@ -86,7 +86,7 @@ if df.empty:
    Проблема: строки размножаются.
    Решение: проверять уникальность ключей и row count.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Подход |
 | --- | --- |
@@ -96,7 +96,7 @@ if df.empty:
 | Контроль схемы | required columns |
 | Защита от лишних колонок | явный `select column...` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

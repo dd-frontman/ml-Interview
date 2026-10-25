@@ -7,7 +7,7 @@ tags:
   - "functions"
 updatedAt: "2026-07-06"
 ---
-## Зачем нужны функции
+## Зачем нужны функции {#zachem-nuzhny-funktsii}
 
 Функция - это именованный блок кода, который можно вызывать много раз.
 
@@ -19,7 +19,7 @@ updatedAt: "2026-07-06"
 - возвращать результат через `return`;
 - разбивать программу на маленькие понятные части.
 
-## Проблема повторения кода
+## Проблема повторения кода {#problema-povtoreniya-koda}
 
 Без функции одинаковая логика копируется.
 
@@ -41,7 +41,7 @@ sum(numbers) / len(numbers)
 
 Лучше вынести её в функцию.
 
-## `def`
+## `def` {#def}
 
 Функция объявляется через `def`.
 
@@ -71,7 +71,7 @@ average_2 = find_average(numbers_2)
 print(average_1, average_2)  # 3.0 8.0
 ```
 
-## Параметры
+## Параметры {#parametry}
 
 Параметр - это переменная, которую функция получает при вызове.
 
@@ -94,7 +94,7 @@ print(count_vowels("Hello, World!"))  # 3
 print(count_vowels("Python is a very powerful language."))  # 13
 ```
 
-## `return`
+## `return` {#return}
 
 `return` возвращает значение из функции и завершает её выполнение.
 
@@ -112,7 +112,7 @@ print(average)  # 2.0
 
 Если функция должна что-то посчитать и отдать наружу, нужен `return`.
 
-## Функция без `return`
+## Функция без `return` {#funktsiya-bez-return}
 
 Если в функции нет `return`, она возвращает `None`.
 
@@ -127,7 +127,7 @@ print(result)  # None
 
 `print()` внутри функции просто выводит текст в консоль. Это не то же самое, что вернуть значение.
 
-## `pass`
+## `pass` {#pass}
 
 `pass` используется как пустое тело функции.
 
@@ -147,7 +147,7 @@ print(nothing())    # None
 
 `pass` полезен как временная заглушка, когда функция уже нужна по структуре, но логика ещё не написана.
 
-## Позиционные аргументы
+## Позиционные аргументы {#pozitsionnye-argumenty}
 
 Аргументы можно передавать по позиции.
 
@@ -169,7 +169,7 @@ print(format_date("January", 1))
 
 Python не понимает смысл аргументов, если они переданы позиционно. Он просто кладет первый аргумент в `day`, второй - в `month`.
 
-## Именованные аргументы
+## Именованные аргументы {#imenovannye-argumenty}
 
 Чтобы явно указать, какой аргумент куда идет, можно использовать имена параметров.
 
@@ -180,7 +180,7 @@ print(format_date(day=15, month="October"))
 
 Такой вызов читается понятнее и снижает риск перепутать порядок.
 
-## Keyword-only параметры
+## Keyword-only параметры {#keyword-only-parametry}
 
 Можно запретить позиционные аргументы и заставить вызывать функцию только по именам.
 
@@ -202,7 +202,7 @@ format_date(15, "October")  # TypeError
 
 Это полезно, когда порядок аргументов легко перепутать.
 
-## Значения по умолчанию
+## Значения по умолчанию {#znacheniya-po-umolchaniyu}
 
 У параметра может быть значение по умолчанию.
 
@@ -225,7 +225,90 @@ print(custom_greeting(name="John", greeting="Good morning"))
 # Good morning, John
 ```
 
-## Type hints
+## Изменяемые значения по умолчанию {#izmenyaemye-znacheniya-po-umolchaniyu}
+
+Если необязательный параметр должен принимать список, в качестве значения по умолчанию используют `None`, а новый список создают внутри функции.
+
+```python
+def append_in_list(
+    *,
+    element: int,
+    lst: list[int] | None = None,
+) -> list[int]:
+    if lst is None:
+        lst = []
+
+    lst.append(element)
+    return lst
+```
+
+Разберем функцию по частям:
+
+- `*` запрещает передавать следующие параметры по позиции;
+- `element: int` - число, которое нужно добавить;
+- `lst: list[int] | None = None` - список чисел или `None`;
+- `if lst is None` проверяет, был ли список передан;
+- `lst = []` создает новый пустой список;
+- `lst.append(element)` изменяет список, добавляя в него элемент;
+- `return lst` возвращает получившийся список.
+
+Если `lst` не передать, при каждом вызове будет создан отдельный список.
+
+```python
+my_list = append_in_list(element=1)
+another_list = append_in_list(element=2)
+
+print(my_list)       # [1]
+print(another_list)  # [2]
+print(my_list is another_list)  # False
+```
+
+Если передать готовый список, функция добавит элемент именно в него.
+
+```python
+numbers = [10, 20]
+result = append_in_list(element=30, lst=numbers)
+
+print(numbers)           # [10, 20, 30]
+print(result)            # [10, 20, 30]
+print(result is numbers)  # True
+```
+
+`append()` изменяет существующий список, поэтому `numbers` и `result` ссылаются на один объект.
+
+### Почему нельзя написать `lst=[]` {#pochemu-nelzya-napisat-lst}
+
+Значения параметров по умолчанию создаются один раз - в момент объявления функции. Поэтому один список будет использоваться повторно при всех вызовах.
+
+```python
+def append_in_list(*, element: int, lst: list[int] = []) -> list[int]:
+    lst.append(element)
+    return lst
+
+
+first = append_in_list(element=1)
+second = append_in_list(element=2)
+
+print(first)             # [1, 2]
+print(second)            # [1, 2]
+print(first is second)   # True
+```
+
+Во втором вызове Python не создает новый список, а берет тот же объект, в котором уже находится `1`. Такое накопление значений обычно является ошибкой.
+
+Правильный шаблон:
+
+```python
+def function(items: list[int] | None = None) -> list[int]:
+    if items is None:
+        items = []
+
+    return items
+```
+
+Важно проверять именно `items is None`, а не `if not items`. Пустой список может быть специально передан вызывающим кодом, а условие `if not items` посчитает его отсутствующим и заменит новым объектом.
+
+## Type hints {#type-hints}
 
 Аннотации типов показывают ожидаемые типы параметров и результата.
 
@@ -252,7 +335,7 @@ print(double("x"))  # xx
 
 Аннотации помогают IDE, чтению кода и статическим анализаторам, но критичные входные данные всё равно нужно проверять кодом.
 
-## Локальные переменные
+## Локальные переменные {#lokalnye-peremennye}
 
 Переменная, созданная внутри функции, называется локальной.
 
@@ -278,7 +361,7 @@ print(local_var)  # NameError
 
 Чтобы получить значение наружу, его нужно вернуть через `return`.
 
-## `print()` или `return`
+## `print()` или `return` {#print-ili-return}
 
 `print()` выводит значение в консоль, но не передает его вызывающему коду.
 
@@ -300,7 +383,7 @@ print(average + 10)
 
 `print()` лучше оставлять для учебного вывода, отладки или простого CLI-вывода.
 
-## Частые ошибки
+## Частые ошибки {#chastye-oshibki}
 
 1. Забыть вызвать функцию.
    Проблема: `find_average` - это сама функция, а `find_average(...)` - её вызов.
@@ -338,7 +421,7 @@ def find_average(numbers):
     return sum(numbers) / len(numbers)
 ```
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Синтаксис | Что делает |
 | --- | --- |
@@ -355,7 +438,7 @@ def find_average(numbers):
 | `arg: str` | Аннотация типа параметра |
 | `-> str` | Аннотация типа результата |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

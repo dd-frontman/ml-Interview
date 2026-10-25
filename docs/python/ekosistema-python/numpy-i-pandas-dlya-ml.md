@@ -8,7 +8,7 @@ tags:
   - "pandas"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 `NumPy` и `Pandas` - это не часть языка Python. Это инструменты экосистемы:
 
@@ -18,9 +18,9 @@ updatedAt: "2026-06-13"
 
 Для ML-инженера важно не знать все методы, а уверенно читать датасет, проверять shape/types, собирать признаки и не ломать train/test split.
 
-## NumPy
+## NumPy {#numpy}
 
-### `ndarray`, shape и dtype
+### `ndarray`, shape и dtype {#ndarray-shape-i-dtype}
 
 Главная структура NumPy - `ndarray`: N-мерный массив с элементами одного типа.
 
@@ -40,7 +40,7 @@ print(x.ndim)   # 2
 - `(n_samples,)` - целевая переменная;
 - `(batch_size, height, width, channels)` - батч изображений.
 
-### Векторизация
+### Векторизация {#vektorizatsiya}
 
 Вместо Python-циклов чаще используют операции над массивом целиком.
 
@@ -53,7 +53,7 @@ print(labels)  # [0 1 0 1]
 
 Это короче и обычно быстрее, потому что тяжелая работа выполняется внутри NumPy.
 
-### Broadcasting
+### Broadcasting {#broadcasting}
 
 Broadcasting позволяет применять операцию к массивам разных, но совместимых shape.
 
@@ -73,7 +73,7 @@ print(scaled.round(2))
 
 Практическое правило: перед операциями всегда проверяй `shape`, иначе легко получить корректный с точки зрения NumPy, но неправильный для ML результат.
 
-### Маски и индексация
+### Маски и индексация {#maski-i-indeksatsiya}
 
 Boolean masks нужны для фильтрации данных.
 
@@ -86,9 +86,9 @@ print(prices[mask])  # [30 40]
 
 В ML это часто используется для отбора строк, проверки выбросов и анализа ошибок модели.
 
-## Pandas
+## Pandas {#pandas}
 
-### `DataFrame` и `Series`
+### `DataFrame` и `Series` {#dataframe-i-series}
 
 `DataFrame` - таблица, `Series` - один столбец.
 
@@ -107,7 +107,7 @@ print(df.shape)
 print(df.dtypes)
 ```
 
-### Выбор столбцов и фильтрация
+### Выбор столбцов и фильтрация {#vybor-stolbtsov-i-filtratsiya}
 
 ```python
 active = df[df["sessions_7d"] > 0]
@@ -121,7 +121,7 @@ target = active["converted"]
 - `y` - целевая переменная;
 - `id`, timestamp и служебные поля - отдельно, чтобы не утащить leakage в модель.
 
-### Пропуски и типы
+### Пропуски и типы {#propuski-i-tipy}
 
 ```python
 df["sessions_7d"] = df["sessions_7d"].fillna(0).astype("int64")
@@ -134,7 +134,7 @@ df["sessions_7d"] = df["sessions_7d"].fillna(0).astype("int64")
 - даты - явный `pd.to_datetime(...)`;
 - перед обучением - проверка `df.isna().sum()`.
 
-### `groupby`, `merge`, `pivot_table`
+### `groupby`, `merge`, `pivot_table` {#groupby-merge-pivot-table}
 
 Агрегации превращают события в признаки.
 
@@ -169,7 +169,7 @@ dataset = features.merge(labels, on="user_id", how="inner")
 
 Главный риск: не присоединить к обучению данные из будущего.
 
-## Практический минимум
+## Практический минимум {#prakticheskiy-minimum}
 
 1. Уметь читать данные через `pd.read_csv`, `pd.read_parquet`, `pd.read_json`.
 2. Проверять `shape`, `dtypes`, пропуски и дубликаты.
@@ -186,7 +186,7 @@ y = dataset["converted"].to_numpy()
 print(X.shape, y.shape)
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Делать `fit` preprocessing на всем датасете до train/test split.
    Проблема: leakage из теста в обучение.
@@ -208,7 +208,7 @@ print(X.shape, y.shape)
    Проблема: дубли могут размножить датасет.
    Решение: сравнивать `shape` до/после и проверять уникальность ключей.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Инструмент | Проверка |
 | --- | --- | --- |
@@ -218,7 +218,7 @@ print(X.shape, y.shape)
 | Соединение таблиц | `merge()` | не выросло ли число строк неожиданно |
 | Передача в модель | `to_numpy()` или DataFrame | порядок признаков зафиксирован |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

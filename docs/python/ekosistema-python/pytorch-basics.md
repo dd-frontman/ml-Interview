@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 PyTorch нужен, когда классического ML уже недостаточно: нейросети, embeddings, компьютерное зрение, NLP, трансформеры.
 
@@ -21,7 +21,7 @@ PyTorch нужен, когда классического ML уже недост
 - `device`;
 - `torch.no_grad()` для inference.
 
-## Tensor
+## Tensor {#tensor}
 
 ```python
 import torch
@@ -34,7 +34,7 @@ print(x.dtype)
 
 Tensor похож на NumPy array, но умеет autograd и работу на GPU.
 
-## Dataset и DataLoader
+## Dataset и DataLoader {#dataset-i-dataloader}
 
 ```python
 from torch.utils.data import DataLoader, TensorDataset
@@ -48,7 +48,7 @@ loader = DataLoader(dataset, batch_size=2, shuffle=True)
 
 `DataLoader` отвечает за batch-и и перемешивание данных.
 
-## Модель
+## Модель {#model}
 
 ```python
 from torch import nn
@@ -65,7 +65,7 @@ class LogisticModel(nn.Module):
 
 `forward` описывает прямой проход модели.
 
-## Training loop
+## Training loop {#training-loop}
 
 ```python
 model = LogisticModel()
@@ -89,7 +89,7 @@ for features, target in loader:
 - backward;
 - optimizer step.
 
-## Inference
+## Inference {#inference}
 
 ```python
 model.eval()
@@ -101,7 +101,7 @@ with torch.no_grad():
 
 `model.eval()` переключает модель в inference-режим, `torch.no_grad()` отключает расчет градиентов.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Не вызывать `optimizer.zero_grad()`.
    Проблема: градиенты накапливаются.
@@ -119,7 +119,7 @@ with torch.no_grad():
    Проблема: runtime error.
    Решение: переносить model и tensors на один `device`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | PyTorch |
 | --- | --- |
@@ -130,7 +130,7 @@ with torch.no_grad():
 | Оптимизация | `torch.optim.*` |
 | Inference | `model.eval()` + `torch.no_grad()` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

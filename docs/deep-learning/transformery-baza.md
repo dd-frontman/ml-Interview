@@ -7,11 +7,11 @@ tags:
   - "transformers"
 updatedAt: "2026-02-27"
 ---
-## Ключевая идея
+## Ключевая идея {#klyuchevaya-ideya}
 
 Transformer заменяет рекуррентность механизмом self-attention, что дает эффективную параллелизацию и лучшую работу на длинных зависимостях.
 
-## Компоненты
+## Компоненты {#komponenty}
 
 - Embedding.
 - Positional encoding.
@@ -19,7 +19,7 @@ Transformer заменяет рекуррентность механизмом s
 - Feed-forward блоки.
 - LayerNorm и residual connections.
 
-## Где применяется
+## Где применяется {#gde-primenyaetsya}
 
 - NLP: классификация, генерация, поиск.
 - CV: Vision Transformer.

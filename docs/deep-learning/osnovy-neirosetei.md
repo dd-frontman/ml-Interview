@@ -6,19 +6,19 @@ tags:
   - "deep-learning"
 updatedAt: "2026-02-27"
 ---
-## Из чего состоит нейросеть
+## Из чего состоит нейросеть {#iz-chego-sostoit-neyroset}
 
 - Линейные преобразования: `z = Wx + b`.
 - Нелинейности: ReLU, GELU, sigmoid, tanh.
 - Функция потерь и оптимизатор.
 
-## Обучение
+## Обучение {#obuchenie}
 
 - Forward pass -> loss -> backpropagation -> update.
 - SGD, Momentum, Adam.
 - Learning rate schedule и early stopping.
 
-## Регуляризация
+## Регуляризация {#regulyarizatsiya}
 
 - Dropout.
 - L1/L2 regularization.

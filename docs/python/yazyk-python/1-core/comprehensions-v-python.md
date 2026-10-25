@@ -8,7 +8,7 @@ tags:
   - "collections"
 updatedAt: "2026-07-25"
 ---
-## Что такое comprehension
+## Что такое comprehension {#chto-takoe-comprehension}
 
 Comprehension - компактный синтаксис создания новой коллекции на основе другой последовательности.
 
@@ -23,7 +23,7 @@ print(squares)
 
 Python перебирает значения `range(6)`, вычисляет `x ** 2` для каждого значения и добавляет результат в новый список.
 
-## Обычный цикл и list comprehension
+## Обычный цикл и list comprehension {#obychnyy-tsikl-i-list-comprehension}
 
 Создание квадратов через обычный цикл:
 
@@ -56,7 +56,7 @@ squares = [x ** 2 for x in range(6)]
 
 Comprehension всегда создает новую коллекцию. Исходная последовательность не изменяется.
 
-## Преобразование элементов
+## Преобразование элементов {#preobrazovanie-elementov}
 
 В левой части может находиться любое выражение, возвращающее значение.
 
@@ -87,7 +87,7 @@ squares = [calculate_square(x) for x in range(6)]
 
 Если вычисление занимает несколько действий, лучше использовать обычный цикл или отдельную функцию.
 
-## Почему нельзя использовать `+=`
+## Почему нельзя использовать `+=` {#pochemu-nelzya-ispolzovat-plus}
 
 Такой код содержит синтаксическую ошибку:
 
@@ -103,7 +103,7 @@ numbers = [x += 1 for x in range(6)]  # SyntaxError
 numbers = [x + 1 for x in range(6)]
 ```
 
-## Фильтрация через `if`
+## Фильтрация через `if` {#filtratsiya-cherez-if}
 
 Условие после `for` определяет, попадет ли элемент в результат.
 
@@ -132,7 +132,7 @@ for x in range(10):
 
 Условие в конце фильтрует элементы. Для неподходящего элемента выражение `x ** 2` не вычисляется.
 
-## `if-else` внутри выражения
+## `if-else` внутри выражения {#if-else-vnutri-vyrazheniya}
 
 Если для каждого элемента нужно выбрать одно из двух значений, используется условное выражение.
 
@@ -163,7 +163,7 @@ print(labels)
 [x if x > 0 else 0 for x in numbers]
 ```
 
-## Dict comprehension
+## Dict comprehension {#dict-comprehension}
 
 Dict comprehension создает словарь.
 
@@ -197,7 +197,7 @@ discount_prices = {
 
 Если вычисленный ключ повторяется, в словаре останется последнее значение для этого ключа.
 
-## Set comprehension
+## Set comprehension {#set-comprehension}
 
 Set comprehension создает множество уникальных значений.
 
@@ -215,7 +215,7 @@ print(squares)
 {выражение for элемент in коллекция}
 ```
 
-## Вложенные comprehensions
+## Вложенные comprehensions {#vlozhennye-comprehensions}
 
 Comprehension может содержать несколько циклов.
 
@@ -240,7 +240,7 @@ for x in range(3):
         pairs.append((x, y))
 ```
 
-## Транспонирование матрицы
+## Транспонирование матрицы {#transponirovanie-matritsy}
 
 Транспонирование меняет строки и столбцы местами.
 
@@ -270,7 +270,7 @@ print(transpose)
 transpose = [list(column) for column in zip(*matrix)]
 ```
 
-## Comprehension или обычный цикл
+## Comprehension или обычный цикл {#comprehension-ili-obychnyy-tsikl}
 
 Comprehension подходит, когда нужно коротко описать одно преобразование или фильтрацию.
 
@@ -289,7 +289,7 @@ active_names = [user["name"] for user in users if user["active"]]
 
 Главный критерий - читаемость, а не минимальное количество строк.
 
-## List comprehension и generator expression
+## List comprehension и generator expression {#list-comprehension-i-generator-expression}
 
 Квадратные скобки сразу создают весь список в памяти:
 
@@ -305,7 +305,7 @@ squares = (x ** 2 for x in range(1_000_000))
 
 Генератор вычисляет значения по мере перебора. Он полезен, если не требуется хранить весь результат одновременно.
 
-## Частые ошибки
+## Частые ошибки {#chastye-oshibki}
 
 1. Использовать `+=`, `print(...)` или другую операцию ради побочного эффекта.
    Решение: comprehension должен создавать коллекцию; для действий используй обычный цикл.
@@ -322,9 +322,9 @@ squares = (x ** 2 for x in range(1_000_000))
 5. Забыть, что comprehension создает новую коллекцию.
    Решение: сохранить результат в переменную или присвоить его исходному имени явно.
 
-## Практические задачи
+## Практические задачи {#prakticheskie-zadachi}
 
-### Задача 1
+### Задача 1 {#zadacha-1}
 
 Создай список кубов чисел от `1` до `10`.
 
@@ -332,7 +332,7 @@ squares = (x ** 2 for x in range(1_000_000))
 cubes = [number ** 3 for number in range(1, 11)]
 ```
 
-### Задача 2
+### Задача 2 {#zadacha-2}
 
 Из списка оставь только непустые строки и удали пробелы по краям.
 
@@ -345,7 +345,7 @@ print(clean_values)
 # ['Python', 'ML', 'SQL']
 ```
 
-### Задача 3
+### Задача 3 {#zadacha-3}
 
 Создай словарь, где ключ - число, а значение показывает его четность.
 
@@ -356,7 +356,7 @@ parity = {
 }
 ```
 
-## Краткая шпаргалка
+## Краткая шпаргалка {#kratkaya-shpargalka}
 
 ```python
 # Преобразование
@@ -378,7 +378,7 @@ parity = {
 (f(x) for x in items)
 ```
 
-## Официальная документация
+## Официальная документация {#ofitsialnaya-dokumentatsiya}
 
 <OfficialDocsLinks
     :links="[

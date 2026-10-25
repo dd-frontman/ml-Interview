@@ -9,7 +9,7 @@ tags:
   - "pip"
 updatedAt: "2026-06-18"
 ---
-## Зачем это нужно
+## Зачем это нужно {#zachem-eto-nuzhno}
 
 Модули, `venv` и `pip` отвечают за инженерную часть Python-проекта:
 
@@ -20,7 +20,7 @@ updatedAt: "2026-06-18"
 
 Без этого проект быстро превращается в набор скриптов, которые работают только на одной машине.
 
-## Модули
+## Модули {#moduli}
 
 Модуль - это обычный `.py` файл. Один модуль должен отвечать за одну зону ответственности.
 
@@ -77,7 +77,7 @@ print(user)
 - структура кода расширяется без хаоса;
 - импорты показывают зависимости между частями проекта.
 
-## `venv`
+## `venv` {#venv}
 
 `venv` создает локальное виртуальное окружение для проекта.
 
@@ -90,7 +90,7 @@ source .venv/bin/activate
 
 Практическое правило: один проект - одно окружение.
 
-## `pip`
+## `pip` {#pip}
 
 `pip` устанавливает Python-пакеты.
 
@@ -107,7 +107,7 @@ pip install -r requirements.txt
 
 В более зрелых проектах вместо `requirements.txt` часто используют `pyproject.toml` и lock-файл, но базовая идея та же: зависимости должны быть воспроизводимыми.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Писать всю логику в `main.py`.
    Проблема: код сложно тестировать и переиспользовать.
@@ -129,7 +129,7 @@ pip install -r requirements.txt
    Проблема: при импорте внезапно запускается обучение, чтение файлов или сетевой запрос.
    Решение: тяжелый запуск держать под `if __name__ == "__main__":`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Тема | Практический минимум |
 | --- | --- |
@@ -148,7 +148,7 @@ pip install -r requirements.txt
 | `pip freeze > requirements.txt` | Зафиксировать версии |
 | `pip install -r requirements.txt` | Установить фиксированный набор |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[
@@ -162,7 +162,7 @@ pip install -r requirements.txt
 <RelatedTopics
     :items="[
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
-        { title: 'Классы в Python', href: '/python/yazyk-python/1-core/klassy-v-python' },
+        { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Воспроизводимость ML-кода', href: '/python/ekosistema-python/vosproizvodimost-ml-koda' },
         { title: 'Logging и CLI', href: '/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov' },
     ]"

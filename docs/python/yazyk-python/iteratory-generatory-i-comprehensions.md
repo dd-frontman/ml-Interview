@@ -6,9 +6,9 @@ tags:
   - "core"
   - "iterators"
   - "generators"
-updatedAt: "2026-06-13"
+updatedAt: "2026-10-20"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 ML-код часто обрабатывает последовательности: строки файла, batch-данные, события пользователя, признаки, предсказания.
 
@@ -19,7 +19,7 @@ ML-код часто обрабатывает последовательност
 - generator - ленивый iterator, часто через `yield`;
 - comprehension - компактная сборка коллекции.
 
-## Comprehensions
+## Comprehensions {#comprehensions}
 
 ```python
 scores = [0.12, 0.73, 0.44, 0.91]
@@ -37,7 +37,7 @@ features = {name: float(value) for name, value in raw_features.items()}
 
 Практическое правило: comprehension хорош для простой трансформации. Если условий много, обычный `for` читается лучше.
 
-## `enumerate` и `zip`
+## `enumerate` и `zip` {#enumerate-i-zip}
 
 ```python
 feature_names = ["sessions_7d", "avg_session_min"]
@@ -54,7 +54,7 @@ for index, score in enumerate(scores):
 
 `zip` полезен, когда нужно связать имена признаков и значения. `enumerate` - когда нужен индекс без ручного счетчика.
 
-## Генераторы
+## Генераторы {#generatory}
 
 ```python
 def positive_scores(scores: list[float]):
@@ -69,7 +69,9 @@ for score in positive_scores([0.1, 0.8, 0.3, 0.9]):
 
 Генератор не строит весь результат заранее. Это удобно для больших файлов и потоков событий.
 
-## Практический пример
+Как генераторы устроены внутри, разобрано в разделе [Генераторы и yield](./iteratory-i-generatory/generatory-i-yield.md).
+
+## Практический пример {#prakticheskiy-primer}
 
 ```python
 def iter_batches(rows: list[dict], batch_size: int):
@@ -83,7 +85,11 @@ for batch in iter_batches(rows=[{"id": 1}, {"id": 2}, {"id": 3}], batch_size=2):
 
 Это базовый паттерн batch processing.
 
-## Типичные ошибки
+## Подробнее об итераторах и генераторах {#podrobnee-ob-iteratorakh-i-generatorakh}
+
+Протокол итерации, `yield`, генераторные выражения, `yield from`, `send`, `itertools` и пример с генераторами как простой многозадачностью разобраны в отдельном разделе: [Итераторы и генераторы](./iteratory-i-generatory/iteratory-i-generatory-glavnaya.md).
+
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Делать огромный `list(...)`, когда достаточно итерации.
    Проблема: лишняя память.
@@ -101,7 +107,7 @@ for batch in iter_batches(rows=[{"id": 1}, {"id": 2}, {"id": 3}], batch_size=2):
    Проблема: лишние элементы silently отбрасываются.
    Решение: заранее проверять длины, если это важно.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Инструмент | Когда использовать |
 | --- | --- |
@@ -111,8 +117,9 @@ for batch in iter_batches(rows=[{"id": 1}, {"id": 2}, {"id": 3}], batch_size=2):
 | `[f(x) for x in xs]` | простая трансформация в список |
 | `{k: v for ...}` | сборка словаря |
 | `yield` | ленивый поток значений |
+| `next(gen)` | взять из генератора одно следующее значение |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

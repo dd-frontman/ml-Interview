@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 Type hints в ML нужны не для академичности, а для контрактов:
 
@@ -18,7 +18,7 @@ Type hints в ML нужны не для академичности, а для к
 - как выглядит payload inference;
 - что возвращает preprocessing или модель.
 
-## Базовые аннотации
+## Базовые аннотации {#bazovye-annotatsii}
 
 ```python
 def apply_threshold(score: float, threshold: float) -> int:
@@ -27,7 +27,7 @@ def apply_threshold(score: float, threshold: float) -> int:
 
 Для публичных функций полезно типизировать вход и выход. Внутри маленькой функции можно не аннотировать каждую переменную.
 
-## `TypeAlias` и `Literal`
+## `TypeAlias` и `Literal` {#typealias-i-literal}
 
 ```python
 from typing import Literal, TypeAlias
@@ -41,7 +41,7 @@ def dataset_path(stage: Stage) -> str:
 
 `Literal` полезен, когда строка должна быть из фиксированного набора.
 
-## `TypedDict`
+## `TypedDict` {#typeddict}
 
 ```python
 from typing import TypedDict
@@ -60,7 +60,7 @@ def validate_payload(payload: PredictionPayload) -> None:
 
 Это удобный минимальный контракт для JSON-like словарей.
 
-## `Sequence` и `Mapping`
+## `Sequence` и `Mapping` {#sequence-i-mapping}
 
 ```python
 from collections.abc import Mapping, Sequence
@@ -76,7 +76,7 @@ def get_score(row: Mapping[str, float]) -> float:
 
 `Sequence` шире, чем `list`: подойдет список, tuple и другие последовательности. `Mapping` шире, чем `dict`.
 
-## `Protocol`
+## `Protocol` {#protocol}
 
 ```python
 from typing import Protocol
@@ -92,7 +92,7 @@ def predict_positive_proba(model: SupportsPredictProba, X) -> list[float]:
 
 `Protocol` полезен, когда важен не конкретный класс, а наличие метода.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Ставить `dict` вместо конкретного контракта.
    Проблема: непонятно, какие ключи ожидаются.
@@ -110,7 +110,7 @@ def predict_positive_proba(model: SupportsPredictProba, X) -> list[float]:
    Проблема: type hints сами не проверяют данные в рантайме.
    Решение: критичные данные валидировать кодом.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Задача | Что использовать |
 | --- | --- |
@@ -121,7 +121,7 @@ def predict_positive_proba(model: SupportsPredictProba, X) -> list[float]:
 | Только чтение словаря | `Mapping[K, V]` |
 | Объект с нужным методом | `Protocol` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

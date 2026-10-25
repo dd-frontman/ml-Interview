@@ -9,7 +9,7 @@ tags:
 updatedAt: "2026-06-28"
 search: false
 ---
-## Что такое список
+## Что такое список {#chto-takoe-spisok}
 
 `list` - это изменяемая упорядоченная коллекция.
 
@@ -20,7 +20,7 @@ print(fruits)
 
 Список хранит элементы в порядке добавления. Порядок важен при сравнении, индексации и сортировке.
 
-## Создание списка
+## Создание списка {#sozdanie-spiska}
 
 Список можно создать через литерал `[]`.
 
@@ -44,7 +44,7 @@ print(my_list)
 
 В реальном коде лучше не смешивать разные типы без необходимости: такой список сложнее обрабатывать.
 
-## `append()`
+## `append()` {#append}
 
 `append()` добавляет один элемент в конец списка.
 
@@ -57,7 +57,7 @@ print(fruits)  # ["apple", "banana", "cherry", "watermelon"]
 
 Метод меняет исходный список.
 
-## `pop()`
+## `pop()` {#pop}
 
 `pop()` удаляет элемент и возвращает его.
 
@@ -81,7 +81,7 @@ print(fruit)   # banana
 print(fruits)  # ["apple", "cherry"]
 ```
 
-## `extend()`
+## `extend()` {#extend}
 
 `extend()` добавляет в список все элементы из другой коллекции.
 
@@ -98,7 +98,7 @@ print(fruits)  # ["apple", "banana", "cherry", "fig", "grape"]
 - `append(x)` добавляет `x` как один элемент;
 - `extend(xs)` добавляет элементы из `xs` по одному.
 
-## `reverse()`
+## `reverse()` {#reverse}
 
 `reverse()` переворачивает список на месте.
 
@@ -111,7 +111,7 @@ print(fruits)  # ["cherry", "banana", "apple"]
 
 Метод не создает новый список.
 
-## `sort()`
+## `sort()` {#sort}
 
 `sort()` сортирует список на месте.
 
@@ -129,7 +129,7 @@ my_list.sort(reverse=True)
 print(my_list)  # [14, 10, 8, 5, 4, 4, 2, 1]
 ```
 
-## `len()`, `max()`, `min()`, `sum()`
+## `len()`, `max()`, `min()`, `sum()` {#len-max-min-sum}
 
 `len()` возвращает количество элементов.
 
@@ -157,7 +157,7 @@ print(sum(my_list))  # TypeError
 
 Python не может сложить `int` и `str`.
 
-## `split()` и `join()`
+## `split()` и `join()` {#split-i-join}
 
 `split()` превращает строку в список.
 
@@ -179,7 +179,7 @@ print(joined_string)  # My name is Alex
 
 Важно: `join()` работает со списком строк. Если внутри есть числа, их нужно сначала привести к `str`.
 
-## Список из строки
+## Список из строки {#spisok-iz-stroki}
 
 `list()` может превратить строку в список символов.
 
@@ -190,7 +190,7 @@ my_list = list(word)
 print(my_list)  # ["H", "e", "l", "l", "o"]
 ```
 
-## Сложение списков
+## Сложение списков {#slozhenie-spiskov}
 
 Списки можно объединять через `+`.
 
@@ -204,7 +204,7 @@ print(list_3)  # [1, 2, 3, 4, 5, 6]
 
 Оператор `+` создает новый список.
 
-## Сравнение списков
+## Сравнение списков {#sravnenie-spiskov}
 
 Списки сравниваются по значениям и порядку элементов.
 
@@ -219,7 +219,7 @@ print(list_1 == list_3)  # True
 
 `[1, 2, 3]` и `[1, 3, 2]` не равны, потому что порядок отличается.
 
-## `bool()` и `in`
+## `bool()` и `in` {#bool-i-in}
 
 Пустой список - `False`.
 
@@ -239,7 +239,7 @@ print("banana" in my_list)      # True
 print("watermelon" in my_list)  # False
 ```
 
-## Строки и списки: главное отличие
+## Строки и списки: главное отличие {#stroki-i-spiski-glavnoe-otlichie}
 
 Список изменяемый.
 
@@ -260,7 +260,7 @@ print(my_string)   # Hello, world!
 print(new_string)  # Hello, Python!
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Ожидать, что `pop()` вернет элемент, которого нет в списке.
    Если список `["apple", "banana", "cherry"]`, то `pop()` вернет `"cherry"`.
@@ -274,7 +274,7 @@ print(new_string)  # Hello, Python!
 4. Путать `append()` и `extend()`.
    `append(["fig", "grape"])` добавит вложенный список, а `extend(["fig", "grape"])` добавит две строки.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Операция | Что делает |
 | --- | --- |
@@ -289,7 +289,7 @@ print(new_string)  # Hello, Python!
 | `split()` | Делит строку на список |
 | `join()` | Склеивает список строк |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

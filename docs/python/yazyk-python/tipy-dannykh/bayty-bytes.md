@@ -8,7 +8,7 @@ tags:
   - "bytes"
 updatedAt: "2026-07-25"
 ---
-## Что такое `bytes`
+## Что такое `bytes` {#chto-takoe-bytes}
 
 `bytes` - это неизменяемая последовательность байтов, чисел от `0` до `255`.
 
@@ -21,7 +21,7 @@ print(type(raw))  # <class 'bytes'>
 
 Аналогия с JS: ближе всего к `Uint8Array` или сырому бинарному буферу, только `bytes` в Python неизменяемый, как `str`.
 
-## Зачем нужен `bytes`
+## Зачем нужен `bytes` {#zachem-nuzhen-bytes}
 
 `str` хранит текст как последовательность символов (Unicode). `bytes` хранит сырые байты без привязки к алфавиту.
 
@@ -32,7 +32,7 @@ print(type(raw))  # <class 'bytes'>
 - работа с изображениями, архивами и другими бинарными форматами;
 - хеширование и криптография.
 
-## Способы создания
+## Способы создания {#sposoby-sozdaniya}
 
 ```python
 a = b"hello"
@@ -51,7 +51,7 @@ print(d)  # b'\x00\x00\x00\x00\x00'
 - `bytes(iterable_of_ints)` - каждое число становится одним байтом, допустимый диапазон `0-255`;
 - `bytes(n)` - создает `n` нулевых байтов.
 
-## `encode()` и `decode()`
+## `encode()` и `decode()` {#encode-i-decode}
 
 Строка превращается в байты через `encode()`, обратно - через `decode()`.
 
@@ -70,7 +70,7 @@ raw = "привет".encode("utf-8")
 raw.decode("ascii")  # UnicodeDecodeError
 ```
 
-## Индексы и срезы
+## Индексы и срезы {#indeksy-i-srezy}
 
 По индексу `bytes` возвращает `int`, а срез - снова `bytes`.
 
@@ -84,7 +84,7 @@ print(raw[-1])    # 111
 
 Это отличается от `str`, где и индекс, и срез возвращают строку.
 
-## Конкатенация и повторение
+## Конкатенация и повторение {#konkatenatsiya-i-povtorenie}
 
 ```python
 a = b"hello"
@@ -100,7 +100,7 @@ print(a * 3)          # b'hellohellohello'
 b"hello" + "world"  # TypeError
 ```
 
-## `bytes` неизменяемый
+## `bytes` неизменяемый {#bytes-neizmenyaemyy}
 
 Элемент нельзя заменить по индексу.
 
@@ -124,7 +124,7 @@ TypeError: 'bytes' object does not support item assignment
 
 Если нужны изменяемые байты, используется `bytearray`, а не `bytes`.
 
-## Частые методы
+## Частые методы {#chastye-metody}
 
 `bytes` поддерживает многие методы `str`, но работает с байтами, а не с символами.
 
@@ -142,7 +142,7 @@ print(clean.endswith(b"admin"))  # True
 
 Подробнее про весь список методов: [Методы типов данных](./metody-tipov-dannykh.md).
 
-## `bytes` vs `bytearray` vs `str`
+## `bytes` vs `bytearray` vs `str` {#bytes-vs-bytearray-vs-str}
 
 | Тип | Изменяемость | Хранит | Пример |
 | --- | --- | --- | --- |
@@ -152,7 +152,7 @@ print(clean.endswith(b"admin"))  # True
 
 Подробнее про изменяемый аналог: [Изменяемые типы](./izmenyaemye-tipy.md#bytearray).
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 Разбор бинарного заголовка фиксированной длины, например при чтении файла.
 
@@ -168,7 +168,7 @@ header = b"PY01" + (2).to_bytes(1, "big") + (256).to_bytes(4, "big")
 print(read_header(header))  # {'magic': b'PY01', 'version': 2, 'length': 256}
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Пытаться сложить `bytes` и `str` напрямую.
    Проблема: `TypeError: can't concat str to bytes`.
@@ -186,7 +186,7 @@ print(read_header(header))  # {'magic': b'PY01', 'version': 2, 'length': 256}
    Проблема: первое - `int`, второе - `bytes` из одного байта.
    Решение: помнить, что индекс всегда возвращает `int`, а срез - `bytes`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Синтаксис | Что делает |
 | --- | --- |
@@ -199,7 +199,7 @@ print(read_header(header))  # {'magic': b'PY01', 'version': 2, 'length': 256}
 | `raw + other` | Конкатенация |
 | `bytearray(raw)` | Изменяемая версия |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

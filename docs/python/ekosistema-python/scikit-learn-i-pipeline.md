@@ -8,7 +8,7 @@ tags:
   - "pipeline"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 `scikit-learn` закрывает классический ML-пайплайн:
 
@@ -21,7 +21,7 @@ updatedAt: "2026-06-13"
 
 Главная идея: preprocessing и модель должны быть связаны в один `Pipeline`, чтобы на inference применялись те же шаги, что и на обучении.
 
-## API моделей
+## API моделей {#api-modeley}
 
 У большинства объектов scikit-learn один стиль:
 
@@ -31,7 +31,7 @@ updatedAt: "2026-06-13"
 - `transform(X)` - преобразовать признаки;
 - `fit_transform(X)` - обучить преобразование и применить.
 
-## Train/test split
+## Train/test split {#train-test-split}
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -47,7 +47,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 `stratify=y` полезен для классификации, чтобы сохранить долю классов в train/test.
 
-## Pipeline и ColumnTransformer
+## Pipeline и ColumnTransformer {#pipeline-i-columntransformer}
 
 ```python
 from sklearn.compose import ColumnTransformer
@@ -113,7 +113,7 @@ print(classification_report(y_test, pred))
 - на inference можно вызвать один `model.predict(...)`;
 - меньше риска train-serving skew.
 
-## Cross-validation
+## Cross-validation {#cross-validation}
 
 ```python
 from sklearn.model_selection import cross_val_score
@@ -124,7 +124,7 @@ print(scores.mean(), scores.std())
 
 Cross-validation помогает оценить устойчивость метрик, но не заменяет финальный hold-out/test.
 
-## Метрики
+## Метрики {#metriki}
 
 Для классификации:
 
@@ -140,7 +140,7 @@ Cross-validation помогает оценить устойчивость мет
 - `RMSE` - сильнее штрафует крупные ошибки;
 - `R2` - доля объясненной вариации, но не бизнес-метрика.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Делать `fit_transform` на всем датасете до split.
    Проблема: leakage.
@@ -162,7 +162,7 @@ Cross-validation помогает оценить устойчивость мет
    Проблема: на inference признаки готовятся иначе.
    Решение: сохранять весь `Pipeline`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Шаг | Инструмент | Главное правило |
 | --- | --- | --- |
@@ -172,7 +172,7 @@ Cross-validation помогает оценить устойчивость мет
 | Оценка | `metrics`, `classification_report` | метрика под задачу |
 | Устойчивость | `cross_val_score` | смотреть mean и std |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

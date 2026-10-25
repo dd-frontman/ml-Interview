@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 EDA нужен не для красивых графиков, а для инженерного понимания датасета до обучения модели.
 
@@ -20,7 +20,7 @@ EDA нужен не для красивых графиков, а для инже
 - увидеть признаки, которые подозрительно похожи на leakage;
 - сформулировать baseline preprocessing.
 
-## Базовая проверка
+## Базовая проверка {#bazovaya-proverka}
 
 ```python
 print(df.shape)
@@ -32,7 +32,7 @@ print(df.duplicated().sum())
 
 Если эти проверки не сделаны, метрики модели рано считать надежными.
 
-## Target и дисбаланс
+## Target и дисбаланс {#target-i-disbalans}
 
 ```python
 target_rate = df["converted"].value_counts(normalize=True)
@@ -41,7 +41,7 @@ print(target_rate)
 
 Если положительный класс редкий, `accuracy` может быть бесполезной. Для классификации дальше нужно смотреть precision, recall, PR-AUC и confusion matrix.
 
-## Распределения признаков
+## Распределения признаков {#raspredeleniya-priznakov}
 
 ```python
 import matplotlib.pyplot as plt
@@ -58,7 +58,7 @@ plt.show()
 - отрицательные значения для строго положительных признаков;
 - подозрительные пики из-за default values.
 
-## Сравнение по target
+## Сравнение по target {#sravnenie-po-target}
 
 ```python
 import seaborn as sns
@@ -69,7 +69,7 @@ plt.show()
 
 Это помогает быстро понять, есть ли сигнал в признаке и не выглядит ли он слишком хорошим.
 
-## Leakage-checks
+## Leakage-checks {#leakage-checks}
 
 Подозрительные признаки:
 
@@ -81,7 +81,7 @@ plt.show()
 
 EDA должен явно отвечать: какие колонки нельзя отдавать модели.
 
-## Практический минимум
+## Практический минимум {#prakticheskiy-minimum}
 
 1. Проверить `shape`, `dtypes`, `head`.
 2. Проверить пропуски и дубли.
@@ -90,7 +90,7 @@ EDA должен явно отвечать: какие колонки нельз
 5. Выписать признаки, которые удалить из-за leakage или служебного смысла.
 6. Зафиксировать список `feature_columns`.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Сразу обучать модель без EDA.
    Проблема: модель маскирует проблемы датасета.
@@ -112,7 +112,7 @@ EDA должен явно отвечать: какие колонки нельз
    Проблема: модель учит id или status вместо закономерностей.
    Решение: явно разделять `feature_columns`, `target_column`, `id_columns`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Проверка | Команда | Зачем |
 | --- | --- | --- |
@@ -123,7 +123,7 @@ EDA должен явно отвечать: какие колонки нельз
 | Target | `value_counts(normalize=True)` | выбрать метрики |
 | Распределения | `hist`, `boxplot` | найти хвосты и выбросы |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

@@ -8,7 +8,7 @@ tags:
   - "api"
 updatedAt: "2026-07-23"
 ---
-## Что изучаем
+## Что изучаем {#chto-izuchaem}
 
 Библиотека `requests` позволяет Python-программе обращаться к сайтам и API по HTTP.
 
@@ -23,7 +23,7 @@ updatedAt: "2026-07-23"
 - повторные запросы с паузой;
 - проверка статуса и обработка ошибок.
 
-## Что такое API
+## Что такое API {#chto-takoe-api}
 
 API определяет, как одна программа может обратиться к другой программе и получить данные.
 
@@ -42,7 +42,7 @@ Python-код -> HTTP-запрос -> API
 Python-код <- HTTP-ответ  <- API
 ```
 
-## Установка `requests`
+## Установка `requests` {#ustanovka-requests}
 
 `requests` не входит в стандартную библиотеку Python, поэтому пакет нужно установить.
 
@@ -64,7 +64,7 @@ python -c "import requests; print(requests.__version__)"
 import requests
 ```
 
-## Первый GET-запрос
+## Первый GET-запрос {#pervyy-get-zapros}
 
 GET используется для получения данных.
 
@@ -82,7 +82,7 @@ print(type(response))
 
 `timeout=10` ограничивает время ожидания ответа десятью секундами. Без timeout программа может ждать проблемный сервер неопределенно долго.
 
-## Параметры запроса `params`
+## Параметры запроса `params` {#parametry-zaprosa-params}
 
 Чтобы запросить цену конкретной торговой пары, передадим словарь `params`.
 
@@ -106,7 +106,7 @@ https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT
 
 Использовать `params` удобнее и безопаснее, чем самостоятельно собирать URL строкой: библиотека правильно кодирует значения.
 
-## Что находится в `Response`
+## Что находится в `Response` {#chto-nakhoditsya-v-response}
 
 У объекта ответа есть несколько важных свойств и методов.
 
@@ -127,7 +127,7 @@ print(response.text)
 
 В примере API возвращает JSON, поэтому удобнее использовать `response.json()`.
 
-## Разбор JSON-ответа
+## Разбор JSON-ответа {#razbor-json-otveta}
 
 ```python
 price_object = response.json()
@@ -156,7 +156,7 @@ print(price)
 
 Не используй пример цены как актуальное значение: сервер возвращает цену на момент выполнения запроса.
 
-## Проверка HTTP-статуса
+## Проверка HTTP-статуса {#proverka-http-statusa}
 
 HTTP-статус показывает результат обработки запроса.
 
@@ -181,7 +181,7 @@ data = response.json()
 
 При ошибочном HTTP-статусе метод вызовет `requests.exceptions.HTTPError`.
 
-## Безопасная функция получения цены
+## Безопасная функция получения цены {#bezopasnaya-funktsiya-polucheniya-tseny}
 
 ```python
 import requests
@@ -204,7 +204,7 @@ print(bitcoin_price)
 
 Функция скрывает детали HTTP-запроса и возвращает готовое число. Вызывающему коду не нужно знать URL и структуру ответа.
 
-## Обработка сетевых ошибок
+## Обработка сетевых ошибок {#obrabotka-setevykh-oshibok}
 
 Запрос может завершиться неудачно из-за отсутствия интернета, превышения timeout, ошибки DNS или ответа сервера.
 
@@ -222,7 +222,7 @@ except requests.exceptions.RequestException as error:
 
 На уровне приложения ошибку можно записать в лог, показать пользователю понятное сообщение или повторить запрос позже.
 
-## Несколько запросов с паузой
+## Несколько запросов с паузой {#neskolko-zaprosov-s-pauzoy}
 
 В уроке цена запрашивается 30 раз с интервалом в одну секунду.
 
@@ -252,7 +252,7 @@ print(min(bitcoin_prices))
 
 Пауза снижает частоту обращений, но не гарантирует соблюдение лимитов API. Ограничения нужно проверять в документации конкретного сервиса.
 
-## Запрос без `params`
+## Запрос без `params` {#zapros-bez-params}
 
 Если вызвать endpoint без `symbol`, API возвращает коллекцию торговых пар.
 
@@ -277,9 +277,9 @@ for ticker in tickers:
 
 Если нужна только одна торговая пара, лучше передать `params`: сервер вернет меньше данных, а клиенту не придется выполнять поиск.
 
-## Частые ошибки
+## Частые ошибки {#chastye-oshibki}
 
-### Не установить библиотеку в активное окружение
+### Не установить библиотеку в активное окружение {#ne-ustanovit-biblioteku-v-aktivnoe-okruzhenie}
 
 ```text
 ModuleNotFoundError: No module named 'requests'
@@ -287,7 +287,7 @@ ModuleNotFoundError: No module named 'requests'
 
 Проверь интерпретатор VS Code и устанавливай пакет через `python -m pip`, а не через случайный `pip`.
 
-### Не задавать timeout
+### Не задавать timeout {#ne-zadavat-timeout}
 
 Без timeout запрос может надолго остановить выполнение программы.
 
@@ -295,7 +295,7 @@ ModuleNotFoundError: No module named 'requests'
 requests.get(endpoint, timeout=10)
 ```
 
-### Не проверять HTTP-статус
+### Не проверять HTTP-статус {#ne-proveryat-http-status}
 
 Вместо попытки сразу прочитать ответ сначала вызывай:
 
@@ -303,15 +303,15 @@ requests.get(endpoint, timeout=10)
 response.raise_for_status()
 ```
 
-### Считать JSON обычной строкой
+### Считать JSON обычной строкой {#schitat-json-obychnoy-strokoy}
 
 Для JSON-ответа используй `response.json()`, а не ручной разбор `response.text`.
 
-### Делать слишком много запросов
+### Делать слишком много запросов {#delat-slishkom-mnogo-zaprosov}
 
 Частые запросы могут привести к ограничению или блокировке клиента. Учитывай rate limit API и не создавай запрос внутри быстрого бесконечного цикла.
 
-## Краткая шпаргалка
+## Краткая шпаргалка {#kratkaya-shpargalka}
 
 ```python
 import requests
@@ -338,7 +338,7 @@ requests.get()
 -> проверка и преобразование данных
 ```
 
-## Официальная документация
+## Официальная документация {#ofitsialnaya-dokumentatsiya}
 
 <OfficialDocsLinks
     :links="[

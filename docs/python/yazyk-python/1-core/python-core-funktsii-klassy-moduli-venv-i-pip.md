@@ -9,7 +9,7 @@ tags:
   - "modules"
 updatedAt: "2026-06-21"
 ---
-## Что входит в блок Core
+## Что входит в блок Core {#chto-vkhodit-v-blok-core}
 
 Первый практический блок Python-разработчика:
 
@@ -25,7 +25,7 @@ updatedAt: "2026-06-21"
 
 Если эти части не настроены, проект быстро превращается в набор скриптов с конфликтами зависимостей.
 
-## Как идти по материалам
+## Как идти по материалам {#kak-idti-po-materialam}
 
 1. Начни с [основ синтаксиса и переменных](./osnovy-sintaksisa-i-peremennye.md): `=`, `==`, присваивание и распаковка через запятую.
 2. Затем разбери [основные функции](./osnovnye-funktsii.md): вывод, ввод строки и просмотр фактического типа объекта.
@@ -33,11 +33,11 @@ updatedAt: "2026-06-21"
 4. Затем разбери [операторы сравнения](./operatory-sravneniya.md): `==`, `!=`, `>`, `<`, `>=`, `<=`.
 5. После сравнений переходи к [Boolean и условиям](./boolean-i-usloviya.md): `True`, `False`, `if`, `elif`, `else`, `not`.
 6. Затем переходи к [функциям](./funktsii-v-python.md): контракт вход/выход, `return`, type hints и edge-case проверки.
-7. После функций разбери [классы](./klassy-v-python.md): состояние, методы, `dataclass` и `__post_init__`.
+7. После функций разбери [классы](../klassy/klassy-glavnaya.md): экземпляры, методы, наследование и свойства.
 8. Дальше смотри [модули, venv и pip](./moduli-venv-i-pip.md): структура файлов, импорты, окружение и зависимости.
 9. Для условий и флагов отдельно есть [логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md).
 
-## Карта раздела
+## Карта раздела {#karta-razdela}
 
 | Страница | Что внутри | Когда читать |
 | --- | --- | --- |
@@ -47,11 +47,11 @@ updatedAt: "2026-06-21"
 | [Операторы сравнения](./operatory-sravneniya.md) | `==`, `!=`, `>`, `<`, `>=`, `<=` | Когда проверяешь значения и границы |
 | [Boolean и условия](./boolean-i-usloviya.md) | `bool`, `if`, `elif`, `else`, `not` | Когда пишешь ветвление логики |
 | [Функции](./funktsii-v-python.md) | параметры, `return`, type hints, ошибки проектирования | Когда нужно вынести логику из скрипта |
-| [Классы](./klassy-v-python.md) | состояние, методы, `dataclass`, инварианты | Когда объекту нужно поведение и состояние |
+| [Классы](../klassy/klassy-glavnaya.md) | экземпляры, методы, наследование, свойства | Когда объекту нужно поведение и состояние |
 | [Модули, venv и pip](./moduli-venv-i-pip.md) | структура проекта, импорты, окружение, зависимости | Когда код нужно разложить по файлам |
-| [Логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md) | `and`, `or`, `not`, `&`, `|` | Когда пишешь условия и флаги |
+| [Логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md) | `and`, `or`, `not`, `&`, `\|` | Когда пишешь условия и флаги |
 
-## Практическое правило
+## Практическое правило {#prakticheskoe-pravilo}
 
 Сначала делай код понятным как маленький скрипт. Когда появляется повторение или несколько зон ответственности, выноси логику в функции, данные с поведением - в классы, а разные ответственности - в модули.
 
@@ -63,7 +63,7 @@ updatedAt: "2026-06-21"
         { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
         { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
-        { title: 'Классы в Python', href: '/python/yazyk-python/1-core/klassy-v-python' },
+        { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Модули, venv и pip', href: '/python/yazyk-python/1-core/moduli-venv-i-pip' },
     ]"
 />

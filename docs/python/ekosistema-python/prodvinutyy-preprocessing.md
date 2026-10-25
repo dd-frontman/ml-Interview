@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 Preprocessing - это не косметика перед моделью. Это часть обучаемого пайплайна:
 
@@ -20,7 +20,7 @@ Preprocessing - это не косметика перед моделью. Это
 
 Главное правило: все обучаемые трансформации должны быть внутри `Pipeline`.
 
-## Imputation
+## Imputation {#imputation}
 
 ```python
 from sklearn.impute import SimpleImputer
@@ -30,7 +30,7 @@ imputer = SimpleImputer(strategy="median")
 
 Числовые пропуски часто заполняют медианой, категориальные - самым частым значением или отдельной категорией.
 
-## Encoding
+## Encoding {#encoding}
 
 ```python
 from sklearn.preprocessing import OneHotEncoder
@@ -40,7 +40,7 @@ encoder = OneHotEncoder(handle_unknown="ignore")
 
 `handle_unknown="ignore"` защищает inference от новой категории, которой не было на train.
 
-## Scaling
+## Scaling {#scaling}
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -50,7 +50,7 @@ scaler = StandardScaler()
 
 Scaling особенно важен для линейных моделей, SVM, KNN и методов, чувствительных к масштабу.
 
-## Leakage-safe порядок
+## Leakage-safe порядок {#leakage-safe-poryadok}
 
 Правильный порядок:
 
@@ -62,7 +62,7 @@ Scaling особенно важен для линейных моделей, SVM,
 
 В scikit-learn это удобнее делать через `Pipeline` и `ColumnTransformer`.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Считать медиану на всем датасете до split.
    Проблема: leakage.
@@ -80,7 +80,7 @@ Scaling особенно важен для линейных моделей, SVM,
    Проблема: inference не повторяет training.
    Решение: фиксировать правило или делать transformer.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Проблема | Инструмент |
 | --- | --- |
@@ -90,7 +90,7 @@ Scaling особенно важен для линейных моделей, SVM,
 | Разные типы колонок | `ColumnTransformer` |
 | Связать шаги | `Pipeline` |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

@@ -8,7 +8,7 @@ tags:
   - "mutability"
 updatedAt: "2026-06-23"
 ---
-## Зачем это знать
+## Зачем это знать {#zachem-eto-znat}
 
 Большая часть "странных" багов в Python связана не с синтаксисом, а с моделью объектов:
 
@@ -22,7 +22,7 @@ updatedAt: "2026-06-23"
 - почему `copy()` иногда не спасает;
 - откуда берется эффект с изменяемыми аргументами по умолчанию.
 
-## Что разбираем
+## Что разбираем {#chto-razbiraem}
 
 Всего в теме: `12` типов и групп типов.
 
@@ -35,12 +35,13 @@ updatedAt: "2026-06-23"
 
 - [Операции со строками](./operatsii-so-strokami.md)
 - [Списки: базовые операции](./spiski-bazovye-operatsii.md)
+- [Множества set](./mnozhestva-set.md)
 - [Байты bytes](./bayty-bytes.md)
 - [Методы типов данных](./metody-tipov-dannykh.md)
 - [Неизменяемые типы](./neizmenyaemye-tipy.md)
 - [Изменяемые типы](./izmenyaemye-tipy.md)
 
-## Что такое immutable и mutable
+## Что такое immutable и mutable {#chto-takoe-immutable-i-mutable}
 
 `Immutable` значит: после создания объект нельзя изменить "на месте". Если значение меняется, создается новый объект.
 
@@ -64,7 +65,7 @@ new_id = id(items)
 print(old_id == new_id)  # True
 ```
 
-## Ссылки на объекты: как мыслить правильно
+## Ссылки на объекты: как мыслить правильно {#ssylki-na-obekty-kak-myslit-pravilno}
 
 В Python присваивание не "копирует" объект, а привязывает имя к объекту.
 
@@ -78,7 +79,7 @@ print(a)  # [1, 2, 3, 4]
 
 `a` и `b` ссылаются на один и тот же список.
 
-## `is` и `==`
+## `is` и `==` {#is-i}
 
 - `==` сравнивает значения
 - `is` проверяет, один и тот же объект или нет
@@ -98,9 +99,9 @@ if value is None:
     ...
 ```
 
-## Копирование: поверхностное и глубокое
+## Копирование: поверхностное и глубокое {#kopirovanie-poverkhnostnoe-i-glubokoe}
 
-### Поверхностная копия (`shallow copy`)
+### Поверхностная копия (`shallow copy`) {#poverkhnostnaya-kopiya-shallow-copy}
 
 Копируется только верхний уровень контейнера.
 
@@ -114,7 +115,7 @@ clone["roles"].append("editor")
 print(src["roles"])  # ['admin', 'editor']
 ```
 
-### Глубокая копия (`deep copy`)
+### Глубокая копия (`deep copy`) {#glubokaya-kopiya-deep-copy}
 
 Копируются и вложенные объекты.
 
@@ -128,7 +129,7 @@ clone["roles"].append("editor")
 print(src["roles"])  # ['admin']
 ```
 
-## Типичный источник багов: аргументы по умолчанию
+## Типичный источник багов: аргументы по умолчанию {#tipichnyy-istochnik-bagov-argumenty-po-umolchaniyu}
 
 Плохо:
 
@@ -150,7 +151,7 @@ def add_event(event, bucket=None):
     return bucket
 ```
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 Ниже пример, который часто встречается в сервисном коде: сбор payload и защита от случайной мутации.
 
@@ -177,7 +178,7 @@ print(p2)
 print(base_payload)  # template не изменился
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Путать присваивание и копирование.
    Симптом: изменение в одной переменной "внезапно" влияет на другую.
@@ -195,7 +196,7 @@ print(base_payload)  # template не изменился
    Симптом: данные "накапливаются" между вызовами функции.
    Решение: паттерн `None -> create new object`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Сценарий | Что использовать |
 | --- | --- |
@@ -205,7 +206,7 @@ print(base_payload)  # template не изменился
 | Копия всей вложенной структуры | `copy.deepcopy(obj)` |
 | Безопасный default-параметр | `arg=None` + создание внутри функции |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

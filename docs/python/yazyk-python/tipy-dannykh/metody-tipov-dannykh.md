@@ -8,14 +8,14 @@ tags:
   - "methods"
 updatedAt: "2026-06-24"
 ---
-## Как пользоваться страницей
+## Как пользоваться страницей {#kak-polzovatsya-stranitsey}
 
 - Ниже собраны методы built-in типов, которые уже есть в этом разделе по Python.
 - Не у каждого типа есть `5-10` реально полезных методов. У `tuple` и `bool` набор заметно меньше, поэтому там показан почти весь практический минимум.
 - Для чисел часто важнее встроенные функции `abs()`, `round()`, `sum()`, `min()`, `max()`, а не методы объектов.
 - Пользовательские объекты классов здесь не разбираем: их набор методов зависит от того, как написан сам класс.
 
-## `str`
+## `str` {#str}
 
 Подробный разбор строк есть на отдельной странице: [Операции со строками](./operatsii-so-strokami.md).
 
@@ -51,7 +51,7 @@ print(clean.startswith("ml"))  # True
 print(clean.endswith("sql"))  # True
 ```
 
-## `list`
+## `list` {#list}
 
 Чаще всего используют:
 
@@ -86,7 +86,7 @@ print(last_item)  # 'ml'
 print(snapshot)  # ['python', 'numpy', 'sql', 'ml', 'stats', 'ml']
 ```
 
-## `dict`
+## `dict` {#dict}
 
 Чаще всего используют:
 
@@ -120,7 +120,7 @@ print(snapshot["role"])  # admin
 print(user)  # {'id': 1, 'name': 'Bob', 'active': True}
 ```
 
-## `set`
+## `set` {#set}
 
 Чаще всего используют:
 
@@ -149,7 +149,7 @@ skills.remove("pandas")
 print(sorted(skills))  # ['ml', 'python', 'sql']
 ```
 
-## `tuple`
+## `tuple` {#tuple}
 
 У `tuple` методов мало. В повседневном коде почти всегда нужны только:
 
@@ -163,7 +163,7 @@ print(point.count(10))  # 2
 print(point.index(20))  # 1
 ```
 
-## `frozenset`
+## `frozenset` {#frozenset}
 
 Чаще всего используют:
 
@@ -188,7 +188,7 @@ print(base.issuperset({"python"}))  # True
 print(base.isdisjoint({"java", "go"}))  # True
 ```
 
-## `bytes`
+## `bytes` {#bytes}
 
 Чаще всего используют:
 
@@ -213,7 +213,7 @@ print(clean.endswith(b"admin"))  # True
 print(clean.decode("utf-8"))  # user=alice;role=admin
 ```
 
-## `bytearray`
+## `bytearray` {#bytearray}
 
 Чаще всего используют:
 
@@ -243,7 +243,7 @@ print(buffer)  # bytearray(b'edca')
 print(buffer.decode("utf-8"))  # edca
 ```
 
-## `int`
+## `int` {#int}
 
 У чисел методов немного, но эти встречаются чаще остальных:
 
@@ -263,7 +263,7 @@ print(int.from_bytes(b"\x00*", "big"))  # 42
 print(n.as_integer_ratio())  # (42, 1)
 ```
 
-## `float`
+## `float` {#float}
 
 У `float` методов тоже немного:
 
@@ -285,7 +285,7 @@ print(float.fromhex(hex_value))  # 12.5
 print(x.conjugate())  # 12.5
 ```
 
-## `bool`
+## `bool` {#bool}
 
 У `bool` почти нет отдельного прикладного API. На практике это скорее логический тип, а не объект, у которого часто вызывают методы. Но он наследует часть методов от `int`:
 
@@ -305,14 +305,14 @@ print(flag.as_integer_ratio())  # (1, 1)
 print(flag.conjugate())  # 1
 ```
 
-## Практический вывод
+## Практический вывод {#prakticheskiy-vyvod}
 
 - Для текстов чаще всего нужны методы `str`.
 - Для коллекций в everyday-коде почти всегда доминируют `list`, `dict`, `set`.
 - Для бинарных данных полезно сразу различать `bytes` и `bytearray`: первый тип immutable, второй mutable.
 - Для `tuple`, `int`, `float`, `bool` методов меньше, и это нормально: там большая часть работы делается не методом объекта, а операторами и built-in функциями.
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

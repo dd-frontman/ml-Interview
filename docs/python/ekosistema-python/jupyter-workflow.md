@@ -8,7 +8,7 @@ tags:
   - "ml"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 Notebook удобен для исследования, но плох как единственный источник production-логики.
 
@@ -19,7 +19,7 @@ Notebook удобен для исследования, но плох как ед
 - обучение запускать скриптом;
 - notebook оставлять как отчет или черновик.
 
-## Что держать в notebook
+## Что держать в notebook {#chto-derzhat-v-notebook}
 
 - EDA;
 - графики;
@@ -27,7 +27,7 @@ Notebook удобен для исследования, но плох как ед
 - быстрые эксперименты;
 - комментарии к выводам.
 
-## Что выносить в `.py`
+## Что выносить в `.py` {#chto-vynosit-v-py}
 
 - загрузку данных;
 - feature engineering;
@@ -36,7 +36,7 @@ Notebook удобен для исследования, но плох как ед
 - inference-функцию;
 - сохранение артефактов.
 
-## Практический цикл
+## Практический цикл {#prakticheskiy-tsikl}
 
 1. В notebook понять датасет.
 2. Написать черновую функцию.
@@ -50,7 +50,7 @@ from ml_project.features import build_features
 features = build_features(events)
 ```
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Обучать финальную модель только из notebook.
    Проблема: трудно повторить запуск.
@@ -68,7 +68,7 @@ features = build_features(events)
    Проблема: inference зависит от notebook-состояния.
    Решение: inference только в `.py`-коде.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Где | Что держать |
 | --- | --- |
@@ -77,7 +77,7 @@ features = build_features(events)
 | Config/CLI | параметры запуска |
 | README | команды воспроизведения |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

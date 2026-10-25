@@ -8,7 +8,7 @@ tags:
   - "artifacts"
 updatedAt: "2026-06-13"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 После обучения важна не только модель, а полный inference-контракт:
 
@@ -21,7 +21,7 @@ updatedAt: "2026-06-13"
 
 Если сохранить только веса модели, production-результат легко разъедется с offline-оценкой.
 
-## Что считать артефактом
+## Что считать артефактом {#chto-schitat-artefaktom}
 
 Минимальный набор:
 
@@ -33,7 +33,7 @@ updatedAt: "2026-06-13"
 - метрики на test/hold-out;
 - версия окружения.
 
-## Сохранение pipeline
+## Сохранение pipeline {#sokhranenie-pipeline}
 
 ```python
 import joblib
@@ -49,7 +49,7 @@ model = joblib.load("models/churn_pipeline.joblib")
 
 Для scikit-learn удобнее сохранять весь `Pipeline`, а не отдельно encoder/scaler/model.
 
-## Metadata рядом с моделью
+## Metadata рядом с моделью {#metadata-ryadom-s-modelyu}
 
 ```python
 import json
@@ -67,7 +67,7 @@ with open("models/churn_metadata.json", "w", encoding="utf-8") as file:
 
 Метаданные нужны, чтобы понять, что именно было обучено и как применять модель.
 
-## Inference-функция
+## Inference-функция {#inference-funktsiya}
 
 ```python
 import pandas as pd
@@ -92,13 +92,13 @@ def predict_user(model, metadata: dict, payload: dict) -> dict:
 
 Главное: inference принимает понятный payload, применяет тот же pipeline и возвращает score вместе с версией модели.
 
-## Риск `pickle`
+## Риск `pickle` {#risk-pickle}
 
 `joblib` для scikit-learn использует pickle-подходы под капотом. Это удобно, но важно правило безопасности: не загружать pickle/joblib-артефакты из недоверенного источника.
 
 Для продакшена артефакты должны приходить только из контролируемого model registry или build pipeline.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Сохранять только estimator без preprocessing.
    Проблема: на inference признаки готовятся иначе.
@@ -120,7 +120,7 @@ def predict_user(model, metadata: dict, payload: dict) -> dict:
    Проблема: невозможно расследовать деградацию.
    Решение: возвращать и логировать `model_version`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Объект | Зачем нужен |
 | --- | --- |
@@ -130,7 +130,7 @@ def predict_user(model, metadata: dict, payload: dict) -> dict:
 | inference-функция | единый контракт применения |
 | prediction log | расследование качества и drift |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[

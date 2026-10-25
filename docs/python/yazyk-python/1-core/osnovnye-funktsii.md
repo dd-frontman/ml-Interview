@@ -8,7 +8,7 @@ tags:
   - "functions"
 updatedAt: "2026-06-23"
 ---
-## Зачем это знать
+## Зачем это знать {#zachem-eto-znat}
 
 `print()`, `input()` и `type()` - встроенные функции Python. Они часто встречаются в первых скриптах и помогают понять, что делает программа:
 
@@ -20,7 +20,7 @@ updatedAt: "2026-06-23"
 
 В production-коде они используются ограниченно, но для обучения, отладки и CLI-прототипов это базовый минимум.
 
-## `print()`: вывод значений
+## `print()`: вывод значений {#print-vyvod-znacheniy}
 
 `print()` выводит одно или несколько значений.
 
@@ -36,7 +36,7 @@ print("model", "v1", "ready")
 # model v1 ready
 ```
 
-## `sep` и `end`
+## `sep` и `end` {#sep-i-end}
 
 `sep` и `end` - именованные параметры функции `print()`.
 
@@ -54,7 +54,7 @@ print("done")
 
 Практическое правило: `sep` нужен, когда один `print()` выводит несколько значений, а `end` - когда нужно управлять завершением строки.
 
-## `input()`: чтение строки из консоли
+## `input()`: чтение строки из консоли {#input-chtenie-stroki-iz-konsoli}
 
 `input()` читает строку из стандартного ввода и возвращает `str`.
 
@@ -85,7 +85,7 @@ print("Threshold:", threshold)
 
 Практическое правило: `input()` годится для учебных скриптов и CLI-прототипов. В production-коде входные данные обычно приходят из аргументов CLI, файлов, API-запросов или переменных окружения.
 
-## `str()`: преобразование в строку
+## `str()`: преобразование в строку {#str-preobrazovanie-v-stroku}
 
 `str()` преобразует значение в строковое представление.
 
@@ -146,7 +146,7 @@ print(json.dumps(payload))  # {"id": 1, "active": true}
 
 Практическое правило: `str()` используй для вывода, сообщений и простой склейки строк. Для парсинга, сериализации и обмена данными нужны отдельные форматы и парсеры.
 
-## `int()` и `float()`: преобразование в числа
+## `int()` и `float()`: преобразование в числа {#int-i-float-preobrazovanie-v-chisla}
 
 `int()` преобразует значение в целое число, а `float()` - в число с плавающей точкой.
 
@@ -200,7 +200,7 @@ print(int(float("3.14")))  # 3
 
 Практическое правило: после `input()` явно приводи строку к нужному типу и обрабатывай `ValueError`, если ввод может быть некорректным.
 
-## `type()`: узнать тип объекта
+## `type()`: узнать тип объекта {#type-uznat-tip-obekta}
 
 `type()` возвращает тип объекта. В Python тип объекта обычно совпадает с его классом.
 
@@ -228,7 +228,7 @@ print(type(user))  # <class '__main__.User'>
 
 `type()` полезен для отладки и обучения: быстро посмотреть, с каким объектом работает код.
 
-## `isinstance()`: проверка типа в условии
+## `isinstance()`: проверка типа в условии {#isinstance-proverka-tipa-v-uslovii}
 
 Для проверок в рабочем коде чаще используют `isinstance()`.
 
@@ -251,7 +251,7 @@ value = 42
 print(isinstance(value, (int, float)))  # True
 ```
 
-## `type()` и type hints
+## `type()` и type hints {#type-i-type-hints}
 
 Не путай `type()` и type hints:
 
@@ -265,7 +265,7 @@ print(type(score))  # <class 'float'>
 
 Практическое правило: для просмотра типа используй `type()`, для условий и валидации - `isinstance()`, а для контракта функции или переменной - type hints.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Ожидать от `input()` число.
    Проблема: `input()` всегда возвращает строку.
@@ -295,7 +295,7 @@ print(type(score))  # <class 'float'>
    Проблема: такая проверка не учитывает наследование.
    Решение: чаще использовать `isinstance(value, SomeClass)`.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Синтаксис | Смысл |
 | --- | --- |
@@ -313,7 +313,7 @@ print(type(score))  # <class 'float'>
 | `type(value)` | Посмотреть фактический тип объекта |
 | `isinstance(value, int)` | Проверить тип в условии |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[
@@ -334,7 +334,7 @@ print(type(score))  # <class 'float'>
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
         { title: 'Основы синтаксиса и переменные', href: '/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
-        { title: 'Классы в Python', href: '/python/yazyk-python/1-core/klassy-v-python' },
+        { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Logging и CLI', href: '/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov' },
     ]"
 />

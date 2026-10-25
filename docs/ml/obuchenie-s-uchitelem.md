@@ -7,7 +7,7 @@ tags:
   - "classification"
 updatedAt: "2026-02-27"
 ---
-## Big Picture
+## Big Picture {#big-picture}
 
 `Supervised learning` - это подход, где у нас есть признаки `X` и правильные ответы `y`, и мы учим модель предсказывать `y` для новых объектов.
 
@@ -18,7 +18,7 @@ updatedAt: "2026-02-27"
 
 В проде модель - это часть цепочки: данные -> обучение -> inference -> мониторинг. Если хотя бы один этап сделан неправильно, качество в реальном трафике почти всегда хуже offline-метрик.
 
-## Концепция простым языком
+## Концепция простым языком {#kontseptsiya-prostym-yazykom}
 
 Аналогия с frontend:
 
@@ -32,23 +32,23 @@ updatedAt: "2026-02-27"
 - можно включать fallback-сценарии;
 - можно объяснить продукту, как меняется precision/recall при другом пороге.
 
-## Инженерная интерпретация
+## Инженерная интерпретация {#inzhenernaya-interpretatsiya}
 
-### Data flow
+### Data flow {#data-flow}
 
 1. Собираем и чистим данные.
 2. Формируем признаки.
 3. Делаем split (`train/validation/test`) до любых `fit`-операций.
 4. Собираем единый `Pipeline`, чтобы не получить leakage.
 
-### Training flow
+### Training flow {#training-flow}
 
 1. Фиксируем baseline и бизнес-метрику.
 2. Обучаем простую модель (например, Logistic Regression).
 3. Проверяем качество через cross-validation и hold-out.
 4. Подбираем порог решения (threshold), если важны precision/recall tradeoff.
 
-### Inference flow
+### Inference flow {#inference-flow}
 
 1. Получаем новые данные.
 2. Прогоняем через те же трансформации признаков.
@@ -56,7 +56,7 @@ updatedAt: "2026-02-27"
 4. Применяем production threshold.
 5. Логируем результат + версию модели.
 
-## Минимальный пример кода
+## Минимальный пример кода {#minimalnyy-primer-koda}
 
 Ниже минимальный скелет binary classification на `scikit-learn`.
 
@@ -97,7 +97,7 @@ print(classification_report(y_test, pred, digits=3))
 - `stratify=y` сохраняет баланс классов при split.
 - ROC-AUC хорошо показывает ранжирующую способность модели.
 
-## Практический пример
+## Практический пример {#prakticheskiy-primer}
 
 Кейс: предсказать конверсию пользователя из `trial` в `paid` по продуктовой активности.
 
@@ -184,7 +184,7 @@ print(f"Chosen threshold: {threshold:.2f}")
 - `Test PR-AUC` - реальная проверка на отложенной выборке.
 - Порог `0.5` не обязателен: его подбирают под стоимость ошибок для бизнеса.
 
-## Типичные ошибки
+## Типичные ошибки {#tipichnye-oshibki}
 
 1. Фитить scaler/encoder до split.
    Почему плохо: leakage, завышенные метрики.
@@ -206,7 +206,7 @@ print(f"Chosen threshold: {threshold:.2f}")
    Почему плохо: в проде может быть другой поток данных (train-serving skew).
    Как правильно: логировать признаки/скоринг и мониторить drift после релиза.
 
-## Cheat-sheet
+## Cheat-sheet {#cheat-sheet}
 
 | Этап | Что делаем | Инструменты | Артефакт | Контрольный вопрос |
 | --- | --- | --- | --- | --- |
@@ -219,7 +219,7 @@ print(f"Chosen threshold: {threshold:.2f}")
 | Thresholding | Выбираем рабочий порог | `precision_recall_curve` | Порог для прод-решения | Какой тип ошибки дороже бизнесу? |
 | Прод и мониторинг | Логируем качество после релиза | MLOps monitoring | Дашборд метрик и drift alerts | Когда модель надо переобучать? |
 
-## Official docs
+## Official docs {#official-docs}
 
 <OfficialDocsLinks
     :links="[
