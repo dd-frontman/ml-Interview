@@ -1,12 +1,12 @@
 ---
 title: "Основные функции"
-description: "Основные встроенные функции Python: print, input, str, int, float, type и isinstance."
+description: "Основные встроенные функции Python: print, input, str, int, float, abs, type и isinstance."
 tags:
   - "python"
   - "core"
   - "builtins"
   - "functions"
-updatedAt: "2026-06-23"
+updatedAt: "2026-11-06"
 ---
 ## Зачем это знать {#zachem-eto-znat}
 
@@ -200,6 +200,67 @@ print(int(float("3.14")))  # 3
 
 Практическое правило: после `input()` явно приводи строку к нужному типу и обрабатывай `ValueError`, если ввод может быть некорректным.
 
+## `abs()`: модуль числа {#abs-modul-chisla}
+
+`abs()` возвращает абсолютное значение, или модуль, числа. Простыми словами, результат показывает расстояние от числа до нуля без учета направления.
+
+```python
+print(abs(5))   # 5
+print(abs(-5))  # 5
+print(abs(0))   # 0
+```
+
+Положительное число не меняется, а у отрицательного числа убирается знак минус.
+
+С числами `float` функция работает так же:
+
+```python
+print(abs(-3.5))  # 3.5
+```
+
+`abs()` не изменяет исходную переменную, а возвращает новое значение.
+
+```python
+temperature = -10
+distance_from_zero = abs(temperature)
+
+print(temperature)         # -10
+print(distance_from_zero)  # 10
+```
+
+### Расстояние между числами {#rasstoyanie-mezhdu-chislami}
+
+Чтобы получить расстояние между двумя числами, можно сначала найти их разность, а затем взять её модуль.
+
+```python
+first = 2
+second = 5
+
+distance = abs(first - second)
+print(distance)  # 3
+```
+
+Порядок вычитания не влияет на результат:
+
+```python
+print(abs(2 - 5))  # 3
+print(abs(5 - 2))  # 3
+```
+
+Это удобно, например, при построении ромба. Выражение `abs(middle - row)` показывает, насколько текущая строка удалена от средней:
+
+```python
+middle = 2
+
+print(abs(middle - 0))  # 2
+print(abs(middle - 1))  # 1
+print(abs(middle - 2))  # 0
+print(abs(middle - 3))  # 1
+print(abs(middle - 4))  # 2
+```
+
+Практическое правило: используй `abs()`, когда важна величина разницы, но не важно, какое из значений больше.
+
 ## `type()`: узнать тип объекта {#type-uznat-tip-obekta}
 
 `type()` возвращает тип объекта. В Python тип объекта обычно совпадает с его классом.
@@ -310,6 +371,8 @@ print(type(score))  # <class 'float'>
 | `float(10)` | Преобразовать `int` в `float` |
 | `int(3.9)` | Отбросить дробную часть |
 | `round(3.9)` | Округлить число |
+| `abs(-5)` | Получить модуль числа: `5` |
+| `abs(a - b)` | Получить расстояние между двумя числами |
 | `type(value)` | Посмотреть фактический тип объекта |
 | `isinstance(value, int)` | Проверить тип в условии |
 
@@ -322,6 +385,7 @@ print(type(score))  # <class 'float'>
         { title: 'Python: str()', href: 'https://docs.python.org/3/library/stdtypes.html#str' },
         { title: 'Python: int()', href: 'https://docs.python.org/3/library/functions.html#int' },
         { title: 'Python: float()', href: 'https://docs.python.org/3/library/functions.html#float' },
+        { title: 'Python: abs()', href: 'https://docs.python.org/3/library/functions.html#abs' },
         { title: 'Python: round()', href: 'https://docs.python.org/3/library/functions.html#round' },
         { title: 'Python: type()', href: 'https://docs.python.org/3/library/functions.html#type' },
         { title: 'Python: isinstance()', href: 'https://docs.python.org/3/library/functions.html#isinstance' },

@@ -84,10 +84,12 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip": "Core обзор",
 	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": "Синтаксис и переменные",
 	"/python/yazyk-python/1-core/osnovnye-funktsii": "Основные функции",
+	"/python/yazyk-python/1-core/vse-operatory-python": "Все операторы",
 	"/python/yazyk-python/1-core/arifmeticheskie-operatory": "Арифметические операторы",
 	"/python/yazyk-python/1-core/operatory-sravneniya": "Операторы сравнения",
 	"/python/yazyk-python/1-core/boolean-i-usloviya": "Boolean и условия",
-	"/python/yazyk-python/1-core/tsikly-for-i-range": "For и range",
+	"/python/yazyk-python/1-core/tsikly-for-i-range": "Документация",
+	"/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb": "Задача: ромб",
 	"/python/yazyk-python/1-core/tsikl-while": "Цикл while",
 	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
 	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": "Args и kwargs",
@@ -172,6 +174,7 @@ const GROUP_TITLE_OVERRIDES = {
 	"/python/algoritmy/etap-6-praktika-intervyu": "Этап 6. Интервью",
 	"/python/yazyk-python": "Язык Python",
 	"/python/yazyk-python/1-core": "Core",
+	"/python/yazyk-python/1-core/tsikly-for-i-range": "For и range",
 	"/python/yazyk-python/klassy": "Классы",
 	"/python/yazyk-python/tipy-dannykh": "Типы данных",
 	"/python/yazyk-python/iteratory-i-generatory": "Итераторы и генераторы",
@@ -239,10 +242,12 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip": -900,
 	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": -800,
 	"/python/yazyk-python/1-core/osnovnye-funktsii": -750,
+	"/python/yazyk-python/1-core/vse-operatory-python": -730,
 	"/python/yazyk-python/1-core/arifmeticheskie-operatory": -725,
 	"/python/yazyk-python/1-core/operatory-sravneniya": -720,
 	"/python/yazyk-python/1-core/boolean-i-usloviya": -710,
 	"/python/yazyk-python/1-core/tsikly-for-i-range": -705,
+	"/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb": -704,
 	"/python/yazyk-python/1-core/tsikl-while": -704,
 	"/python/yazyk-python/1-core/funktsii-v-python": -700,
 	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": -698,
@@ -437,6 +442,7 @@ function toSidebarItems(entries) {
 
 	for (const entry of entries) {
 		const route = toPublicRoute(entry.route);
+		const groupingRoute = entry.route.endsWith("/index") ? entry.route : route;
 		const item = { text: entry.title, link: route };
 		const isSectionRoot = route === `/${section}` || route === `/${section}/index`;
 
@@ -445,12 +451,15 @@ function toSidebarItems(entries) {
 			continue;
 		}
 
-		if (!route.startsWith(sectionPrefix)) {
+		if (!groupingRoute.startsWith(sectionPrefix)) {
 			topLevelItems.push(item);
 			continue;
 		}
 
-		const relativeSegments = route.slice(sectionPrefix.length).split("/").filter(Boolean);
+		const relativeSegments = groupingRoute
+			.slice(sectionPrefix.length)
+			.split("/")
+			.filter(Boolean);
 		if (relativeSegments.length <= 1) {
 			topLevelItems.push(item);
 			continue;

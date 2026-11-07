@@ -160,10 +160,10 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Core обзор", link: "/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
 							{ text: "Синтаксис и переменные", link: "/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye" },
 							{ text: "Основные функции", link: "/python/yazyk-python/1-core/osnovnye-funktsii" },
+							{ text: "Все операторы", link: "/python/yazyk-python/1-core/vse-operatory-python" },
 							{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
 							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
 							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
-							{ text: "For и range", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
 							{ text: "Цикл while", link: "/python/yazyk-python/1-core/tsikl-while" },
 							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
 							{ text: "Args и kwargs", link: "/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs" },
@@ -176,7 +176,16 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Try и except", link: "/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except" },
 							{ text: "Декораторы", link: "/python/yazyk-python/1-core/dekoratory-v-python" },
 							{ text: "Файлы", link: "/python/yazyk-python/1-core/fayly-v-python" },
-							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }
+							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" },
+							{
+								text: "For и range",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Документация", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
+									{ text: "Задача ромб", link: "/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb" }
+								],
+							}
 						],
 					},
 					{

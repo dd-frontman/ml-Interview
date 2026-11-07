@@ -6,7 +6,7 @@ tags:
   - "core"
   - "loops"
   - "range"
-updatedAt: "2026-07-02"
+updatedAt: "2026-11-07"
 ---
 ## Зачем нужны циклы {#zachem-nuzhny-tsikly}
 
@@ -362,6 +362,7 @@ for i in range(len(numbers)):
 
 <RelatedTopics
     :items="[
+        { title: 'Задача: бриллиантовый ромб', href: '/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb' },
         { title: 'Цикл while', href: '/python/yazyk-python/1-core/tsikl-while' },
         { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },

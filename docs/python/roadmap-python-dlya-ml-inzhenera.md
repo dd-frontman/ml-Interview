@@ -135,7 +135,7 @@ PyTorch, HTTP API, Docker и распределенная обработка в�
 
 - [операторы сравнения](./yazyk-python/1-core/operatory-sravneniya.md);
 - [boolean и условия](./yazyk-python/1-core/boolean-i-usloviya.md);
-- [for и range](./yazyk-python/1-core/tsikly-for-i-range.md);
+- [for и range](./yazyk-python/1-core/tsikly-for-i-range/);
 - [while](./yazyk-python/1-core/tsikl-while.md);
 - `break`, `continue`, `enumerate()` и `zip()`.
 
