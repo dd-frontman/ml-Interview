@@ -6,7 +6,8 @@ tags:
   - "core"
   - "classes"
   - "methods"
-updatedAt: "2026-09-01"
+updatedAt: "2026-11-15"
+search: false
 ---
 ## Инициализация объекта {#initsializatsiya-obekta}
 
@@ -70,6 +71,92 @@ Character.introduce()
 ```
 
 `self` не является ключевым словом Python, но это обязательное соглашение кодстайла.
+
+## Поля, методы и атрибуты {#polya-metody-i-atributy}
+
+Объект может хранить данные в переменных, связанных с этим объектом или его классом. Такие переменные часто называют **полями**. В документации Python также используется более точный термин **атрибуты данных**.
+
+Функция, объявленная внутри класса, называется **методом**. Метод описывает действие объекта и может читать или изменять его поля через `self`.
+
+```python
+class Character:
+    species = "creature"  # Поле, или атрибут данных, класса.
+
+    def __init__(self, name: str, health_points: int) -> None:
+        self.name = name                  # Поле экземпляра.
+        self.health_points = health_points  # Поле экземпляра.
+
+    def is_alive(self) -> bool:  # Метод.
+        return self.health_points > 0
+
+
+ork = Character("Ork", 100)
+
+print(ork.name)        # Ork
+print(ork.species)     # creature
+print(ork.is_alive())  # True
+```
+
+В широком смысле **атрибут** — это любое имя, доступное через точку у объекта или класса:
+
+- `ork.name` — атрибут данных экземпляра;
+- `Character.species` — атрибут данных класса;
+- `ork.is_alive` — атрибут-метод;
+- `ork.is_alive()` — вызов этого метода.
+
+Поэтому поля и методы вместе называют атрибутами. К атрибутам Python также относятся свойства, созданные через `@property`, и другие значения, доступные через точку.
+
+Обычная переменная или функция существуют самостоятельно:
+
+```python
+default_health = 100
+
+
+def is_positive(value: int) -> bool:
+    return value > 0
+```
+
+`default_health` и `is_positive()` не принадлежат классу. Напротив, `health_points` и `is_alive()` в примере выше связаны с `Character` и его экземплярами.
+
+## Пространства имён класса и объекта {#prostranstva-imyon-klassa-i-obekta}
+
+Пространство имён связывает имена с объектами Python. У класса и у каждого экземпляра есть собственное пространство имён.
+
+```python
+class Character:
+    species = "creature"
+
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+    def introduce(self) -> str:
+        return f"I am {self.name}"
+
+
+ork = Character("Ork")
+
+print(Character.__dict__["species"])  # creature
+print("introduce" in Character.__dict__)  # True
+print(ork.__dict__)  # {'name': 'Ork'}
+```
+
+В этом примере:
+
+- `species` и `introduce` находятся в пространстве имён класса `Character`;
+- `name` находится в пространстве имён конкретного объекта `ork`;
+- обратиться к ним можно в контексте класса или объекта через точку: `Character.species`, `ork.name`, `ork.introduce()`.
+
+Имена разных объектов не конфликтуют, потому что хранятся в разных пространствах имён:
+
+```python
+ork = Character("Ork")
+elf = Character("Elf")
+
+print(ork.__dict__)  # {'name': 'Ork'}
+print(elf.__dict__)  # {'name': 'Elf'}
+```
+
+У каждого экземпляра свой словарь атрибутов. Изменение `ork.name` не меняет `elf.name`.
 
 ## Атрибуты экземпляра {#atributy-ekzemplyara}
 
@@ -189,6 +276,17 @@ if ork.level < Character.max_level:
     ork.level += 1
 ```
 
+Атрибут класса хранится в пространстве имён класса в одном экземпляре. Если изменить его через сам класс, новое значение увидят все объекты, у которых нет одноимённого собственного атрибута:
+
+```python
+Character.max_level = 4
+
+print(ork.max_level)  # 4
+print(elf.max_level)  # 4
+```
+
+Однако присваивание через объект работает иначе: `ork.max_level = 5` не меняет `Character.max_level`, а создаёт отдельный атрибут в пространстве имён `ork`.
+
 Атрибут класса также позволяет дочерним классам задавать разные настройки при сохранении общего алгоритма:
 
 ```python
@@ -246,8 +344,8 @@ Python сначала ищет атрибут в экземпляре, зате�
 ork.max_level = 5
 
 print(ork.max_level)        # 5
-print(elf.max_level)        # 3
-print(Character.max_level)  # 3
+print(elf.max_level)        # 4
+print(Character.max_level)  # 4
 ```
 
 Присваивание создало у `ork` собственный атрибут, который скрыл значение класса.

@@ -32,7 +32,7 @@ updatedAt: "2026-06-21"
 3. После этого посмотри [арифметические операторы](./arifmeticheskie-operatory.md): `+`, `-`, `*`, `/`, `**`, `//`, `%`.
 4. Затем разбери [операторы сравнения](./operatory-sravneniya.md): `==`, `!=`, `>`, `<`, `>=`, `<=`.
 5. После сравнений переходи к [Boolean и условиям](./boolean-i-usloviya.md): `True`, `False`, `if`, `elif`, `else`, `not`.
-6. Затем переходи к [функциям](./funktsii-v-python.md): контракт вход/выход, `return`, type hints и edge-case проверки.
+6. Затем переходи к [функциям](./funktsii-v-python/index.md): контракт вход/выход, `return`, type hints и edge-case проверки.
 7. После функций разбери [классы](../klassy/klassy-glavnaya.md): экземпляры, методы, наследование и свойства.
 8. Дальше смотри [модули, venv и pip](./moduli-venv-i-pip.md): структура файлов, импорты, окружение и зависимости.
 9. Для условий и флагов отдельно есть [логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md).
@@ -46,7 +46,7 @@ updatedAt: "2026-06-21"
 | [Арифметические операторы](./arifmeticheskie-operatory.md) | `+`, `-`, `*`, `/`, `**`, `//`, `%` | Когда пишешь вычисления |
 | [Операторы сравнения](./operatory-sravneniya.md) | `==`, `!=`, `>`, `<`, `>=`, `<=` | Когда проверяешь значения и границы |
 | [Boolean и условия](./boolean-i-usloviya.md) | `bool`, `if`, `elif`, `else`, `not` | Когда пишешь ветвление логики |
-| [Функции](./funktsii-v-python.md) | параметры, `return`, type hints, ошибки проектирования | Когда нужно вынести логику из скрипта |
+| [Функции](./funktsii-v-python/index.md) | параметры, `return`, type hints, ошибки проектирования | Когда нужно вынести логику из скрипта |
 | [Классы](../klassy/klassy-glavnaya.md) | экземпляры, методы, наследование, свойства | Когда объекту нужно поведение и состояние |
 | [Модули, venv и pip](./moduli-venv-i-pip.md) | структура проекта, импорты, окружение, зависимости | Когда код нужно разложить по файлам |
 | [Логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md) | `and`, `or`, `not`, `&`, `\|` | Когда пишешь условия и флаги |
@@ -62,7 +62,7 @@ updatedAt: "2026-06-21"
         { title: 'Арифметические операторы', href: '/python/yazyk-python/1-core/arifmeticheskie-operatory' },
         { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
         { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Модули, venv и pip', href: '/python/yazyk-python/1-core/moduli-venv-i-pip' },
     ]"

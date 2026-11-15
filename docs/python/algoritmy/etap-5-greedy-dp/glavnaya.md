@@ -26,7 +26,7 @@ updatedAt: "2026-10-16"
 1. [Неделя 18. Greedy](./nedelya-18-greedy.md).
 2. [Неделя 19. Dynamic Programming I](./nedelya-19-dynamic-programming-i.md).
 3. [Неделя 20. Dynamic Programming II](./nedelya-20-dynamic-programming-ii.md).
-4. [Неделя 21. Продвинутый трек](./nedelya-21-prodvinutyy-trek.md).
+4. [Неделя 21. Продвинутый трек](./nedelya-21-prodvinutyy-trek/).
 
 На страницах недель находятся подробные объяснения, примеры с комментариями, пошаговый разбор и задачи для самостоятельного решения.
 

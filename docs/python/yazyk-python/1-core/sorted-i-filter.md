@@ -452,7 +452,7 @@ filtered_items = list(filter(predicate, items))
 <RelatedTopics
     :items="[
         { title: 'Comprehensions', href: '/python/yazyk-python/1-core/comprehensions-v-python' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'For и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
         { title: 'Множества set', href: '/python/yazyk-python/tipy-dannykh/mnozhestva-set' },
     ]"

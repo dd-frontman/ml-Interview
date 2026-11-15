@@ -353,6 +353,6 @@ requests.get()
         { title: 'JSON и сериализация', href: '/python/ekosistema-python/json-i-serializatsiya' },
         { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
-        { title: 'Импорты и модули', href: '/python/yazyk-python/1-core/importy-i-moduli' },
+        { title: 'Импорты и модули', href: '/python/yazyk-python/1-core/importy-i-moduli/' },
     ]"
 />

@@ -145,9 +145,9 @@ PyTorch, HTTP API, Docker и распределенная обработка в�
 
 Изучи:
 
-- [обычные функции](./yazyk-python/1-core/funktsii-v-python.md);
-- [args и kwargs](./yazyk-python/1-core/prodvinutye-funktsii-args-kwargs.md);
-- [область видимости](./yazyk-python/1-core/oblast-vidimosti-peremennyh.md);
+- [обычные функции](./yazyk-python/1-core/funktsii-v-python/index.md);
+- [`*args` и `**kwargs`](./yazyk-python/1-core/funktsii-v-python/args-proizvolnye-pozitsionnye-argumenty.md);
+- [область видимости](./yazyk-python/1-core/oblast-vidimosti-peremennyh/);
 - параметры по умолчанию, keyword-only аргументы и `return`;
 - разбиение большой задачи на маленькие функции.
 
@@ -159,7 +159,7 @@ PyTorch, HTTP API, Docker и распределенная обработка в�
 
 - [try и except](./yazyk-python/1-core/obrabotka-isklyucheniy-try-except.md);
 - [файлы и pathlib](./yazyk-python/1-core/fayly-v-python.md);
-- [импорты и модули](./yazyk-python/1-core/importy-i-moduli.md);
+- [импорты и модули](./yazyk-python/1-core/importy-i-moduli/index.md);
 - `with`, кодировки и собственные исключения.
 
 Практика: прочитать данные из файла, проверить обязательные поля и записать понятный отчет об ошибках.

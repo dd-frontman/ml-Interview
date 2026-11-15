@@ -492,7 +492,7 @@ name, score = "Alice", 0.91, "extra"
         { title: 'Арифметические операторы', href: '/python/yazyk-python/1-core/arifmeticheskie-operatory' },
         { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Логические и побитовые операторы', href: '/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory' },
     ]"
 />

@@ -447,7 +447,7 @@ raise
     :items="[
         { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
         { title: 'HTTP-запросы с requests', href: '/python/ekosistema-python/http-zaprosy-requests' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
     ]"
 />

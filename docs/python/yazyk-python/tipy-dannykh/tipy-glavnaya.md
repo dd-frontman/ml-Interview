@@ -33,7 +33,7 @@ updatedAt: "2026-06-23"
 
 Подробные страницы:
 
-- [Операции со строками](./operatsii-so-strokami.md)
+- [Операции со строками](./operatsii-so-strokami/)
 - [Списки: базовые операции](./spiski-bazovye-operatsii.md)
 - [Множества set](./mnozhestva-set.md)
 - [Байты bytes](./bayty-bytes.md)

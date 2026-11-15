@@ -287,7 +287,7 @@ print(parse_event_time("2026-09-30T13:00:00+03:00"))  # 2026-09-30 10:00:00+00:0
 
 <RelatedTopics
     :items="[
-        { title: 'Импорты и модули', href: '/python/yazyk-python/1-core/importy-i-moduli' },
+        { title: 'Импорты и модули', href: '/python/yazyk-python/1-core/importy-i-moduli/' },
         { title: 'JSON и сериализация', href: '/python/ekosistema-python/json-i-serializatsiya' },
         { title: 'Feature engineering и валидация', href: '/mlops/feature-engineering-i-validatsiya' },
         { title: 'EDA и визуализация', href: '/python/ekosistema-python/eda-i-vizualizatsiya' },

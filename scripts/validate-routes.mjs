@@ -70,6 +70,30 @@ function resolveRouteAlias(route, routeSet) {
 	return null;
 }
 
+function resolveSidebarRoute(route, routeSet) {
+	if (!route.endsWith("/")) {
+		return resolveRouteAlias(route, routeSet);
+	}
+
+	const normalized = route.replace(/\/+$/, "");
+	const indexRoute = normalized === "" ? "/index" : `${normalized}/index`;
+
+	return routeSet.has(indexRoute) ? indexRoute : null;
+}
+
+function isValidSidebarRoute(route) {
+	if (ROUTE_RE.test(route)) {
+		return true;
+	}
+
+	if (!route.endsWith("/")) {
+		return false;
+	}
+
+	const normalized = route.slice(0, -1);
+	return normalized === "" || ROUTE_RE.test(normalized);
+}
+
 const routes = collectMarkdownRoutes();
 const routeSet = new Set(routes);
 const errors = [];
@@ -83,11 +107,11 @@ for (const route of routes) {
 const sidebarSourcePath = fs.existsSync(sidebarGeneratedPath) ? sidebarGeneratedPath : sidebarPath;
 const sidebarLinks = extractMatches(sidebarSourcePath, /link:\s*"([^"]+)"/g);
 for (const link of sidebarLinks) {
-	if (!ROUTE_RE.test(link)) {
+	if (!isValidSidebarRoute(link)) {
 		errors.push(`Invalid sidebar link format: ${link}`);
 		continue;
 	}
-	if (!resolveRouteAlias(link, routeSet)) {
+	if (!resolveSidebarRoute(link, routeSet)) {
 		errors.push(`Sidebar link points to missing page: ${link}`);
 	}
 }

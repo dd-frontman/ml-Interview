@@ -76,9 +76,9 @@ def diamond(n):
 - [циклы `for` и функция `range()`](/python/yazyk-python/1-core/tsikly-for-i-range/);
 - [арифметические операторы `%` и `//`](/python/yazyk-python/1-core/arifmeticheskie-operatory);
 - [функция `abs()`](/python/yazyk-python/1-core/osnovnye-funktsii#abs-modul-chisla);
-- [умножение и объединение строк](/python/yazyk-python/tipy-dannykh/operatsii-so-strokami);
+- [умножение и объединение строк](/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/);
 - [списки и метод `append()`](/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii);
-- [функции и `return`](/python/yazyk-python/1-core/funktsii-v-python).
+- [функции и `return`](/python/yazyk-python/1-core/funktsii-v-python/).
 
 Сначала попробуй решить задачу самостоятельно. Открывай решение только после того, как составишь свой алгоритм и напишешь хотя бы одну рабочую версию.
 
@@ -146,6 +146,33 @@ return "".join(lines)
 ```
 
 `return` находится после цикла, поэтому функция сначала создает все строки ромба.
+
+### Короткое решение {#korotkoe-reshenie}
+
+Когда принцип построения ромба уже понятен, решение можно сократить с помощью генераторного выражения и `join()`:
+
+```python
+def diamond(n: int) -> str | None:
+    if n <= 0 or n % 2 == 0:
+        return None
+
+    middle = n // 2
+
+    return "".join(
+        " " * abs(middle - row)
+        + "*" * (n - abs(middle - row) * 2)
+        + "\n"
+        for row in range(n)
+    )
+```
+
+Конструкция перед `for` создает одну строку ромба для текущего номера `row`:
+
+```python
+line for row in range(n)
+```
+
+В полном решении вместо переменной `line` сразу записано выражение, которое вычисляет пробелы, звездочки и перенос строки. `join()` последовательно получает созданные строки и объединяет их в одну строку результата.
 
 :::
 

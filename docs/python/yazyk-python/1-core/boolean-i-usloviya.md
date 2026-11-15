@@ -296,6 +296,6 @@ def get_access_message(age: int, has_ticket: bool, is_blocked: bool) -> str:
         { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
         { title: 'Логические и побитовые операторы', href: '/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory' },
         { title: 'Основы синтаксиса и переменные', href: '/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
     ]"
 />

@@ -11,6 +11,12 @@
 	padding-inline-start: 1.25rem;
 }
 
+/* Show only the expanded top-level section, like an accordion. */
+#VPSidebarNav:has(.VPSidebarItem.level-0:not(.collapsed))
+	> .group:not(:has(.VPSidebarItem.level-0:not(.collapsed))) {
+	display: none;
+}
+
 /* Brand color for site title in the top nav. */
 .VPNavBarTitle .title {
 	color: var(--vp-c-brand-1);
@@ -21,6 +27,51 @@
 
 .VPNavBarTitle .title:hover {
 	opacity: 0.85;
+}
+
+/* Breadcrumbs use the generated sidebar as their Russian navigation source. */
+.doc-breadcrumbs {
+	margin: 0 0 1.5rem;
+	overflow-x: auto;
+	font-size: 0.8125rem;
+	line-height: 1.4;
+	scrollbar-width: thin;
+}
+
+.doc-breadcrumbs__list {
+	display: flex;
+	align-items: center;
+	min-width: max-content;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.doc-breadcrumbs__item {
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+.doc-breadcrumbs__separator {
+	margin: 0 0.5rem;
+	color: var(--vp-c-text-3);
+}
+
+.doc-breadcrumbs__link {
+	color: var(--vp-c-text-2);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.doc-breadcrumbs__link:hover {
+	color: var(--vp-c-brand-1);
+}
+
+.doc-breadcrumbs__label {
+	color: var(--vp-c-text-1);
+	font-weight: 500;
 }
 
 /* Home page */
@@ -201,6 +252,11 @@
 }
 
 @media (max-width: 767px) {
+	.doc-breadcrumbs {
+		margin-bottom: 1rem;
+		padding-bottom: 0.25rem;
+	}
+
 	.home-header {
 		padding-top: 1.5rem;
 	}

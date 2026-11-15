@@ -535,6 +535,6 @@ dp[i][j] — минимальное число операций
     :items="[
         { title: 'Неделя 19. DP I', href: '/python/algoritmy/etap-5-greedy-dp/nedelya-19-dynamic-programming-i' },
         { title: 'Неделя 14. Grid', href: '/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-14-matritsy-i-grid-traversal' },
-        { title: 'Неделя 21. Advanced', href: '/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek' },
+        { title: 'Неделя 21. Advanced', href: '/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/' },
     ]"
 />

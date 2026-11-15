@@ -161,7 +161,7 @@ pip install -r requirements.txt
 
 <RelatedTopics
     :items="[
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Воспроизводимость ML-кода', href: '/python/ekosistema-python/vosproizvodimost-ml-koda' },
         { title: 'Logging и CLI', href: '/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov' },

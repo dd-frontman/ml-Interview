@@ -6,7 +6,7 @@ tags:
   - "core"
   - "classes"
   - "oop"
-updatedAt: "2026-08-20"
+updatedAt: "2026-11-15"
 ---
 ## Что изучаем {#chto-izuchaem}
 
@@ -47,8 +47,9 @@ class Character:
 | --- | --- |
 | Класс | описание структуры и поведения объектов |
 | Экземпляр | конкретный объект, созданный из класса |
-| Атрибут | значение, связанное с объектом или классом |
-| Метод | функция, объявленная внутри класса |
+| Поле | переменная с данными, принадлежащая объекту или классу; также называется атрибутом данных |
+| Атрибут | общее название для данных, методов и свойств, доступных через точку |
+| Метод | функция, объявленная внутри класса и доступная как атрибут |
 | `self` | ссылка на текущий экземпляр |
 | Наследование | получение поведения родительского класса |
 | Переопределение | замена родительского метода в дочернем классе |
@@ -117,7 +118,7 @@ class BankAccount:
 
 <RelatedTopics
     :items="[
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
         { title: 'Typing для Python и ML', href: '/python/yazyk-python/typing-dlya-python-i-ml' },

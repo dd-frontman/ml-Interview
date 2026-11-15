@@ -50,7 +50,8 @@ const TITLE_OVERRIDES = {
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/glavnaya": "Обзор этапа",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-12-recursion": "12. Recursion",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-13-binary-trees": "13. Binary Trees",
-	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-14-matritsy-i-grid-traversal": "14. Grid Traversal",
+	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-14-matritsy-i-grid-traversal":
+		"14. Grid Traversal",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-15-graphs": "15. Graphs",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-16-backtracking": "16. Backtracking",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy/nedelya-17-heap-i-priority-queue": "17. Heap",
@@ -58,7 +59,15 @@ const TITLE_OVERRIDES = {
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-18-greedy": "18. Greedy",
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-19-dynamic-programming-i": "19. DP I",
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-20-dynamic-programming-ii": "20. DP II",
-	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek": "21. Advanced",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek": "Обзор",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/topological-sort":
+		"Topological Sort",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/union-find": "Union Find",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/dijkstra": "Dijkstra",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/trie": "Trie",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/bitovye-operatsii":
+		"Битовые операции",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/praktika": "Практика",
 	"/python/algoritmy/etap-6-praktika-intervyu/glavnaya": "Обзор этапа",
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-22-mixed-problems": "22. Mixed Problems",
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-23-mock-interviews": "23. Mock Interviews",
@@ -85,16 +94,60 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": "Синтаксис и переменные",
 	"/python/yazyk-python/1-core/osnovnye-funktsii": "Основные функции",
 	"/python/yazyk-python/1-core/vse-operatory-python": "Все операторы",
+	"/python/yazyk-python/1-core/del-v-python": "Инструкция del",
 	"/python/yazyk-python/1-core/arifmeticheskie-operatory": "Арифметические операторы",
 	"/python/yazyk-python/1-core/operatory-sravneniya": "Операторы сравнения",
 	"/python/yazyk-python/1-core/boolean-i-usloviya": "Boolean и условия",
 	"/python/yazyk-python/1-core/tsikly-for-i-range": "Документация",
 	"/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb": "Задача: ромб",
 	"/python/yazyk-python/1-core/tsikl-while": "Цикл while",
-	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
-	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": "Args и kwargs",
-	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": "Область видимости",
-	"/python/yazyk-python/1-core/importy-i-moduli": "Импорты и модули",
+	"/python/yazyk-python/1-core/funktsii-v-python": "Обзор",
+	"/python/yazyk-python/1-core/funktsii-v-python/obyavlenie-i-vyzov-funktsii":
+		"Объявление и вызов",
+	"/python/yazyk-python/1-core/funktsii-v-python/parametry-i-argumenty":
+		"Параметры и аргументы",
+	"/python/yazyk-python/1-core/funktsii-v-python/return-print-i-pass": "Return и pass",
+	"/python/yazyk-python/1-core/funktsii-v-python/znacheniya-parametrov-po-umolchaniyu":
+		"Значения по умолчанию",
+	"/python/yazyk-python/1-core/funktsii-v-python/annotatsii-tipov": "Аннотации типов",
+	"/python/yazyk-python/1-core/funktsii-v-python/docstring-stroki-dokumentatsii":
+		"Docstring",
+	"/python/yazyk-python/1-core/funktsii-v-python/lokalnye-peremennye-i-oshibki":
+		"Переменные и ошибки",
+	"/python/yazyk-python/1-core/funktsii-v-python/args-proizvolnye-pozitsionnye-argumenty":
+		"Позиционные args",
+	"/python/yazyk-python/1-core/funktsii-v-python/kwargs-proizvolnye-imenovannye-argumenty":
+		"Именованные kwargs",
+	"/python/yazyk-python/1-core/funktsii-v-python/raspakovka-argumentov":
+		"Распаковка аргументов",
+	"/python/yazyk-python/1-core/funktsii-v-python/poryadok-parametrov-funktsii":
+		"Порядок параметров",
+	"/python/yazyk-python/1-core/funktsii-v-python/vozvrat-i-raspakovka-rezultata":
+		"Несколько результатов",
+	"/python/yazyk-python/1-core/funktsii-v-python/praktika-args-kwargs":
+		"Практика args/kwargs",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": "Обзор",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/lokalnye-i-globalnye-peremennye":
+		"Локальные и глобальные",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/legb-i-shadowing": "LEGB и shadowing",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/global-i-konstanty":
+		"Global и константы",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/nonlocal-i-zamykaniya":
+		"Nonlocal и замыкания",
+	"/python/yazyk-python/1-core/importy-i-moduli": "Обзор",
+	"/python/yazyk-python/1-core/importy-i-moduli/moduli-pakety-i-biblioteki":
+		"Модули и пакеты",
+	"/python/yazyk-python/1-core/importy-i-moduli/prostranstva-imen-i-dir":
+		"Пространства имён",
+	"/python/yazyk-python/1-core/importy-i-moduli/formy-importa": "Формы импорта",
+	"/python/yazyk-python/1-core/importy-i-moduli/protsess-importa-i-bayt-kod":
+		"Импорт и pyc",
+	"/python/yazyk-python/1-core/importy-i-moduli/name-main": "Точка входа main",
+	"/python/yazyk-python/1-core/importy-i-moduli/absolyutnye-i-otnositelnye-importy":
+		"Абсолютные и относительные",
+	"/python/yazyk-python/1-core/importy-i-moduli/poisk-modulya-i-oshibki":
+		"Поиск и ошибки",
+	"/python/yazyk-python/1-core/importy-i-moduli/praktika-importov": "Практика",
 	"/python/yazyk-python/1-core/moduli-venv-i-pip": "Модули и окружение",
 	"/python/yazyk-python/1-core/comprehensions-v-python": "Comprehensions",
 	"/python/yazyk-python/1-core/sorted-i-filter": "Sorted и filter",
@@ -108,7 +161,18 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/klassy/nasledovanie-i-polimorfizm": "Наследование",
 	"/python/yazyk-python/klassy/property-super-i-pereopredelenie": "Property и super",
 	"/python/yazyk-python/klassy/praktika-igrovye-personazhi": "Практика ООП",
-	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Операции со строками",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Обзор",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/sozdanie-i-bazovye-operatsii":
+		"Создание и операции",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/indeksy-srezy-i-poisk":
+		"Индексы и поиск",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/metody-strok": "Методы строк",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/formatirovanie-i-ekranirovanie":
+		"Форматирование",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/praktika-i-oshibki":
+		"Практика и ошибки",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/zadacha-podschet-smaylikov":
+		"Задача: смайлики",
 	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": "Списки базовые операции",
 	"/python/yazyk-python/tipy-dannykh/indeksy-i-srezy": "Индексы и срезы",
 	"/python/yazyk-python/tipy-dannykh/kortezhi-tuple": "Кортежи tuple",
@@ -121,7 +185,8 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/iteratory-i-generatory/generatory-i-yield": "Генераторы и yield",
 	"/python/yazyk-python/iteratory-i-generatory/generatornye-vyrazheniya": "Генераторные выражения",
 	"/python/yazyk-python/iteratory-i-generatory/yield-from-i-konveyery": "Конвейеры yield from",
-	"/python/yazyk-python/iteratory-i-generatory/upravlenie-generatorom-send-throw-close": "Управление генератором",
+	"/python/yazyk-python/iteratory-i-generatory/upravlenie-generatorom-send-throw-close":
+		"Управление генератором",
 	"/python/yazyk-python/iteratory-i-generatory/modul-itertools": "Модуль itertools",
 	"/python/yazyk-python/iteratory-i-generatory/generatory-kak-mnogozadachnost": "Многозадачность",
 };
@@ -171,12 +236,17 @@ const GROUP_TITLE_OVERRIDES = {
 	"/python/algoritmy/etap-3-lineynye-struktury": "Этап 3. Структуры",
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy": "Этап 4. Обходы",
 	"/python/algoritmy/etap-5-greedy-dp": "Этап 5. DP",
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek": "21. Advanced",
 	"/python/algoritmy/etap-6-praktika-intervyu": "Этап 6. Интервью",
 	"/python/yazyk-python": "Язык Python",
 	"/python/yazyk-python/1-core": "Core",
 	"/python/yazyk-python/1-core/tsikly-for-i-range": "For и range",
+	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": "Область видимости",
+	"/python/yazyk-python/1-core/importy-i-moduli": "Импорты и модули",
 	"/python/yazyk-python/klassy": "Классы",
 	"/python/yazyk-python/tipy-dannykh": "Типы данных",
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Операции со строками",
 	"/python/yazyk-python/iteratory-i-generatory": "Итераторы и генераторы",
 	"/python/ekosistema-python": "Экосистема Python",
 	"/vue/global-state": "Глобальное состояние",
@@ -189,11 +259,16 @@ const GROUP_ORDER_OVERRIDES = {
 	"/python/algoritmy/etap-3-lineynye-struktury": -400,
 	"/python/algoritmy/etap-4-rekursiya-derevya-grafy": -300,
 	"/python/algoritmy/etap-5-greedy-dp": -200,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek": -60,
 	"/python/algoritmy/etap-6-praktika-intervyu": -100,
 	"/python/yazyk-python": -200,
 	"/python/yazyk-python/1-core": -200,
+	"/python/yazyk-python/1-core/funktsii-v-python": -700,
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": -695,
+	"/python/yazyk-python/1-core/importy-i-moduli": -550,
 	"/python/yazyk-python/klassy": -150,
 	"/python/yazyk-python/tipy-dannykh": -100,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
 	"/python/yazyk-python/iteratory-i-generatory": -50,
 	"/python/ekosistema-python": -100,
 };
@@ -229,6 +304,12 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-19-dynamic-programming-i": -80,
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-20-dynamic-programming-ii": -70,
 	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek": -60,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/topological-sort": -59,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/union-find": -58,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/dijkstra": -57,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/trie": -56,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/bitovye-operatsii": -55,
+	"/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/praktika": -54,
 	"/python/algoritmy/etap-6-praktika-intervyu/glavnaya": -100,
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-22-mixed-problems": -90,
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-23-mock-interviews": -80,
@@ -243,6 +324,7 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye": -800,
 	"/python/yazyk-python/1-core/osnovnye-funktsii": -750,
 	"/python/yazyk-python/1-core/vse-operatory-python": -730,
+	"/python/yazyk-python/1-core/del-v-python": -729,
 	"/python/yazyk-python/1-core/arifmeticheskie-operatory": -725,
 	"/python/yazyk-python/1-core/operatory-sravneniya": -720,
 	"/python/yazyk-python/1-core/boolean-i-usloviya": -710,
@@ -250,9 +332,33 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb": -704,
 	"/python/yazyk-python/1-core/tsikl-while": -704,
 	"/python/yazyk-python/1-core/funktsii-v-python": -700,
-	"/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs": -698,
+	"/python/yazyk-python/1-core/funktsii-v-python/obyavlenie-i-vyzov-funktsii": -699,
+	"/python/yazyk-python/1-core/funktsii-v-python/parametry-i-argumenty": -698,
+	"/python/yazyk-python/1-core/funktsii-v-python/return-print-i-pass": -697,
+	"/python/yazyk-python/1-core/funktsii-v-python/znacheniya-parametrov-po-umolchaniyu": -696,
+	"/python/yazyk-python/1-core/funktsii-v-python/annotatsii-tipov": -695,
+	"/python/yazyk-python/1-core/funktsii-v-python/docstring-stroki-dokumentatsii": -694,
+	"/python/yazyk-python/1-core/funktsii-v-python/lokalnye-peremennye-i-oshibki": -693,
+	"/python/yazyk-python/1-core/funktsii-v-python/args-proizvolnye-pozitsionnye-argumenty": -692,
+	"/python/yazyk-python/1-core/funktsii-v-python/kwargs-proizvolnye-imenovannye-argumenty": -691,
+	"/python/yazyk-python/1-core/funktsii-v-python/raspakovka-argumentov": -690,
+	"/python/yazyk-python/1-core/funktsii-v-python/poryadok-parametrov-funktsii": -689,
+	"/python/yazyk-python/1-core/funktsii-v-python/vozvrat-i-raspakovka-rezultata": -688,
+	"/python/yazyk-python/1-core/funktsii-v-python/praktika-args-kwargs": -687,
 	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": -695,
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/lokalnye-i-globalnye-peremennye": -694,
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/legb-i-shadowing": -693,
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/global-i-konstanty": -692,
+	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/nonlocal-i-zamykaniya": -691,
 	"/python/yazyk-python/1-core/importy-i-moduli": -550,
+	"/python/yazyk-python/1-core/importy-i-moduli/moduli-pakety-i-biblioteki": -549,
+	"/python/yazyk-python/1-core/importy-i-moduli/prostranstva-imen-i-dir": -548,
+	"/python/yazyk-python/1-core/importy-i-moduli/formy-importa": -547,
+	"/python/yazyk-python/1-core/importy-i-moduli/protsess-importa-i-bayt-kod": -546,
+	"/python/yazyk-python/1-core/importy-i-moduli/name-main": -545,
+	"/python/yazyk-python/1-core/importy-i-moduli/absolyutnye-i-otnositelnye-importy": -544,
+	"/python/yazyk-python/1-core/importy-i-moduli/poisk-modulya-i-oshibki": -543,
+	"/python/yazyk-python/1-core/importy-i-moduli/praktika-importov": -542,
 	"/python/yazyk-python/1-core/moduli-venv-i-pip": -500,
 	"/python/yazyk-python/1-core/comprehensions-v-python": -450,
 	"/python/yazyk-python/1-core/sorted-i-filter": -440,
@@ -269,6 +375,12 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/klassy/praktika-igrovye-personazhi": -50,
 	"/python/yazyk-python/tipy-dannykh/tipy-glavnaya": -100,
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/sozdanie-i-bazovye-operatsii": -89,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/indeksy-srezy-i-poisk": -88,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/metody-strok": -87,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/formatirovanie-i-ekranirovanie": -86,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/praktika-i-oshibki": -85,
+	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/zadacha-podschet-smaylikov": -84,
 	"/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii": -80,
 	"/python/yazyk-python/tipy-dannykh/indeksy-i-srezy": -70,
 	"/python/yazyk-python/tipy-dannykh/kortezhi-tuple": -60,
@@ -307,9 +419,13 @@ function toPublicRoute(route) {
 		return "/";
 	}
 	if (route.endsWith("/index")) {
-		return route.slice(0, -"/index".length);
+		return `${route.slice(0, -"/index".length)}/`;
 	}
 	return route;
+}
+
+function withoutTrailingSlash(route) {
+	return route === "/" ? route : route.replace(/\/$/, "");
 }
 
 function looksLikeLatinOnlyTitle(value) {
@@ -384,7 +500,10 @@ function resolveSection(route) {
 
 function normalizeTitle(route, body, frontmatter) {
 	const publicRoute = toPublicRoute(route);
-	const override = TITLE_OVERRIDES[publicRoute] ?? TITLE_OVERRIDES[route];
+	const override =
+		TITLE_OVERRIDES[publicRoute] ??
+		TITLE_OVERRIDES[withoutTrailingSlash(publicRoute)] ??
+		TITLE_OVERRIDES[route];
 	if (override) {
 		return compactTitle(override);
 	}
@@ -444,7 +563,7 @@ function toSidebarItems(entries) {
 		const route = toPublicRoute(entry.route);
 		const groupingRoute = entry.route.endsWith("/index") ? entry.route : route;
 		const item = { text: entry.title, link: route };
-		const isSectionRoot = route === `/${section}` || route === `/${section}/index`;
+		const isSectionRoot = withoutTrailingSlash(route) === `/${section}`;
 
 		if (isSectionRoot) {
 			rootItems.push(item);
@@ -456,10 +575,7 @@ function toSidebarItems(entries) {
 			continue;
 		}
 
-		const relativeSegments = groupingRoute
-			.slice(sectionPrefix.length)
-			.split("/")
-			.filter(Boolean);
+		const relativeSegments = groupingRoute.slice(sectionPrefix.length).split("/").filter(Boolean);
 		if (relativeSegments.length <= 1) {
 			topLevelItems.push(item);
 			continue;
@@ -483,8 +599,10 @@ function toSidebarItems(entries) {
 
 	function sortLeafItems(items) {
 		return items.sort((a, b) => {
-			const aPriority = ITEM_ORDER_OVERRIDES[a.link] ?? 0;
-			const bPriority = ITEM_ORDER_OVERRIDES[b.link] ?? 0;
+			const aPriority =
+				ITEM_ORDER_OVERRIDES[a.link] ?? ITEM_ORDER_OVERRIDES[withoutTrailingSlash(a.link)] ?? 0;
+			const bPriority =
+				ITEM_ORDER_OVERRIDES[b.link] ?? ITEM_ORDER_OVERRIDES[withoutTrailingSlash(b.link)] ?? 0;
 			if (aPriority !== bPriority) {
 				return aPriority - bPriority;
 			}

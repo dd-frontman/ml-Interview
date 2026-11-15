@@ -447,7 +447,7 @@ list(map(lambda number: number ** 2, numbers))
 
 <RelatedTopics
     :items="[
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Sorted и filter', href: '/python/yazyk-python/1-core/sorted-i-filter' },
         { title: 'Comprehensions', href: '/python/yazyk-python/1-core/comprehensions-v-python' },
         { title: 'Область видимости переменных', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh' },

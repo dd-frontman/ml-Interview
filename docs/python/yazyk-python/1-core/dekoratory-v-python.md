@@ -393,7 +393,7 @@ def report_completion(func):
 <RelatedTopics
     :items="[
         { title: 'Практика: retry и API погоды', href: '/python/ekosistema-python/dekorator-retry-i-api-pogody' },
-        { title: 'Args и kwargs', href: '/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs' },
+        { title: '*args и **kwargs', href: '/python/yazyk-python/1-core/funktsii-v-python/args-proizvolnye-pozitsionnye-argumenty' },
         { title: 'Область видимости', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh' },
         { title: 'Property и super', href: '/python/yazyk-python/klassy/property-super-i-pereopredelenie' },
     ]"

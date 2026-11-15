@@ -397,7 +397,7 @@ print(type(score))  # <class 'float'>
     :items="[
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
         { title: 'Основы синтаксиса и переменные', href: '/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Logging и CLI', href: '/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov' },
     ]"

@@ -417,7 +417,7 @@ def play_martingale(...) -> int:
     :items="[
         { title: 'Циклы for и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
         { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
-        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python' },
+        { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Область видимости переменных', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh' },
     ]"
 />

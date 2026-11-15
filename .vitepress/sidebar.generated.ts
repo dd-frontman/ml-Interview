@@ -57,7 +57,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 		collapsible: true,
 		collapsed: true,
 		items: [
-			{ text: "Обзор", link: "/python" },
+			{ text: "Обзор", link: "/python/" },
 			{ text: "Roadmap Python", link: "/python/roadmap-python-dlya-ml-inzhenera" },
 			{ text: "Алгоритмы на Python", link: "/python/roadmap-algoritmy-i-struktury-dannykh-na-python" },
 			{
@@ -125,7 +125,20 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "18. Greedy", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-18-greedy" },
 							{ text: "19. DP I", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-19-dynamic-programming-i" },
 							{ text: "20. DP II", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-20-dynamic-programming-ii" },
-							{ text: "21. Advanced", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek" }
+							{
+								text: "21. Advanced",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/" },
+									{ text: "Topological Sort", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/topological-sort" },
+									{ text: "Union Find", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/union-find" },
+									{ text: "Dijkstra", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/dijkstra" },
+									{ text: "Trie", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/trie" },
+									{ text: "Битовые операции", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/bitovye-operatsii" },
+									{ text: "Практика", link: "/python/algoritmy/etap-5-greedy-dp/nedelya-21-prodvinutyy-trek/praktika" }
+								],
+							}
 						],
 					},
 					{
@@ -161,14 +174,11 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Синтаксис и переменные", link: "/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye" },
 							{ text: "Основные функции", link: "/python/yazyk-python/1-core/osnovnye-funktsii" },
 							{ text: "Все операторы", link: "/python/yazyk-python/1-core/vse-operatory-python" },
+							{ text: "Инструкция del", link: "/python/yazyk-python/1-core/del-v-python" },
 							{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
 							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
 							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
 							{ text: "Цикл while", link: "/python/yazyk-python/1-core/tsikl-while" },
-							{ text: "Функции", link: "/python/yazyk-python/1-core/funktsii-v-python" },
-							{ text: "Args и kwargs", link: "/python/yazyk-python/1-core/prodvinutye-funktsii-args-kwargs" },
-							{ text: "Область видимости", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh" },
-							{ text: "Импорты и модули", link: "/python/yazyk-python/1-core/importy-i-moduli" },
 							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
 							{ text: "Comprehensions", link: "/python/yazyk-python/1-core/comprehensions-v-python" },
 							{ text: "Sorted и filter", link: "/python/yazyk-python/1-core/sorted-i-filter" },
@@ -178,11 +188,60 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Файлы", link: "/python/yazyk-python/1-core/fayly-v-python" },
 							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" },
 							{
+								text: "Функции",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/funktsii-v-python/" },
+									{ text: "Объявление и вызов", link: "/python/yazyk-python/1-core/funktsii-v-python/obyavlenie-i-vyzov-funktsii" },
+									{ text: "Параметры и аргументы", link: "/python/yazyk-python/1-core/funktsii-v-python/parametry-i-argumenty" },
+									{ text: "Return и pass", link: "/python/yazyk-python/1-core/funktsii-v-python/return-print-i-pass" },
+									{ text: "Значения по умолчанию", link: "/python/yazyk-python/1-core/funktsii-v-python/znacheniya-parametrov-po-umolchaniyu" },
+									{ text: "Аннотации типов", link: "/python/yazyk-python/1-core/funktsii-v-python/annotatsii-tipov" },
+									{ text: "Docstring", link: "/python/yazyk-python/1-core/funktsii-v-python/docstring-stroki-dokumentatsii" },
+									{ text: "Переменные и ошибки", link: "/python/yazyk-python/1-core/funktsii-v-python/lokalnye-peremennye-i-oshibki" },
+									{ text: "Позиционные args", link: "/python/yazyk-python/1-core/funktsii-v-python/args-proizvolnye-pozitsionnye-argumenty" },
+									{ text: "Именованные kwargs", link: "/python/yazyk-python/1-core/funktsii-v-python/kwargs-proizvolnye-imenovannye-argumenty" },
+									{ text: "Распаковка аргументов", link: "/python/yazyk-python/1-core/funktsii-v-python/raspakovka-argumentov" },
+									{ text: "Порядок параметров", link: "/python/yazyk-python/1-core/funktsii-v-python/poryadok-parametrov-funktsii" },
+									{ text: "Несколько результатов", link: "/python/yazyk-python/1-core/funktsii-v-python/vozvrat-i-raspakovka-rezultata" },
+									{ text: "Практика args/kwargs", link: "/python/yazyk-python/1-core/funktsii-v-python/praktika-args-kwargs" }
+								],
+							},
+							{
+								text: "Область видимости",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/" },
+									{ text: "Локальные и глобальные", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/lokalnye-i-globalnye-peremennye" },
+									{ text: "LEGB и shadowing", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/legb-i-shadowing" },
+									{ text: "Global и константы", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/global-i-konstanty" },
+									{ text: "Nonlocal и замыкания", link: "/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/nonlocal-i-zamykaniya" }
+								],
+							},
+							{
+								text: "Импорты и модули",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/importy-i-moduli/" },
+									{ text: "Модули и пакеты", link: "/python/yazyk-python/1-core/importy-i-moduli/moduli-pakety-i-biblioteki" },
+									{ text: "Пространства имён", link: "/python/yazyk-python/1-core/importy-i-moduli/prostranstva-imen-i-dir" },
+									{ text: "Формы импорта", link: "/python/yazyk-python/1-core/importy-i-moduli/formy-importa" },
+									{ text: "Импорт и pyc", link: "/python/yazyk-python/1-core/importy-i-moduli/protsess-importa-i-bayt-kod" },
+									{ text: "Точка входа main", link: "/python/yazyk-python/1-core/importy-i-moduli/name-main" },
+									{ text: "Абсолютные и относительные", link: "/python/yazyk-python/1-core/importy-i-moduli/absolyutnye-i-otnositelnye-importy" },
+									{ text: "Поиск и ошибки", link: "/python/yazyk-python/1-core/importy-i-moduli/poisk-modulya-i-oshibki" },
+									{ text: "Практика", link: "/python/yazyk-python/1-core/importy-i-moduli/praktika-importov" }
+								],
+							},
+							{
 								text: "For и range",
 								collapsible: true,
 								collapsed: true,
 								items: [
-									{ text: "Документация", link: "/python/yazyk-python/1-core/tsikly-for-i-range" },
+									{ text: "Документация", link: "/python/yazyk-python/1-core/tsikly-for-i-range/" },
 									{ text: "Задача ромб", link: "/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb" }
 								],
 							}
@@ -207,7 +266,6 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 						collapsed: true,
 						items: [
 							{ text: "Типы главная", link: "/python/yazyk-python/tipy-dannykh/tipy-glavnaya" },
-							{ text: "Операции со строками", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami" },
 							{ text: "Списки базовые операции", link: "/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii" },
 							{ text: "Индексы и срезы", link: "/python/yazyk-python/tipy-dannykh/indeksy-i-srezy" },
 							{ text: "Кортежи tuple", link: "/python/yazyk-python/tipy-dannykh/kortezhi-tuple" },
@@ -216,7 +274,21 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Множества set", link: "/python/yazyk-python/tipy-dannykh/mnozhestva-set" },
 							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
 							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
-							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" }
+							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" },
+							{
+								text: "Операции со строками",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/" },
+									{ text: "Создание и операции", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/sozdanie-i-bazovye-operatsii" },
+									{ text: "Индексы и поиск", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/indeksy-srezy-i-poisk" },
+									{ text: "Методы строк", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/metody-strok" },
+									{ text: "Форматирование", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/formatirovanie-i-ekranirovanie" },
+									{ text: "Практика и ошибки", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/praktika-i-oshibki" },
+									{ text: "Задача смайлики", link: "/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/zadacha-podschet-smaylikov" }
+								],
+							}
 						],
 					},
 					{
