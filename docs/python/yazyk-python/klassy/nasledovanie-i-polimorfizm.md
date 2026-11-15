@@ -6,7 +6,7 @@ tags:
   - "core"
   - "classes"
   - "inheritance"
-updatedAt: "2026-08-20"
+updatedAt: "2026-11-15"
 ---
 ## Зачем нужно наследование {#zachem-nuzhno-nasledovanie}
 
@@ -136,6 +136,23 @@ print(elf.attack())        # Elf shoots an arrow
 ```
 
 Python выбирает метод по фактическому классу объекта.
+
+## Виртуальные методы в Python {#virtualnye-metody-v-python}
+
+В некоторых языках метод нужно явно пометить словом `virtual`, чтобы дочерний класс мог переопределить его. В Python такого ключевого слова нет: обычные методы экземпляра поддерживают динамический выбор реализации по умолчанию.
+
+```python
+def make_attack(character: Character) -> str:
+    return character.attack()
+
+
+print(make_attack(Character()))  # Character attacks
+print(make_attack(Elf()))        # Elf shoots an arrow
+```
+
+Хотя параметр аннотирован типом `Character`, при передаче `Elf` вызывается `Elf.attack()`. В этом смысле обычные методы Python ведут себя как виртуальные.
+
+Формулировку «все методы виртуальные» лучше понимать именно так: большинство методов можно переопределить, а реализация выбирается во время выполнения. При этом Python не использует отдельные модификаторы `virtual` и `override`, а имена с двойным подчёркиванием подвергаются name mangling и требуют отдельного внимания при наследовании.
 
 ## Совместимость сигнатур {#sovmestimost-signatur}
 

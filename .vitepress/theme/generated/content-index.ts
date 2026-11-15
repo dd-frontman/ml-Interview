@@ -1309,7 +1309,7 @@ export const contentIndex: ContentIndexItem[] = [
 		title: "Наследование и полиморфизм",
 		description: "Третья часть урока о классах Python: базовые и дочерние классы, наследование атрибутов и методов, переопределение и полиморфизм.",
 		tags: ["python", "core", "classes", "inheritance"],
-		updatedAt: "2026-08-20",
+		updatedAt: "2026-11-15",
 		hasManualRelated: true,
 		search: true,
 		source: "docs/python/yazyk-python/klassy/nasledovanie-i-polimorfizm.md",

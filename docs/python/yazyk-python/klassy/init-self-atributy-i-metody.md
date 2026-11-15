@@ -158,6 +158,45 @@ print(elf.__dict__)  # {'name': 'Elf'}
 
 У каждого экземпляра свой словарь атрибутов. Изменение `ork.name` не меняет `elf.name`.
 
+## Публичные и условно непубличные атрибуты {#publichnye-i-uslovno-nepublichnye-atributy}
+
+В Python атрибуты класса и объекта по умолчанию публичны: к ним можно обратиться через точку и изменить их снаружи.
+
+```python
+class Character:
+    def __init__(self, name: str) -> None:
+        self.name = name
+
+
+ork = Character("Ork")
+
+print(ork.name)  # Ork
+
+ork.name = "Chief Ork"
+print(ork.name)  # Chief Ork
+```
+
+Строгих модификаторов доступа `public`, `protected` и `private`, как в некоторых других языках, в Python нет. Вместо них используются соглашения об именовании:
+
+- `name` — публичная часть интерфейса;
+- `_name` — внутренний атрибут, который не следует использовать напрямую без необходимости;
+- `__name` — имя с двойным подчёркиванием, для которого Python применяет **name mangling**.
+
+```python
+class Character:
+    def __init__(self, name: str) -> None:
+        self._status = "active"
+        self.__name = name
+
+
+ork = Character("Ork")
+
+print(ork._status)  # active, но подчёркивание просит считать атрибут внутренним
+print(ork.__dict__)  # {'_status': 'active', '_Character__name': 'Ork'}
+```
+
+Name mangling преобразует `__name` в `_Character__name`. Это помогает избежать случайного конфликта имён в наследниках, но не создаёт настоящую защиту данных: преобразованное имя всё ещё можно получить. Поэтому одно подчёркивание — соглашение для программистов, а двойное — механизм изменения имени, а не строгий `private`.
+
 ## Атрибуты экземпляра {#atributy-ekzemplyara}
 
 Запись `self.name = name` создает атрибут конкретного экземпляра.
