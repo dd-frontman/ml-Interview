@@ -73,6 +73,7 @@ const TITLE_OVERRIDES = {
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-23-mock-interviews": "23. Mock Interviews",
 	"/python/algoritmy/etap-6-praktika-intervyu/nedelya-24-finalnaya-diagnostika": "24. Диагностика",
 	"/python/ekosistema-python/json-i-serializatsiya": "JSON и сериализация",
+	"/python/ekosistema-python/pickle-dlitelnoe-khranenie-obektov": "Pickle и хранение",
 	"/python/ekosistema-python/http-zaprosy-requests": "HTTP-запросы requests",
 	"/python/ekosistema-python/dekorator-retry-i-api-pogody": "Retry и погода",
 	"/python/ekosistema-python/zagruzka-dannykh-i-formaty": "Загрузка данных",
@@ -153,6 +154,21 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/1-core/sorted-i-filter": "Sorted и filter",
 	"/python/yazyk-python/1-core/lambda-funktsii": "Lambda-функции",
 	"/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except": "Try и except",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy": "Обзор",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sintaksis-i-otstupy":
+		"Синтаксис и отступы",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/tipy-znacheniya-imena-i-atributy":
+		"Типы, имена, атрибуты",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/kollektsii-i-vychisleniya":
+		"Коллекции и вычисления",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/fayly-importy-i-kodirovki":
+		"Файлы, импорт, Unicode",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/resursy-vypolnenie-i-set":
+		"Ресурсы и сеть",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sistemnye-i-polzovatelskie-isklyucheniya":
+		"Системные и пользовательские",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/vybor-isklyucheniya-i-praktika":
+		"Выбор и практика",
 	"/python/yazyk-python/1-core/dekoratory-v-python": "Декораторы",
 	"/python/yazyk-python/1-core/fayly-v-python": "Файлы",
 	"/python/yazyk-python/klassy/klassy-glavnaya": "Обзор классов",
@@ -160,6 +176,20 @@ const TITLE_OVERRIDES = {
 	"/python/yazyk-python/klassy/init-self-atributy-i-metody": "Инициализация и методы",
 	"/python/yazyk-python/klassy/nasledovanie-i-polimorfizm": "Наследование",
 	"/python/yazyk-python/klassy/property-super-i-pereopredelenie": "Property и super",
+	"/python/yazyk-python/klassy/metaklassy": "Обзор",
+	"/python/yazyk-python/klassy/metaklassy/obekty-klassy-i-metaklassy":
+		"Классы и метаклассы",
+	"/python/yazyk-python/klassy/metaklassy/type-i-dinamicheskoe-sozdanie-klassov":
+		"type и классы",
+	"/python/yazyk-python/klassy/metaklassy/sobstvennyy-metaklass-i-new":
+		"Собственный метакласс",
+	"/python/yazyk-python/klassy/metaklassy/validatsiya-i-reestr-klassov":
+		"Валидация и реестр",
+	"/python/yazyk-python/klassy/metaklassy/prepare-init-call-i-etapy-sozdaniya":
+		"Этапы создания класса",
+	"/python/yazyk-python/klassy/metaklassy/nasledovanie-konflikty-i-alternativy":
+		"Конфликты и альтернативы",
+	"/python/yazyk-python/klassy/metaklassy/praktika-metaklassov": "Практика",
 	"/python/yazyk-python/klassy/praktika-igrovye-personazhi": "Практика ООП",
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Обзор",
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami/sozdanie-i-bazovye-operatsii":
@@ -244,7 +274,9 @@ const GROUP_TITLE_OVERRIDES = {
 	"/python/yazyk-python/1-core/funktsii-v-python": "Функции",
 	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": "Область видимости",
 	"/python/yazyk-python/1-core/importy-i-moduli": "Импорты и модули",
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy": "Типы ошибок",
 	"/python/yazyk-python/klassy": "Классы",
+	"/python/yazyk-python/klassy/metaklassy": "Метаклассы",
 	"/python/yazyk-python/tipy-dannykh": "Типы данных",
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": "Операции со строками",
 	"/python/yazyk-python/iteratory-i-generatory": "Итераторы и генераторы",
@@ -266,7 +298,9 @@ const GROUP_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/funktsii-v-python": -700,
 	"/python/yazyk-python/1-core/oblast-vidimosti-peremennyh": -695,
 	"/python/yazyk-python/1-core/importy-i-moduli": -550,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy": -419,
 	"/python/yazyk-python/klassy": -150,
+	"/python/yazyk-python/klassy/metaklassy": -55,
 	"/python/yazyk-python/tipy-dannykh": -100,
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
 	"/python/yazyk-python/iteratory-i-generatory": -50,
@@ -364,6 +398,14 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/1-core/sorted-i-filter": -440,
 	"/python/yazyk-python/1-core/lambda-funktsii": -430,
 	"/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except": -420,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy": -100,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sintaksis-i-otstupy": -90,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/tipy-znacheniya-imena-i-atributy": -80,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/kollektsii-i-vychisleniya": -70,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/fayly-importy-i-kodirovki": -60,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/resursy-vypolnenie-i-set": -50,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sistemnye-i-polzovatelskie-isklyucheniya": -40,
+	"/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/vybor-isklyucheniya-i-praktika": -30,
 	"/python/yazyk-python/1-core/dekoratory-v-python": -410,
 	"/python/yazyk-python/1-core/fayly-v-python": -405,
 	"/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory": -400,
@@ -372,6 +414,14 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/klassy/init-self-atributy-i-metody": -80,
 	"/python/yazyk-python/klassy/nasledovanie-i-polimorfizm": -70,
 	"/python/yazyk-python/klassy/property-super-i-pereopredelenie": -60,
+	"/python/yazyk-python/klassy/metaklassy": -100,
+	"/python/yazyk-python/klassy/metaklassy/obekty-klassy-i-metaklassy": -90,
+	"/python/yazyk-python/klassy/metaklassy/type-i-dinamicheskoe-sozdanie-klassov": -80,
+	"/python/yazyk-python/klassy/metaklassy/sobstvennyy-metaklass-i-new": -70,
+	"/python/yazyk-python/klassy/metaklassy/validatsiya-i-reestr-klassov": -60,
+	"/python/yazyk-python/klassy/metaklassy/prepare-init-call-i-etapy-sozdaniya": -50,
+	"/python/yazyk-python/klassy/metaklassy/nasledovanie-konflikty-i-alternativy": -40,
+	"/python/yazyk-python/klassy/metaklassy/praktika-metaklassov": -30,
 	"/python/yazyk-python/klassy/praktika-igrovye-personazhi": -50,
 	"/python/yazyk-python/tipy-dannykh/tipy-glavnaya": -100,
 	"/python/yazyk-python/tipy-dannykh/operatsii-so-strokami": -90,
@@ -397,6 +447,7 @@ const ITEM_ORDER_OVERRIDES = {
 	"/python/yazyk-python/iteratory-i-generatory/modul-itertools": -30,
 	"/python/yazyk-python/iteratory-i-generatory/generatory-kak-mnogozadachnost": -20,
 	"/python/ekosistema-python/json-i-serializatsiya": -1300,
+	"/python/ekosistema-python/pickle-dlitelnoe-khranenie-obektov": -1290,
 	"/python/ekosistema-python/http-zaprosy-requests": -1250,
 	"/python/ekosistema-python/dekorator-retry-i-api-pogody": -1240,
 	"/python/ekosistema-python/zagruzka-dannykh-i-formaty": -1200,

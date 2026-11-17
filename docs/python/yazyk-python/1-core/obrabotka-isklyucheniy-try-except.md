@@ -299,6 +299,8 @@ except ValueError as error:
 
 Не нужно запоминать все классы исключений сразу. Сначала прочитай последнюю строку traceback: там находятся тип и сообщение ошибки.
 
+Подробный справочник с примерами: [Типы ошибок и исключений в Python](./tipy-oshibok-i-isklyucheniy/).
+
 ## Исключения при HTTP-запросах {#isklyucheniya-pri-http-zaprosakh}
 
 Сетевой запрос может завершиться ошибкой соединения, тайм-аутом или HTTP-ответом со статусом `4xx`/`5xx`.
@@ -445,6 +447,7 @@ raise
 
 <RelatedTopics
     :items="[
+        { title: 'Типы ошибок и исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/' },
         { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
         { title: 'HTTP-запросы с requests', href: '/python/ekosistema-python/http-zaprosy-requests' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },

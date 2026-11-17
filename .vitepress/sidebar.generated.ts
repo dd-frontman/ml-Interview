@@ -237,6 +237,21 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 								],
 							},
 							{
+								text: "Типы ошибок",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/" },
+									{ text: "Синтаксис и отступы", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sintaksis-i-otstupy" },
+									{ text: "Типы имена атрибуты", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/tipy-znacheniya-imena-i-atributy" },
+									{ text: "Коллекции и вычисления", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/kollektsii-i-vychisleniya" },
+									{ text: "Файлы импорт Unicode", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/fayly-importy-i-kodirovki" },
+									{ text: "Ресурсы и сеть", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/resursy-vypolnenie-i-set" },
+									{ text: "Системные и пользовательские", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sistemnye-i-polzovatelskie-isklyucheniya" },
+									{ text: "Выбор и практика", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/vybor-isklyucheniya-i-praktika" }
+								],
+							},
+							{
 								text: "For и range",
 								collapsible: true,
 								collapsed: true,
@@ -257,7 +272,22 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Инициализация и методы", link: "/python/yazyk-python/klassy/init-self-atributy-i-metody" },
 							{ text: "Наследование", link: "/python/yazyk-python/klassy/nasledovanie-i-polimorfizm" },
 							{ text: "Property и super", link: "/python/yazyk-python/klassy/property-super-i-pereopredelenie" },
-							{ text: "Практика ООП", link: "/python/yazyk-python/klassy/praktika-igrovye-personazhi" }
+							{ text: "Практика ООП", link: "/python/yazyk-python/klassy/praktika-igrovye-personazhi" },
+							{
+								text: "Метаклассы",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/klassy/metaklassy/" },
+									{ text: "Классы и метаклассы", link: "/python/yazyk-python/klassy/metaklassy/obekty-klassy-i-metaklassy" },
+									{ text: "type и классы", link: "/python/yazyk-python/klassy/metaklassy/type-i-dinamicheskoe-sozdanie-klassov" },
+									{ text: "Собственный метакласс", link: "/python/yazyk-python/klassy/metaklassy/sobstvennyy-metaklass-i-new" },
+									{ text: "Валидация и реестр", link: "/python/yazyk-python/klassy/metaklassy/validatsiya-i-reestr-klassov" },
+									{ text: "Этапы создания класса", link: "/python/yazyk-python/klassy/metaklassy/prepare-init-call-i-etapy-sozdaniya" },
+									{ text: "Конфликты и альтернативы", link: "/python/yazyk-python/klassy/metaklassy/nasledovanie-konflikty-i-alternativy" },
+									{ text: "Практика", link: "/python/yazyk-python/klassy/metaklassy/praktika-metaklassov" }
+								],
+							}
 						],
 					},
 					{
@@ -315,6 +345,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				collapsed: true,
 				items: [
 					{ text: "JSON и сериализация", link: "/python/ekosistema-python/json-i-serializatsiya" },
+					{ text: "Pickle и хранение", link: "/python/ekosistema-python/pickle-dlitelnoe-khranenie-obektov" },
 					{ text: "HTTP-запросы requests", link: "/python/ekosistema-python/http-zaprosy-requests" },
 					{ text: "Retry и погода", link: "/python/ekosistema-python/dekorator-retry-i-api-pogody" },
 					{ text: "Загрузка данных", link: "/python/ekosistema-python/zagruzka-dannykh-i-formaty" },
