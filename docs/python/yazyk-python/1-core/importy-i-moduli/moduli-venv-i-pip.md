@@ -7,7 +7,7 @@ tags:
   - "modules"
   - "venv"
   - "pip"
-updatedAt: "2026-06-18"
+updatedAt: "2026-11-21"
 ---
 ## Зачем это нужно {#zachem-eto-nuzhno}
 
@@ -79,14 +79,74 @@ print(user)
 
 ## `venv` {#venv}
 
-`venv` создает локальное виртуальное окружение для проекта.
+Виртуальное окружение — отдельное окружение Python для проекта. Внутри находятся интерпретатор или ссылка на базовый интерпретатор, скрипты активации и собственный каталог `site-packages`.
+
+Окружение решает конкретную проблему: двум проектам могут требоваться несовместимые версии одной библиотеки.
+
+```text
+project-a/.venv → package 1.x
+project-b/.venv → package 2.x
+```
+
+Без изоляции установка версии для одного проекта может сломать другой проект или системные инструменты Python.
+
+### Создание и активация {#sozdanie-i-aktivatsiya}
+
+Создать окружение стандартным модулем `venv`:
 
 ```bash
 python -m venv .venv
+```
+
+Активировать на macOS или Linux:
+
+```bash
 source .venv/bin/activate
 ```
 
-После активации пакеты ставятся в `.venv`, а не в глобальный Python.
+В Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Активация добавляет команды `python` и `pip` из окружения в начало `PATH`. Проверить используемый интерпретатор можно так:
+
+```bash
+python -c "import sys; print(sys.executable)"
+```
+
+В пути должна находиться папка `.venv`. Завершить работу с окружением:
+
+```bash
+deactivate
+```
+
+Активация удобна, но не обязательна. Можно вызвать интерпретатор окружения напрямую:
+
+```bash
+.venv/bin/python script.py
+```
+
+### Что изолирует окружение {#chto-izoliruet-okruzhenie}
+
+Виртуальное окружение изолирует установленные Python-пакеты и выбор интерпретатора. Оно не является виртуальной машиной или контейнером и не изолирует операционную систему, сеть и процессы.
+
+Папку `.venv` не добавляют в Git. Окружение считают временным: его должно быть возможно удалить и пересоздать из `requirements.txt`, `pyproject.toml` и lock-файла.
+
+Само окружение не фиксирует зависимости. Оно только предоставляет место для их установки.
+
+### Инструменты {#instrumenty}
+
+| Инструмент | Назначение |
+| --- | --- |
+| `venv` | встроенный в Python базовый инструмент |
+| `virtualenv` | стороннее создание изолированных Python-окружений |
+| `uv` | окружения, установка Python и зависимостей, управление проектом |
+| Poetry, Pipenv | зависимости, lock-файл и автоматическое управление окружением |
+| Conda | окружения, версии Python и пакеты, включая не-Python-зависимости |
+
+Для базового проекта достаточно `venv` и `pip`. В проекте с другим менеджером следует использовать уже принятый инструмент, чтобы не создавать несколько конфликтующих способов управления зависимостями.
 
 Практическое правило: один проект - одно окружение.
 
@@ -154,6 +214,12 @@ pip install -r requirements.txt
     :links="[
         { title: 'Python: Modules', href: 'https://docs.python.org/3/tutorial/modules.html' },
         { title: 'Python: venv', href: 'https://docs.python.org/3/library/venv.html' },
+        { title: 'Python Packaging: venv and pip', href: 'https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/' },
+        { title: 'virtualenv', href: 'https://virtualenv.pypa.io/en/latest/' },
+        { title: 'uv environments', href: 'https://docs.astral.sh/uv/pip/environments/' },
+        { title: 'Poetry environments', href: 'https://python-poetry.org/docs/managing-environments/' },
+        { title: 'Pipenv environments', href: 'https://pipenv.pypa.io/en/latest/virtualenv.html' },
+        { title: 'Conda environments', href: 'https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html' },
         { title: 'pip User Guide', href: 'https://pip.pypa.io/en/stable/user_guide/' },
         { title: 'Python packaging guide', href: 'https://packaging.python.org/en/latest/' },
     ]"
@@ -162,6 +228,7 @@ pip install -r requirements.txt
 <RelatedTopics
     :items="[
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
+        { title: 'Модуль sys', href: '/python/yazyk-python/1-core/modul-sys' },
         { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Воспроизводимость ML-кода', href: '/python/ekosistema-python/vosproizvodimost-ml-koda' },
         { title: 'Logging и CLI', href: '/python/ekosistema-python/logging-i-cli-dlya-ml-skriptov' },

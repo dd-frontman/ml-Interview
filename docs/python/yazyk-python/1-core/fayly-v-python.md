@@ -238,7 +238,7 @@ print(loaded_persons)  # [{'name': 'John', 'age': '28', 'occupation': 'Engineer'
 
 <RelatedTopics
     :items="[
-        { title: 'Исключения, context managers и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'JSON и сериализация', href: '/python/ekosistema-python/json-i-serializatsiya' },
         { title: 'Загрузка данных и форматы', href: '/python/ekosistema-python/zagruzka-dannykh-i-formaty' },
         { title: 'Байты bytes', href: '/python/yazyk-python/tipy-dannykh/bayty-bytes' },

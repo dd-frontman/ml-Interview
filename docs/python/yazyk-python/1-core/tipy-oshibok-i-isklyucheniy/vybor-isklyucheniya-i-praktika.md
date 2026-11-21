@@ -237,7 +237,7 @@ except ValueError:
 <RelatedTopics
     :items="[
         { title: 'Обзор типов ошибок', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'Функции', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
     ]"
 />

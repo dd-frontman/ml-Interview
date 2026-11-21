@@ -1,69 +1,87 @@
 ---
-title: "Core: функции, классы, модули, venv и pip"
-description: "Навигационная страница по базовому Python: синтаксис, переменные, функции, классы, модули, venv и pip."
+title: "Базовый Python: обзор"
+description: "Порядок изучения базового Python: синтаксис, операторы, циклы, функции, область видимости, модули, файлы и исключения."
 tags:
   - "python"
   - "core"
   - "functions"
   - "classes"
   - "modules"
-updatedAt: "2026-06-21"
+updatedAt: "2026-11-21"
 ---
-## Что входит в блок Core {#chto-vkhodit-v-blok-core}
+## Что входит в базовый Python {#chto-vkhodit-v-bazovyy-python}
 
-Первый практический блок Python-разработчика:
+В этом разделе собраны механизмы самого языка, которые нужны для небольшого рабочего скрипта:
 
-- базовый синтаксис и переменные;
-- встроенные функции для вывода, ввода и проверки типа;
-- арифметические операторы и операторы сравнения;
-- `bool`, условия и ветвление;
-- логические и побитовые операторы;
-- функции для переиспользуемой логики;
-- классы для модели предметной области;
-- модули для структуры проекта;
-- `venv` и `pip` для воспроизводимой среды.
+- переменные и встроенные функции;
+- вычисления, сравнения и условия;
+- циклы и comprehensions;
+- функции и область видимости;
+- импорты, модули и окружение;
+- файлы и обработка ошибок.
 
-Если эти части не настроены, проект быстро превращается в набор скриптов с конфликтами зависимостей.
+```python
+def select_positive(values: list[int]) -> list[int]:
+    return [value for value in values if value > 0]
+
+
+print(select_positive([-2, 0, 3, 5]))  # [3, 5]
+```
+
+Этот пример объединяет типы данных, функцию, параметры, условие и comprehension. Разделы ниже последовательно объясняют каждую часть.
 
 ## Как идти по материалам {#kak-idti-po-materialam}
 
-1. Начни с [основ синтаксиса и переменных](./osnovy-sintaksisa-i-peremennye.md): `=`, `==`, присваивание и распаковка через запятую.
-2. Затем разбери [основные функции](./osnovnye-funktsii.md): вывод, ввод строки и просмотр фактического типа объекта.
-3. После этого посмотри [арифметические операторы](./arifmeticheskie-operatory.md): `+`, `-`, `*`, `/`, `**`, `//`, `%`.
-4. Затем разбери [операторы сравнения](./operatory-sravneniya.md): `==`, `!=`, `>`, `<`, `>=`, `<=`.
-5. После сравнений переходи к [Boolean и условиям](./boolean-i-usloviya.md): `True`, `False`, `if`, `elif`, `else`, `not`.
-6. Затем переходи к [функциям](./funktsii-v-python/index.md): контракт вход/выход, `return`, type hints и edge-case проверки.
-7. После функций разбери [классы](../klassy/klassy-glavnaya.md): экземпляры, методы, наследование и свойства.
-8. Дальше смотри [модули, venv и pip](./moduli-venv-i-pip.md): структура файлов, импорты, окружение и зависимости.
-9. Для условий и флагов отдельно есть [логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md).
+1. [Основы языка](./osnovy-yazyka/)
+   Синтаксис, переменные, встроенные функции, `repr()` и `del`.
+
+2. [Операторы и условия](./operatory-i-usloviya/)
+   Арифметика, сравнения, `bool`, логические выражения и ветвление.
+
+3. [Циклы и comprehensions](./iteratsiya/)
+   `for`, `range()`, `while`, `break`, `continue`, `enumerate()`, `zip()` и comprehensions.
+
+4. [Функции](./funktsii-v-python/)
+   Объявление, параметры, `return`, аннотации, `*args`, `**kwargs` и дополнительные инструменты.
+
+5. [Область видимости](./oblast-vidimosti-peremennyh/)
+   Правило LEGB, локальные и глобальные имена, `global`, `nonlocal` и замыкания.
+
+6. [Импорты и модули](./importy-i-moduli/)
+   Пакеты, формы импорта, `__name__`, `venv`, `pip` и модуль `sys`.
+
+7. [Типы ошибок и исключений](./tipy-oshibok-i-isklyucheniy/)
+   Чтение traceback, `try`/`except`, выбор исключения и собственные ошибки.
+
+8. [Файлы](./fayly-v-python.md)
+   Контекстный менеджер `with`, режимы чтения и записи, пути, JSON и CSV.
 
 ## Карта раздела {#karta-razdela}
 
-| Страница | Что внутри | Когда читать |
+| Группа | Что внутри | Результат |
 | --- | --- | --- |
-| [Основы синтаксиса и переменные](./osnovy-sintaksisa-i-peremennye.md) | типы, присваивание, распаковка | Когда путается базовый синтаксис |
-| [Основные функции](./osnovnye-funktsii.md) | `print()`, `input()`, `type()`, `isinstance()` | Когда нужны первые built-in функции |
-| [Арифметические операторы](./arifmeticheskie-operatory.md) | `+`, `-`, `*`, `/`, `**`, `//`, `%` | Когда пишешь вычисления |
-| [Операторы сравнения](./operatory-sravneniya.md) | `==`, `!=`, `>`, `<`, `>=`, `<=` | Когда проверяешь значения и границы |
-| [Boolean и условия](./boolean-i-usloviya.md) | `bool`, `if`, `elif`, `else`, `not` | Когда пишешь ветвление логики |
-| [Функции](./funktsii-v-python/index.md) | параметры, `return`, type hints, ошибки проектирования | Когда нужно вынести логику из скрипта |
-| [Классы](../klassy/klassy-glavnaya.md) | экземпляры, методы, наследование, свойства | Когда объекту нужно поведение и состояние |
-| [Модули, venv и pip](./moduli-venv-i-pip.md) | структура проекта, импорты, окружение, зависимости | Когда код нужно разложить по файлам |
-| [Логические и побитовые операторы](./logicheskie-i-pobitovye-operatory.md) | `and`, `or`, `not`, `&`, `\|` | Когда пишешь условия и флаги |
+| [Основы языка](./osnovy-yazyka/) | синтаксис и встроенные функции | Прочитать и запустить простой скрипт |
+| [Операторы и условия](./operatory-i-usloviya/) | вычисления, сравнения и ветвление | Записать правило принятия решения |
+| [Итерация](./iteratsiya/) | циклы и comprehensions | Обработать коллекцию значений |
+| [Функции](./funktsii-v-python/) | контракт входа и выхода | Разделить задачу на небольшие операции |
+| [Область видимости](./oblast-vidimosti-peremennyh/) | поиск и изменение имён | Объяснить, откуда взялось значение переменной |
+| [Импорты и модули](./importy-i-moduli/) | структура кода и окружение | Разнести программу по файлам |
+| [Типы ошибок](./tipy-oshibok-i-isklyucheniy/) | исключения и обработка сбоев | Обработать ожидаемую ошибку |
+| [Файлы](./fayly-v-python.md) | чтение и запись данных | Безопасно обработать локальный файл |
 
 ## Практическое правило {#prakticheskoe-pravilo}
 
-Сначала делай код понятным как маленький скрипт. Когда появляется повторение или несколько зон ответственности, выноси логику в функции, данные с поведением - в классы, а разные ответственности - в модули.
+Сначала собери небольшой работающий скрипт. Повторяющуюся логику выноси в функции, разные части программы разделяй по модулям, а ожидаемые сбои обрабатывай через исключения. После этого переходи к [классам](../klassy/klassy-glavnaya.md), итераторам и асинхронности.
 
 <RelatedTopics
     :items="[
-        { title: 'Основы синтаксиса и переменные', href: '/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye' },
-        { title: 'Основные функции', href: '/python/yazyk-python/1-core/osnovnye-funktsii' },
-        { title: 'Арифметические операторы', href: '/python/yazyk-python/1-core/arifmeticheskie-operatory' },
-        { title: 'Операторы сравнения', href: '/python/yazyk-python/1-core/operatory-sravneniya' },
-        { title: 'Boolean и условия', href: '/python/yazyk-python/1-core/boolean-i-usloviya' },
+        { title: 'Основы языка', href: '/python/yazyk-python/1-core/osnovy-yazyka/' },
+        { title: 'Операторы и условия', href: '/python/yazyk-python/1-core/operatory-i-usloviya/' },
+        { title: 'Циклы и comprehensions', href: '/python/yazyk-python/1-core/iteratsiya/' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
+        { title: 'Область видимости', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/' },
+        { title: 'Импорты и модули', href: '/python/yazyk-python/1-core/importy-i-moduli/' },
+        { title: 'Типы ошибок', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/' },
         { title: 'Классы в Python', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
-        { title: 'Модули, venv и pip', href: '/python/yazyk-python/1-core/moduli-venv-i-pip' },
     ]"
 />

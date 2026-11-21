@@ -6,17 +6,20 @@ tags:
   - "core"
   - "data-types"
   - "mutable"
-updatedAt: "2026-02-27"
+updatedAt: "2026-11-21"
 ---
 ## Что входит в группу {#chto-vkhodit-v-gruppu}
 
-В этом разделе: `5` изменяемых типов и групп типов.
+В этом разделе: `4` основных встроенных изменяемых типа.
 
 - `list`
 - `dict`
 - `set`
 - `bytearray`
-- пользовательские объекты классов
+
+Большинство обычных экземпляров пользовательских классов тоже изменяемые, но они не входят в число четырёх встроенных типов.
+
+`memoryview` не включён в этот список: возможность записи через него зависит от буфера и режима представления. Подробнее: [Бинарные типы](./binarnye-tipy-bytes-bytearray-memoryview.md#pochemu-memoryview-ne-vsegda-izmenyaemyy).
 
 Изменяемый тип значит: объект можно менять без создания нового.
 
@@ -143,6 +146,8 @@ print(user)  # {'id': 1, 'roles': ['admin', 'editor']}
         { title: 'Множества set', href: '/python/yazyk-python/tipy-dannykh/mnozhestva-set' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
+        { title: 'Бинарные типы', href: '/python/yazyk-python/tipy-dannykh/binarnye-tipy-bytes-bytearray-memoryview' },
+        { title: 'Ссылки и копирование', href: '/python/yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
         { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
     ]"

@@ -6,7 +6,7 @@ tags:
   - "core"
   - "exceptions"
   - "try-except"
-updatedAt: "2026-08-18"
+updatedAt: "2026-11-18"
 ---
 ## Что такое исключение {#chto-takoe-isklyuchenie}
 
@@ -299,7 +299,7 @@ except ValueError as error:
 
 Не нужно запоминать все классы исключений сразу. Сначала прочитай последнюю строку traceback: там находятся тип и сообщение ошибки.
 
-Подробный справочник с примерами: [Типы ошибок и исключений в Python](./tipy-oshibok-i-isklyucheniy/).
+Подробный справочник с примерами: [Типы ошибок и исключений в Python](./index.md).
 
 ## Исключения при HTTP-запросах {#isklyucheniya-pri-http-zaprosakh}
 
@@ -448,7 +448,7 @@ raise
 <RelatedTopics
     :items="[
         { title: 'Типы ошибок и исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/' },
-        { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
+        { title: 'Файлы в Python', href: '/python/yazyk-python/1-core/fayly-v-python' },
         { title: 'HTTP-запросы с requests', href: '/python/ekosistema-python/http-zaprosy-requests' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },

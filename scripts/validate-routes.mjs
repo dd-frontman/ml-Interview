@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { collectMarkdownFiles, routeFromFilePath } from "./lib/content-utils.mjs";
 
 const cwd = process.cwd();
 const docsRoot = path.join(cwd, "docs");
@@ -13,35 +14,8 @@ function toPosix(filePath) {
 	return filePath.split(path.sep).join("/");
 }
 
-function isInsidePublic(relativePath) {
-	return relativePath === "public" || relativePath.startsWith("public/");
-}
-
 function collectMarkdownRoutes() {
-	const routes = [];
-	const stack = [docsRoot];
-
-	while (stack.length > 0) {
-		const current = stack.pop();
-		for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
-			const abs = path.join(current, entry.name);
-			const rel = toPosix(path.relative(docsRoot, abs));
-			if (isInsidePublic(rel)) {
-				continue;
-			}
-
-			if (entry.isDirectory()) {
-				stack.push(abs);
-				continue;
-			}
-
-			if (entry.isFile() && entry.name.endsWith(".md")) {
-				routes.push(`/${rel.replace(/\.md$/, "")}`);
-			}
-		}
-	}
-
-	return routes.sort();
+	return collectMarkdownFiles().map(routeFromFilePath).sort();
 }
 
 function extractMatches(filePath, regex) {

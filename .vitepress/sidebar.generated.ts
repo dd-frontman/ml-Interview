@@ -61,6 +61,38 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 			{ text: "Roadmap Python", link: "/python/roadmap-python-dlya-ml-inzhenera" },
 			{ text: "Алгоритмы на Python", link: "/python/roadmap-algoritmy-i-struktury-dannykh-na-python" },
 			{
+				text: "Вопросы с собеседований",
+				collapsible: true,
+				collapsed: true,
+				items: [
+					{ text: "Обзор", link: "/python/voprosy-s-sobesedovaniy/" },
+					{
+						text: "Джун",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Вопросы", link: "/python/voprosy-s-sobesedovaniy/junior/" }
+						],
+					},
+					{
+						text: "Мидл",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Вопросы", link: "/python/voprosy-s-sobesedovaniy/middle/" }
+						],
+					},
+					{
+						text: "Сеньор",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Вопросы", link: "/python/voprosy-s-sobesedovaniy/senior/" }
+						],
+					}
+				],
+			},
+			{
 				text: "Алгоритмы",
 				collapsible: true,
 				collapsed: true,
@@ -160,33 +192,59 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 				collapsed: true,
 				items: [
 					{ text: "Введение в Python", link: "/python/yazyk-python/vvedenie-v-python" },
-					{ text: "Исключения и файлы", link: "/python/yazyk-python/isklyucheniya-context-managers-i-fayly" },
-					{ text: "Итерация и comprehensions", link: "/python/yazyk-python/iteratory-generatory-i-comprehensions" },
-					{ text: "Asyncio и TaskGroup", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup" },
 					{ text: "Typing для ML", link: "/python/yazyk-python/typing-dlya-python-i-ml" },
 					{ text: "Дата и время", link: "/python/yazyk-python/datetime-i-timezone" },
 					{
-						text: "Core",
+						text: "Базовый Python",
 						collapsible: true,
 						collapsed: true,
 						items: [
-							{ text: "Core обзор", link: "/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
-							{ text: "Синтаксис и переменные", link: "/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye" },
-							{ text: "Основные функции", link: "/python/yazyk-python/1-core/osnovnye-funktsii" },
-							{ text: "Все операторы", link: "/python/yazyk-python/1-core/vse-operatory-python" },
-							{ text: "Инструкция del", link: "/python/yazyk-python/1-core/del-v-python" },
-							{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
-							{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
-							{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
-							{ text: "Цикл while", link: "/python/yazyk-python/1-core/tsikl-while" },
-							{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
-							{ text: "Comprehensions", link: "/python/yazyk-python/1-core/comprehensions-v-python" },
-							{ text: "Sorted и filter", link: "/python/yazyk-python/1-core/sorted-i-filter" },
-							{ text: "Lambda-функции", link: "/python/yazyk-python/1-core/lambda-funktsii" },
-							{ text: "Try и except", link: "/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except" },
-							{ text: "Декораторы", link: "/python/yazyk-python/1-core/dekoratory-v-python" },
+							{ text: "Обзор", link: "/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip" },
 							{ text: "Файлы", link: "/python/yazyk-python/1-core/fayly-v-python" },
-							{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" },
+							{
+								text: "Основы языка",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/osnovy-yazyka/" },
+									{ text: "Синтаксис и переменные", link: "/python/yazyk-python/1-core/osnovy-sintaksisa-i-peremennye" },
+									{ text: "Основные функции", link: "/python/yazyk-python/1-core/osnovnye-funktsii" },
+									{ text: "Функция repr", link: "/python/yazyk-python/1-core/repr-v-python" },
+									{ text: "Инструкция del", link: "/python/yazyk-python/1-core/del-v-python" }
+								],
+							},
+							{
+								text: "Операторы и условия",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/operatory-i-usloviya/" },
+									{ text: "Все операторы", link: "/python/yazyk-python/1-core/vse-operatory-python" },
+									{ text: "Арифметические операторы", link: "/python/yazyk-python/1-core/arifmeticheskie-operatory" },
+									{ text: "Операторы сравнения", link: "/python/yazyk-python/1-core/operatory-sravneniya" },
+									{ text: "Boolean и условия", link: "/python/yazyk-python/1-core/boolean-i-usloviya" },
+									{ text: "Логические и побитовые", link: "/python/yazyk-python/1-core/logicheskie-i-pobitovye-operatory" }
+								],
+							},
+							{
+								text: "Итерация",
+								collapsible: true,
+								collapsed: true,
+								items: [
+									{ text: "Обзор", link: "/python/yazyk-python/1-core/iteratsiya/" },
+									{ text: "Цикл while", link: "/python/yazyk-python/1-core/tsikl-while" },
+									{ text: "Comprehensions", link: "/python/yazyk-python/1-core/comprehensions-v-python" },
+									{
+										text: "For и range",
+										collapsible: true,
+										collapsed: true,
+										items: [
+											{ text: "Документация", link: "/python/yazyk-python/1-core/tsikly-for-i-range/" },
+											{ text: "Задача ромб", link: "/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb" }
+										],
+									}
+								],
+							},
 							{
 								text: "Функции",
 								collapsible: true,
@@ -205,7 +263,18 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 									{ text: "Распаковка аргументов", link: "/python/yazyk-python/1-core/funktsii-v-python/raspakovka-argumentov" },
 									{ text: "Порядок параметров", link: "/python/yazyk-python/1-core/funktsii-v-python/poryadok-parametrov-funktsii" },
 									{ text: "Несколько результатов", link: "/python/yazyk-python/1-core/funktsii-v-python/vozvrat-i-raspakovka-rezultata" },
-									{ text: "Практика args/kwargs", link: "/python/yazyk-python/1-core/funktsii-v-python/praktika-args-kwargs" }
+									{ text: "Практика args/kwargs", link: "/python/yazyk-python/1-core/funktsii-v-python/praktika-args-kwargs" },
+									{
+										text: "Инструменты",
+										collapsible: true,
+										collapsed: true,
+										items: [
+											{ text: "Обзор", link: "/python/yazyk-python/1-core/funktsii-v-python/instrumenty/" },
+											{ text: "Sorted и filter", link: "/python/yazyk-python/1-core/sorted-i-filter" },
+											{ text: "Lambda-функции", link: "/python/yazyk-python/1-core/lambda-funktsii" },
+											{ text: "Декораторы", link: "/python/yazyk-python/1-core/dekoratory-v-python" }
+										],
+									}
 								],
 							},
 							{
@@ -233,7 +302,9 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 									{ text: "Точка входа main", link: "/python/yazyk-python/1-core/importy-i-moduli/name-main" },
 									{ text: "Абсолютные и относительные", link: "/python/yazyk-python/1-core/importy-i-moduli/absolyutnye-i-otnositelnye-importy" },
 									{ text: "Поиск и ошибки", link: "/python/yazyk-python/1-core/importy-i-moduli/poisk-modulya-i-oshibki" },
-									{ text: "Практика", link: "/python/yazyk-python/1-core/importy-i-moduli/praktika-importov" }
+									{ text: "Практика", link: "/python/yazyk-python/1-core/importy-i-moduli/praktika-importov" },
+									{ text: "Модули и окружение", link: "/python/yazyk-python/1-core/moduli-venv-i-pip" },
+									{ text: "Модуль sys", link: "/python/yazyk-python/1-core/modul-sys" }
 								],
 							},
 							{
@@ -242,6 +313,7 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 								collapsed: true,
 								items: [
 									{ text: "Обзор", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/" },
+									{ text: "Try и except", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except" },
 									{ text: "Синтаксис и отступы", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sintaksis-i-otstupy" },
 									{ text: "Типы имена атрибуты", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/tipy-znacheniya-imena-i-atributy" },
 									{ text: "Коллекции и вычисления", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/kollektsii-i-vychisleniya" },
@@ -249,15 +321,6 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 									{ text: "Ресурсы и сеть", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/resursy-vypolnenie-i-set" },
 									{ text: "Системные и пользовательские", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/sistemnye-i-polzovatelskie-isklyucheniya" },
 									{ text: "Выбор и практика", link: "/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/vybor-isklyucheniya-i-praktika" }
-								],
-							},
-							{
-								text: "For и range",
-								collapsible: true,
-								collapsed: true,
-								items: [
-									{ text: "Документация", link: "/python/yazyk-python/1-core/tsikly-for-i-range/" },
-									{ text: "Задача ромб", link: "/python/yazyk-python/1-core/tsikly-for-i-range/zadacha-brilliantovyy-romb" }
 								],
 							}
 						],
@@ -295,16 +358,18 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 						collapsible: true,
 						collapsed: true,
 						items: [
-							{ text: "Типы главная", link: "/python/yazyk-python/tipy-dannykh/tipy-glavnaya" },
+							{ text: "Обзор", link: "/python/yazyk-python/tipy-dannykh/tipy-glavnaya" },
+							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" },
+							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
+							{ text: "Ссылки и копирование", link: "/python/yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie" },
 							{ text: "Списки базовые операции", link: "/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii" },
 							{ text: "Индексы и срезы", link: "/python/yazyk-python/tipy-dannykh/indeksy-i-srezy" },
 							{ text: "Кортежи tuple", link: "/python/yazyk-python/tipy-dannykh/kortezhi-tuple" },
 							{ text: "Словари dict", link: "/python/yazyk-python/tipy-dannykh/slovari-dict" },
 							{ text: "Байты bytes", link: "/python/yazyk-python/tipy-dannykh/bayty-bytes" },
+							{ text: "Бинарные типы", link: "/python/yazyk-python/tipy-dannykh/binarnye-tipy-bytes-bytearray-memoryview" },
 							{ text: "Множества set", link: "/python/yazyk-python/tipy-dannykh/mnozhestva-set" },
-							{ text: "Изменяемые типы", link: "/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy" },
 							{ text: "Методы типов данных", link: "/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh" },
-							{ text: "Неизменяемые типы", link: "/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy" },
 							{
 								text: "Операции со строками",
 								collapsible: true,
@@ -335,6 +400,19 @@ export const sidebar: SidebarItemWithCollapsible[] = [
 							{ text: "Управление генератором", link: "/python/yazyk-python/iteratory-i-generatory/upravlenie-generatorom-send-throw-close" },
 							{ text: "Модуль itertools", link: "/python/yazyk-python/iteratory-i-generatory/modul-itertools" },
 							{ text: "Многозадачность", link: "/python/yazyk-python/iteratory-i-generatory/generatory-kak-mnogozadachnost" }
+						],
+					},
+					{
+						text: "Asyncio",
+						collapsible: true,
+						collapsed: true,
+						items: [
+							{ text: "Обзор", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup" },
+							{ text: "Корутины и await", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup/korutiny-i-await" },
+							{ text: "Задачи и gather", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup/zadachi-i-gather" },
+							{ text: "TaskGroup и ошибки", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup/taskgroup-i-oshibki" },
+							{ text: "Таймауты и блокировки", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup/taymauty-i-blokiruyushchiy-kod" },
+							{ text: "Сравнение и практика", link: "/python/yazyk-python/asyncio-korutiny-i-taskgroup/sravnenie-i-praktika" }
 						],
 					}
 				],

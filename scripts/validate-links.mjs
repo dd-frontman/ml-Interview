@@ -1,8 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
+import {
+	collectMarkdownFiles as collectDocsMarkdownFiles,
+	docsRoot,
+	routeFromFilePath,
+	sourceRouteFromFilePath,
+	toPosix,
+} from "./lib/content-utils.mjs";
 
 const cwd = process.cwd();
-const docsRoot = path.join(cwd, "docs");
 const readmePath = path.join(cwd, "README.md");
 const sidebarGeneratedPath = path.join(cwd, ".vitepress", "sidebar.generated.ts");
 const sidebarFallbackPath = path.join(cwd, ".vitepress", "sidebar.ts");
@@ -13,19 +19,6 @@ const URL_WITH_TITLE_RE = /^(\S+)(?:\s+["'][^"']*["'])?$/;
 const RELATED_TOPICS_BLOCK_RE = /<RelatedTopics[\s\S]*?\/>/g;
 const RELATED_TOPICS_HREF_RE = /href:\s*"([^"]+)"/g;
 const ROOT_LINK_RE = /link:\s*"([^"]+)"/g;
-
-function toPosix(filePath) {
-	return filePath.split(path.sep).join("/");
-}
-
-function isInsidePublic(relativePath) {
-	return relativePath === "public" || relativePath.startsWith("public/");
-}
-
-function routeFromFilePath(filePath) {
-	const rel = toPosix(path.relative(docsRoot, filePath)).replace(/\.md$/, "");
-	return `/${rel}`;
-}
 
 function normalizeRoute(route) {
 	if (route === "/") {
@@ -98,58 +91,17 @@ function splitPathAndHash(target) {
 
 function collectDocRoutes() {
 	const routes = new Map();
-	const stack = [docsRoot];
-
-	while (stack.length > 0) {
-		const current = stack.pop();
-		for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
-			const abs = path.join(current, entry.name);
-			const rel = toPosix(path.relative(docsRoot, abs));
-			if (isInsidePublic(rel)) {
-				continue;
-			}
-
-			if (entry.isDirectory()) {
-				stack.push(abs);
-				continue;
-			}
-
-			if (entry.isFile() && entry.name.endsWith(".md")) {
-				routes.set(routeFromFilePath(abs), abs);
-			}
-		}
+	for (const filePath of collectDocsMarkdownFiles()) {
+		routes.set(routeFromFilePath(filePath), filePath);
 	}
-
 	return routes;
 }
 
 function collectMarkdownFiles() {
-	const files = [];
+	const files = collectDocsMarkdownFiles();
 	if (fs.existsSync(readmePath)) {
-		files.push(readmePath);
+		files.unshift(readmePath);
 	}
-
-	const stack = [docsRoot];
-	while (stack.length > 0) {
-		const current = stack.pop();
-		for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
-			const abs = path.join(current, entry.name);
-			const rel = toPosix(path.relative(docsRoot, abs));
-			if (isInsidePublic(rel)) {
-				continue;
-			}
-
-			if (entry.isDirectory()) {
-				stack.push(abs);
-				continue;
-			}
-
-			if (entry.isFile() && entry.name.endsWith(".md")) {
-				files.push(abs);
-			}
-		}
-	}
-
 	return files.sort();
 }
 
@@ -171,6 +123,19 @@ function extractSidebarLinks() {
 }
 
 function resolveRelativeTarget(baseFile, targetPath, routeMap) {
+	const publicBaseRoute = routeFromFilePath(baseFile);
+	const publicBaseDir = path.posix.dirname(publicBaseRoute);
+	const publicTarget = path.posix
+		.normalize(path.posix.join(publicBaseDir, targetPath))
+		.replace(/\.md$/, "");
+	const publicRoute = resolveRouteAlias(publicTarget, routeMap);
+	if (publicRoute) {
+		return { exists: true, route: publicRoute };
+	}
+	if (routeFromFilePath(baseFile) !== sourceRouteFromFilePath(baseFile)) {
+		return { exists: false, route: null };
+	}
+
 	const baseDir = path.dirname(baseFile);
 	const resolved = path.resolve(baseDir, targetPath);
 	const candidates = [];

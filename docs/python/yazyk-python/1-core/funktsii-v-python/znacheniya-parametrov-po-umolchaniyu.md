@@ -162,6 +162,6 @@ print(result is numbers)  # True
         { title: 'Обзор функций', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Параметры и аргументы', href: '/python/yazyk-python/1-core/funktsii-v-python/parametry-i-argumenty' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
-        { title: 'is и ==', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
+        { title: 'Ссылки и копирование', href: '/python/yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie' },
     ]"
 />

@@ -175,6 +175,6 @@ print(find_average([]))         # 0
     :items="[
         { title: 'Обзор функций', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Область видимости переменных', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
     ]"
 />

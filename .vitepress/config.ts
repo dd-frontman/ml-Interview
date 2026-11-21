@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { rewriteDocPath } from "../scripts/lib/route-rewrites.mjs";
 import { sidebar } from "./sidebar";
 
 const fallbackRepoName = "ml-interview";
@@ -23,6 +24,7 @@ export default defineConfig({
 
 	// Чистые URL без .html
 	cleanUrls: true,
+	rewrites: rewriteDocPath,
 
 	// Настройки темы
 	themeConfig: {

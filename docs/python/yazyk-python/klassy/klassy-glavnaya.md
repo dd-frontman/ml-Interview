@@ -123,7 +123,7 @@ class BankAccount:
 <RelatedTopics
     :items="[
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
         { title: 'Typing для Python и ML', href: '/python/yazyk-python/typing-dlya-python-i-ml' },
     ]"

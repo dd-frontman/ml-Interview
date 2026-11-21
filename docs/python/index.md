@@ -20,15 +20,17 @@ updatedAt: "2026-06-13"
 
 - [Python для ML-инженера](./roadmap-python-dlya-ml-inzhenera.md) - путь от языка до воспроизводимого обучения и batch inference.
 - [Алгоритмы и структуры данных на Python](./roadmap-algoritmy-i-struktury-dannykh-na-python.md) - подготовка к алгоритмическим собеседованиям уровня Easy и Medium.
+- [Вопросы с собеседований по Python](./voprosy-s-sobesedovaniy/) - вопросы уровней Джун, Мидл и Сеньор со свёрнутыми ответами.
 
 ## Как идти {#kak-idti}
 
 1. Начни с [роадмапа Python для ML-инженера](./roadmap-python-dlya-ml-inzhenera.md): пройди входную диагностику и выбери точку старта.
 2. Если есть пробелы в языке, переходи к [Введению в Python](./yazyk-python/vvedenie-v-python.md).
-3. Затем закрой [типы данных](./yazyk-python/tipy-dannykh/tipy-glavnaya.md): mutability, copy, `is`/`==`, методы коллекций.
-4. Дальше добери язык для реального кода: [исключения и файлы](./yazyk-python/isklyucheniya-context-managers-i-fayly.md), [итераторы и генераторы](./yazyk-python/iteratory-i-generatory/iteratory-i-generatory-glavnaya.md), [typing](./yazyk-python/typing-dlya-python-i-ml.md), [datetime](./yazyk-python/datetime-i-timezone.md).
-5. После этого переходи к данным: [загрузка и форматы](./ekosistema-python/zagruzka-dannykh-i-formaty.md), [SQL из Python](./ekosistema-python/sql-iz-python.md), [NumPy и Pandas](./ekosistema-python/numpy-i-pandas-dlya-ml.md).
-6. Для ML-практики дальше нужны [EDA](./ekosistema-python/eda-i-vizualizatsiya.md), [scikit-learn pipeline](./ekosistema-python/scikit-learn-i-pipeline.md), [preprocessing](./ekosistema-python/prodvinutyy-preprocessing.md), [experiment tracking](./ekosistema-python/experiment-tracking.md) и [артефакты модели](./ekosistema-python/artefakty-modeli-i-inference.md).
+3. Пройди [базовый Python](./yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip.md): синтаксис, условия, циклы, функции, модули и ошибки.
+4. Затем закрой [типы данных](./yazyk-python/tipy-dannykh/tipy-glavnaya.md): основные группы, изменяемость и методы коллекций. После этого разбери [ссылки и копирование](./yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie.md): присваивание, `copy`, `deepcopy`, `is` и `==`.
+5. Дальше добери язык для реального кода: [работу с файлами](./yazyk-python/1-core/fayly-v-python.md), [итераторы и генераторы](./yazyk-python/iteratory-i-generatory/iteratory-i-generatory-glavnaya.md), [asyncio](./yazyk-python/asyncio-korutiny-i-taskgroup.md), [typing](./yazyk-python/typing-dlya-python-i-ml.md), [datetime](./yazyk-python/datetime-i-timezone.md).
+6. После этого переходи к данным: [загрузка и форматы](./ekosistema-python/zagruzka-dannykh-i-formaty.md), [SQL из Python](./ekosistema-python/sql-iz-python.md), [NumPy и Pandas](./ekosistema-python/numpy-i-pandas-dlya-ml.md).
+7. Для ML-практики дальше нужны [EDA](./ekosistema-python/eda-i-vizualizatsiya.md), [scikit-learn pipeline](./ekosistema-python/scikit-learn-i-pipeline.md), [preprocessing](./ekosistema-python/prodvinutyy-preprocessing.md), [experiment tracking](./ekosistema-python/experiment-tracking.md) и [артефакты модели](./ekosistema-python/artefakty-modeli-i-inference.md).
 
 ## Практическое правило {#prakticheskoe-pravilo}
 

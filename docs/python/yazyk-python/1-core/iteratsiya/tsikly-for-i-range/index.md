@@ -289,6 +289,35 @@ for i in range(1, 10):
 
 ## Когда нужен обычный перебор, а когда индексы {#kogda-nuzhen-obychnyy-perebor-a-kogda-indeksy}
 
+Если вместе со значением нужен его индекс, используй `enumerate()`. Это понятнее, чем сочетание `range(len(...))` и обращения по индексу.
+
+```python
+scores = [0.72, 0.91, 0.64]
+
+for index, score in enumerate(scores):
+    print(index, score)
+```
+
+Результат:
+
+```text
+0 0.72
+1 0.91
+2 0.64
+```
+
+Чтобы одновременно перебрать несколько последовательностей, используй `zip()`:
+
+```python
+feature_names = ["sessions", "score"]
+feature_values = [8, 0.91]
+
+for name, value in zip(feature_names, feature_values):
+    print(name, value)
+```
+
+`zip()` останавливается по самой короткой последовательности. Если потеря лишних элементов недопустима, сначала проверь длины или используй `itertools.zip_longest()`.
+
 Обычный перебор удобнее, когда нужно только прочитать значения.
 
 ```python
@@ -344,6 +373,8 @@ for i in range(len(numbers)):
 | `range(1, 10, 2)` | Числа от `1` до `9` с шагом `2` |
 | `range(10, 1, -1)` | Числа от `10` до `2` в обратном порядке |
 | `range(len(items))` | Индексы списка |
+| `enumerate(items)` | Пары из индекса и значения |
+| `zip(a, b)` | Пары значений из двух последовательностей |
 | `items[i]` | Элемент по индексу |
 | `continue` | Пропустить текущую итерацию |
 | `break` | Завершить цикл |
@@ -354,6 +385,8 @@ for i in range(len(numbers)):
     :links="[
         { title: 'Python Tutorial: for statements', href: 'https://docs.python.org/3/tutorial/controlflow.html#for-statements' },
         { title: 'Python Tutorial: range()', href: 'https://docs.python.org/3/tutorial/controlflow.html#the-range-function' },
+        { title: 'Python: enumerate()', href: 'https://docs.python.org/3/library/functions.html#enumerate' },
+        { title: 'Python: zip()', href: 'https://docs.python.org/3/library/functions.html#zip' },
         { title: 'Python Reference: for statement', href: 'https://docs.python.org/3/reference/compound_stmts.html#the-for-statement' },
         { title: 'Python Tutorial: break and continue', href: 'https://docs.python.org/3/tutorial/controlflow.html#break-and-continue-statements' },
         { title: 'Python Built-in Types: range', href: 'https://docs.python.org/3/library/stdtypes.html#ranges' },

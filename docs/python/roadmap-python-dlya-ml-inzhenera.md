@@ -157,7 +157,7 @@ PyTorch, HTTP API, Docker и распределенная обработка в�
 
 Изучи:
 
-- [try и except](./yazyk-python/1-core/obrabotka-isklyucheniy-try-except.md);
+- [try и except](./yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except.md);
 - [файлы и pathlib](./yazyk-python/1-core/fayly-v-python.md);
 - [импорты и модули](./yazyk-python/1-core/importy-i-moduli/index.md);
 - `with`, кодировки и собственные исключения.
@@ -206,8 +206,8 @@ PyTorch, HTTP API, Docker и распределенная обработка в�
 Изучи:
 
 - [requests](./ekosistema-python/http-zaprosy-requests.md);
-- [исключения и context managers](./yazyk-python/isklyucheniya-context-managers-i-fayly.md);
-- [итераторы и генераторы](./yazyk-python/iteratory-generatory-i-comprehensions.md).
+- [файлы и context managers](./yazyk-python/1-core/fayly-v-python.md);
+- [итераторы и генераторы](./yazyk-python/iteratory-i-generatory/iteratory-i-generatory-glavnaya.md).
 
 Проект этапа: скрипт получает данные из файла или API, проверяет их, преобразует и сохраняет результат. Для сетевого запроса обязательны `timeout` и обработка ошибок.
 

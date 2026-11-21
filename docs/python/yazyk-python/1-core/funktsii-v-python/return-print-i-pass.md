@@ -168,6 +168,6 @@ def example():
     :items="[
         { title: 'Обзор функций', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Объявление и вызов функции', href: '/python/yazyk-python/1-core/funktsii-v-python/obyavlenie-i-vyzov-funktsii' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
     ]"
 />

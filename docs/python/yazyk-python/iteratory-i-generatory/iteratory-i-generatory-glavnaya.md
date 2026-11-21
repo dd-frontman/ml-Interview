@@ -138,7 +138,7 @@ squares_gen = (x * x for x in range(1_000_000))   # конвейер: числа
 
 <RelatedTopics
     :items="[
-        { title: 'Итерация и comprehensions', href: '/python/yazyk-python/iteratory-generatory-i-comprehensions' },
+        { title: 'Циклы и comprehensions', href: '/python/yazyk-python/1-core/iteratsiya/' },
         { title: 'Comprehensions в Python', href: '/python/yazyk-python/1-core/comprehensions-v-python' },
         { title: 'Цикл for и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
         { title: 'Классы в Python: обзор', href: '/python/yazyk-python/klassy/klassy-glavnaya' },

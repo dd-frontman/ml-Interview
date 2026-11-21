@@ -391,7 +391,7 @@ parity = {
 <RelatedTopics
     :items="[
         { title: 'For и range', href: '/python/yazyk-python/1-core/tsikly-for-i-range' },
-        { title: 'Итераторы и генераторы', href: '/python/yazyk-python/iteratory-generatory-i-comprehensions' },
+        { title: 'Итераторы и генераторы', href: '/python/yazyk-python/iteratory-i-generatory/iteratory-i-generatory-glavnaya' },
         { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
         { title: 'Словари dict', href: '/python/yazyk-python/tipy-dannykh/slovari-dict' },
     ]"

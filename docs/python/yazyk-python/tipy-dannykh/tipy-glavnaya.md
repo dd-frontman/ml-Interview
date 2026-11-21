@@ -1,229 +1,148 @@
 ---
-title: "Типы главная"
-description: "Что такое изменяемые и неизменяемые типы в Python, как работают ссылки на объекты, сравнение, копирование и типичные источники багов."
+title: "Типы данных Python"
+description: "Карта основных встроенных типов Python, их группировка, изменяемость и рекомендуемый порядок изучения."
 tags:
   - "python"
   - "core"
   - "data-types"
   - "mutability"
-updatedAt: "2026-06-23"
+updatedAt: "2026-11-21"
 ---
-## Зачем это знать {#zachem-eto-znat}
+## Зачем нужна карта типов {#zachem-nuzhna-karta-tipov}
 
-Большая часть "странных" багов в Python связана не с синтаксисом, а с моделью объектов:
-
-- переменная хранит не само значение, а ссылку на объект;
-- часть типов изменяемые (`mutable`), часть нет (`immutable`);
-- одни операции создают новый объект, другие меняют текущий.
-
-Если это понимать, становится предсказуемо:
-
-- когда данные неожиданно меняются "в другом месте";
-- почему `copy()` иногда не спасает;
-- откуда берется эффект с изменяемыми аргументами по умолчанию.
-
-## Что разбираем {#chto-razbiraem}
-
-Всего в теме: `12` типов и групп типов.
-
-- Неизменяемые типы (`7`):
-  `int`, `float`, `bool`, `str`, `tuple`, `frozenset`, `bytes`
-- Изменяемые типы (`5`):
-  `list`, `dict`, `set`, `bytearray`, пользовательские объекты классов
-
-Подробные страницы:
-
-- [Операции со строками](./operatsii-so-strokami/)
-- [Списки: базовые операции](./spiski-bazovye-operatsii.md)
-- [Множества set](./mnozhestva-set.md)
-- [Байты bytes](./bayty-bytes.md)
-- [Методы типов данных](./metody-tipov-dannykh.md)
-- [Неизменяемые типы](./neizmenyaemye-tipy.md)
-- [Изменяемые типы](./izmenyaemye-tipy.md)
-
-## Что такое immutable и mutable {#chto-takoe-immutable-i-mutable}
-
-`Immutable` значит: после создания объект нельзя изменить "на месте". Если значение меняется, создается новый объект.
+Тип определяет, какие значения хранит объект и какие операции с ним доступны. Список можно изменить через любую ссылку на него. Переменную со строкой можно связать с новой строкой, но сам существующий объект `str` изменить нельзя:
 
 ```python
-s = "ml"
-old_id = id(s)
-s += "-python"
-new_id = id(s)
+items = ["python"]
+same_items = items
+items.append("ml")
 
-print(old_id == new_id)  # False
+text = "python"
+same_text = text
+text += "!"
+
+print(same_items)  # ['python', 'ml']
+print(text)        # python!
+print(same_text)   # python
 ```
 
-`Mutable` значит: объект можно менять без создания нового.
+`items.append()` изменил существующий список. Выражение `text += "!"` создало другую строку и перепривязало к ней имя `text`; объект, на который указывает `same_text`, остался прежним.
 
-```python
-items = [1, 2]
-old_id = id(items)
-items.append(3)
-new_id = id(items)
+Эта страница помогает выбрать нужную тему. Подробные правила и примеры находятся на отдельных страницах.
 
-print(old_id == new_id)  # True
+## Карта основных типов {#karta-osnovnykh-tipov}
+
+В учебной карте `15` встроенных типов:
+
+| Группа | Количество | Типы |
+| --- | ---: | --- |
+| Специальные значения | `2` | `bool`, `NoneType` |
+| Числа | `3` | `int`, `float`, `complex` |
+| Текст | `1` | `str` |
+| Последовательности | `3` | `list`, `tuple`, `range` |
+| Словари (отображения) | `1` | `dict` |
+| Уникальные элементы | `2` | `set`, `frozenset` |
+| Бинарные данные | `3` | `bytes`, `bytearray`, `memoryview` |
+
+Это не закрытый список всех типов Python. Свои классы, стандартная библиотека и сторонние библиотеки создают дополнительные типы.
+
+В документации Python `dict` относится к категории *mapping types*, по-русски «отображения». «Отображение» описывает общий принцип «ключ → значение», а «словарь» — привычное название конкретного встроенного типа `dict`.
+
+## Изменяемость {#izmenyaemost}
+
+В этой карте типы распределяются так:
+
+| Категория | Количество | Типы |
+| --- | ---: | --- |
+| Неизменяемые | `10` | `int`, `float`, `complex`, `bool`, `str`, `tuple`, `range`, `frozenset`, `bytes`, `NoneType` |
+| Изменяемые | `4` | `list`, `dict`, `set`, `bytearray` |
+| Зависит от буфера и режима представления | `1` | `memoryview` |
+
+Подробности:
+
+- [неизменяемые типы](./neizmenyaemye-tipy.md);
+- [изменяемые типы](./izmenyaemye-tipy.md);
+- [ссылки, сравнение и копирование](./ssylki-sravnenie-i-kopirovanie.md).
+
+## Как запомнить типы {#kak-zapomnit-tipy}
+
+Сокращение `СЧТПКУБ` помогает восстановить семь групп:
+
+> **С**аша **Ч**асто **Т**ренирует **П**амять, **К**огда **У**чит **Б**азу.
+
+```text
+С — специальные: bool, NoneType
+Ч — числа: int, float, complex
+Т — текст: str
+П — последовательности: list, tuple, range
+К — ключ → значение: dict (словарь)
+У — уникальные элементы: set, frozenset
+Б — бинарные данные: bytes, bytearray, memoryview
 ```
 
-## Ссылки на объекты: как мыслить правильно {#ssylki-na-obekty-kak-myslit-pravilno}
+Проверка количества:
 
-В Python присваивание не "копирует" объект, а привязывает имя к объекту.
-
-```python
-a = [1, 2, 3]
-b = a
-
-b.append(4)
-print(a)  # [1, 2, 3, 4]
+```text
+2 + 3 + 1 + 3 + 1 + 2 + 3 = 15
 ```
 
-`a` и `b` ссылаются на один и тот же список.
+Четыре изменяемых типа можно запомнить словом `ЛИДИСЕБАЙТ`:
 
-## `is` и `==` {#is-i}
+- **ЛИ** — `list`;
+- **ДИ** — `dict`;
+- **СЕ** — `set`;
+- **БАЙТ** — `bytearray`.
 
-- `==` сравнивает значения
-- `is` проверяет, один и тот же объект или нет
+Остальные десять типов неизменяемые. `memoryview` стоит отдельно, потому что возможность записи зависит от буфера и режима представления.
 
-```python
-x = [1, 2]
-y = [1, 2]
+## Порядок изучения {#poryadok-izucheniya}
 
-print(x == y)  # True
-print(x is y)  # False
-```
+1. [Неизменяемые типы](./neizmenyaemye-tipy.md)
+   Числа, `bool`, строки, кортежи, `range`, `frozenset`, `bytes` и `NoneType`.
 
-Для `None` почти всегда использовать `is`:
+2. Основные коллекции
+   [Списки](./spiski-bazovye-operatsii.md), [кортежи](./kortezhi-tuple.md), [словари](./slovari-dict.md) и [множества](./mnozhestva-set.md).
 
-```python
-if value is None:
-    ...
-```
+3. [Операции со строками](./operatsii-so-strokami/)
+   Создание, индексы, поиск, методы и форматирование строк.
 
-## Копирование: поверхностное и глубокое {#kopirovanie-poverkhnostnoe-i-glubokoe}
+4. [Бинарные типы](./binarnye-tipy-bytes-bytearray-memoryview.md)
+   Различия между `bytes`, `bytearray` и `memoryview`.
 
-### Поверхностная копия (`shallow copy`) {#poverkhnostnaya-kopiya-shallow-copy}
+5. [Изменяемые типы](./izmenyaemye-tipy.md)
+   Какие операции меняют объект на месте и где возникают побочные эффекты.
 
-Копируется только верхний уровень контейнера.
+6. [Ссылки, сравнение и копирование](./ssylki-sravnenie-i-kopirovanie.md)
+   Присваивание, `is`, `==`, поверхностные и глубокие копии.
 
-```python
-import copy
+7. [Методы типов данных](./metody-tipov-dannykh.md)
+   Повторение частых операций после изучения отдельных типов.
 
-src = {"user": {"name": "Alice"}, "roles": ["admin"]}
-clone = copy.copy(src)
+## Куда перейти по задаче {#kuda-pereyti-po-zadache}
 
-clone["roles"].append("editor")
-print(src["roles"])  # ['admin', 'editor']
-```
-
-### Глубокая копия (`deep copy`) {#glubokaya-kopiya-deep-copy}
-
-Копируются и вложенные объекты.
-
-```python
-import copy
-
-src = {"user": {"name": "Alice"}, "roles": ["admin"]}
-clone = copy.deepcopy(src)
-
-clone["roles"].append("editor")
-print(src["roles"])  # ['admin']
-```
-
-## Типичный источник багов: аргументы по умолчанию {#tipichnyy-istochnik-bagov-argumenty-po-umolchaniyu}
-
-Плохо:
-
-```python
-def add_event(event, bucket=[]):
-    bucket.append(event)
-    return bucket
-```
-
-`bucket` создается один раз при объявлении функции, а не на каждый вызов.
-
-Правильно:
-
-```python
-def add_event(event, bucket=None):
-    if bucket is None:
-        bucket = []
-    bucket.append(event)
-    return bucket
-```
-
-## Практический пример {#prakticheskiy-primer}
-
-Ниже пример, который часто встречается в сервисном коде: сбор payload и защита от случайной мутации.
-
-```python
-from copy import deepcopy
-
-base_payload = {
-    "source": "web",
-    "meta": {"version": 1},
-    "tags": ["trial"],
-}
-
-def build_payload(user_id: int, template: dict) -> dict:
-    payload = deepcopy(template)
-    payload["user_id"] = user_id
-    payload["tags"].append("scored")
-    return payload
-
-p1 = build_payload(101, base_payload)
-p2 = build_payload(202, base_payload)
-
-print(p1)
-print(p2)
-print(base_payload)  # template не изменился
-```
-
-## Типичные ошибки {#tipichnye-oshibki}
-
-1. Путать присваивание и копирование.
-   Симптом: изменение в одной переменной "внезапно" влияет на другую.
-   Решение: явно использовать `copy()`/`deepcopy()`.
-
-2. Использовать `is` для сравнения строк, чисел, списков.
-   Симптом: нестабильные проверки.
-   Решение: для значений использовать `==`, `is` только для identity.
-
-3. Делать только `copy.copy` для сложной вложенной структуры.
-   Симптом: вложенные поля все еще общие.
-   Решение: использовать `deepcopy`.
-
-4. Использовать mutable default arguments.
-   Симптом: данные "накапливаются" между вызовами функции.
-   Решение: паттерн `None -> create new object`.
-
-## Cheat-sheet {#cheat-sheet}
-
-| Сценарий | Что использовать |
+| Задача | Страница |
 | --- | --- |
-| Сравнить значения | `==` |
-| Проверить identity | `is` |
-| Копия 1-го уровня | `copy.copy(obj)` / `obj.copy()` |
-| Копия всей вложенной структуры | `copy.deepcopy(obj)` |
-| Безопасный default-параметр | `arg=None` + создание внутри функции |
-
-## Official docs {#official-docs}
+| Обработать текст | [Операции со строками](./operatsii-so-strokami/) |
+| Хранить упорядоченные элементы | [Списки](./spiski-bazovye-operatsii.md) и [кортежи](./kortezhi-tuple.md) |
+| Хранить пары ключ → значение | [Словари](./slovari-dict.md) |
+| Убрать дубликаты или сравнить наборы | [Множества](./mnozhestva-set.md) |
+| Работать с файлами и сетевыми буферами | [Бинарные типы](./binarnye-tipy-bytes-bytearray-memoryview.md) |
+| Понять неожиданное изменение данных | [Ссылки и копирование](./ssylki-sravnenie-i-kopirovanie.md) |
+| Найти метод конкретного типа | [Методы типов данных](./metody-tipov-dannykh.md) |
 
 <OfficialDocsLinks
     :links="[
-        { title: 'Python Data Model', href: 'https://docs.python.org/3/reference/datamodel.html' },
         { title: 'Built-in Types', href: 'https://docs.python.org/3/library/stdtypes.html' },
-        { title: 'copy module', href: 'https://docs.python.org/3/library/copy.html' },
-        { title: 'Functions and default arguments', href: 'https://docs.python.org/3/tutorial/controlflow.html#default-argument-values' },
+        { title: 'Python Data Model', href: 'https://docs.python.org/3/reference/datamodel.html' },
     ]"
 />
 
 <RelatedTopics
     :items="[
-        { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
-        { title: 'Списки: базовые операции', href: '/python/yazyk-python/tipy-dannykh/spiski-bazovye-operatsii' },
-        { title: 'Методы типов данных', href: '/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh' },
-        { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
         { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
-        { title: 'Функции, классы, модули, venv и pip', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
+        { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
+        { title: 'Ссылки и копирование', href: '/python/yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie' },
+        { title: 'Бинарные типы', href: '/python/yazyk-python/tipy-dannykh/binarnye-tipy-bytes-bytearray-memoryview' },
+        { title: 'Базовый Python', href: '/python/yazyk-python/1-core/python-core-funktsii-klassy-moduli-venv-i-pip' },
     ]"
 />

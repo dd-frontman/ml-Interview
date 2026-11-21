@@ -109,25 +109,28 @@ except LookupError as error:
 
 ## Порядок изучения {#poryadok-izucheniya}
 
-1. [Синтаксис и отступы](./sintaksis-i-otstupy.md)
+1. [Обработка исключений](./obrabotka-isklyucheniy-try-except.md)
+   `try`, `except`, `else`, `finally` и `raise`.
+
+2. [Синтаксис и отступы](./sintaksis-i-otstupy.md)
    `SyntaxError`, `IndentationError` и `TabError`.
 
-2. [Типы, значения, имена и атрибуты](./tipy-znacheniya-imena-i-atributy.md)
+3. [Типы, значения, имена и атрибуты](./tipy-znacheniya-imena-i-atributy.md)
    `TypeError`, `ValueError`, `NameError`, `UnboundLocalError` и `AttributeError`.
 
-3. [Коллекции и вычисления](./kollektsii-i-vychisleniya.md)
+4. [Коллекции и вычисления](./kollektsii-i-vychisleniya.md)
    `IndexError`, `KeyError`, `ZeroDivisionError` и `OverflowError`.
 
-4. [Файлы, импорты и кодировки](./fayly-importy-i-kodirovki.md)
+5. [Файлы, импорты и кодировки](./fayly-importy-i-kodirovki.md)
    Семейство `OSError`, ошибки импорта и Unicode.
 
-5. [Ресурсы, выполнение и сеть](./resursy-vypolnenie-i-set.md)
+6. [Ресурсы, выполнение и сеть](./resursy-vypolnenie-i-set.md)
    Рекурсия, память, проверки, незавершённые методы и сетевые проблемы.
 
-6. [Системные и пользовательские исключения](./sistemnye-i-polzovatelskie-isklyucheniya.md)
+7. [Системные и пользовательские исключения](./sistemnye-i-polzovatelskie-isklyucheniya.md)
    Завершение программы и собственные классы исключений.
 
-7. [Выбор исключения и практика](./vybor-isklyucheniya-i-praktika.md)
+8. [Выбор исключения и практика](./vybor-isklyucheniya-i-praktika.md)
    Что перехватывать, что исправлять и какой класс выбрать.
 
 ## Главный принцип {#glavnyy-printsip}
@@ -157,7 +160,7 @@ except LookupError as error:
 
 <RelatedTopics
     :items="[
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Область видимости', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/' },
     ]"

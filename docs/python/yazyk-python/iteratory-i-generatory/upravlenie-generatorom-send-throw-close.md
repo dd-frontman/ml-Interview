@@ -308,6 +308,6 @@ gen.close()                # GeneratorExit, выполнится finally
         { title: 'Генераторы и yield', href: '/python/yazyk-python/iteratory-i-generatory/generatory-i-yield' },
         { title: 'yield from и конвейеры', href: '/python/yazyk-python/iteratory-i-generatory/yield-from-i-konveyery' },
         { title: 'Генераторы как многозадачность', href: '/python/yazyk-python/iteratory-i-generatory/generatory-kak-mnogozadachnost' },
-        { title: 'Исключения и файлы', href: '/python/yazyk-python/isklyucheniya-context-managers-i-fayly' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
     ]"
 />

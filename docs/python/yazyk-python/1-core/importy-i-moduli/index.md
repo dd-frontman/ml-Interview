@@ -6,8 +6,7 @@ tags:
   - "core"
   - "imports"
   - "modules"
-updatedAt: "2026-11-13"
-search: false
+updatedAt: "2026-11-21"
 ---
 ## Зачем нужны импорты {#zachem-nuzhny-importy}
 
@@ -44,6 +43,8 @@ print(random_number)  # 1
 | [Абсолютные и относительные импорты](./absolyutnye-i-otnositelnye-importy.md) | Полные пути, точки в импортах и запуск через `python -m` |
 | [Поиск модулей и ошибки](./poisk-modulya-i-oshibki.md) | `sys.path`, `ModuleNotFoundError`, конфликты имён и побочные эффекты |
 | [Практика импортов](./praktika-importov.md) | Небольшая задача на создание собственного пакета |
+| [Модули, `venv` и `pip`](/python/yazyk-python/1-core/moduli-venv-i-pip) | Структура проекта, виртуальное окружение и установка зависимостей |
+| [Модуль `sys`](/python/yazyk-python/1-core/modul-sys) | Аргументы командной строки, стандартные потоки и сведения об интерпретаторе |
 
 Изучай страницы по порядку: сначала разберись с модулем и пространством имён, затем переходи к механизму импорта и структуре пакетов.
 
@@ -115,6 +116,7 @@ from .math_operations import add
 <RelatedTopics
     :items="[
         { title: 'Модули, venv и pip', href: '/python/yazyk-python/1-core/moduli-venv-i-pip' },
+        { title: 'Модуль sys', href: '/python/yazyk-python/1-core/modul-sys' },
         { title: 'Функции в Python', href: '/python/yazyk-python/1-core/funktsii-v-python/' },
         { title: 'Область видимости', href: '/python/yazyk-python/1-core/oblast-vidimosti-peremennyh/' },
         { title: 'JSON и сериализация', href: '/python/ekosistema-python/json-i-serializatsiya' },

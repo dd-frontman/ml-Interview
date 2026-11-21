@@ -5,6 +5,7 @@ import {
 	collectMarkdownFiles,
 	cwd,
 	routeFromFilePath,
+	sourceRouteFromFilePath,
 	toPosix,
 } from "./lib/content-utils.mjs";
 
@@ -134,6 +135,19 @@ function resolveTargetFile(currentFile, targetPath, routeMap) {
 	if (targetPath.startsWith("/")) {
 		const route = targetPath.replace(/\.(?:md|html)$/, "").replace(/\/+$/, "") || "/";
 		return routeMap.get(route) ?? routeMap.get(`${route}/index`) ?? null;
+	}
+
+	const publicBaseDir = path.posix.dirname(routeFromFilePath(currentFile));
+	const publicRoute = path.posix
+		.normalize(path.posix.join(publicBaseDir, targetPath))
+		.replace(/\.(?:md|html)$/, "")
+		.replace(/\/+$/, "");
+	const publicFile = routeMap.get(publicRoute) ?? routeMap.get(`${publicRoute}/index`);
+	if (publicFile) {
+		return publicFile;
+	}
+	if (routeFromFilePath(currentFile) !== sourceRouteFromFilePath(currentFile)) {
+		return null;
 	}
 
 	const absoluteTarget = path.resolve(path.dirname(currentFile), targetPath);

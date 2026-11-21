@@ -1,26 +1,29 @@
 ---
 title: "Неизменяемые типы"
-description: "Подробный разбор неизменяемых типов Python: int, float, bool, str, tuple, frozenset и bytes."
+description: "Разбор десяти основных неизменяемых типов Python: числа, строки, tuple, range, frozenset, bytes и NoneType."
 tags:
   - "python"
   - "core"
   - "data-types"
   - "immutable"
-updatedAt: "2026-06-23"
+updatedAt: "2026-11-21"
 ---
 ## Что входит в группу {#chto-vkhodit-v-gruppu}
 
-В этом разделе: `7` неизменяемых типов.
+В этом разделе: `10` неизменяемых типов.
 
 - `int`
 - `float`
+- `complex`
 - `bool`
 - `str`
 - `tuple`
+- `range`
 - `frozenset`
 - `bytes`
+- `NoneType`
 
-Неизменяемый тип значит: после создания объект нельзя изменить "на месте". Любая модификация создает новый объект.
+Неизменяемый тип значит: после создания сам объект нельзя изменить. Переменную при этом можно перепривязать к другому объекту. Операции вроде `text += "!"` создают новую строку и связывают с ней имя `text`, а не меняют прежнюю строку.
 
 ## Int {#int}
 
@@ -62,6 +65,19 @@ updatedAt: "2026-06-23"
 - Подробнее: [Логические и побитовые операторы: and, or, &, |](../1-core/logicheskie-i-pobitovye-operatory.md)
 - Это неизменяемый тип
 
+## Complex {#complex}
+
+`3 + 4j` — комплексное число с действительной и мнимой частями.
+
+```python
+number = 3 + 4j
+
+print(number.real)  # 3.0
+print(number.imag)  # 4.0
+```
+
+Как и остальные числовые типы, `complex` неизменяемый. Операции создают новое значение.
+
 ## Str {#str}
 
 `"python"` Аналогия с JS: по смыслу это обычная строка `string`
@@ -69,6 +85,7 @@ updatedAt: "2026-06-23"
 - `str` хранит текст
 - Это последовательность символов, по которой можно ходить по индексу: `"ml"[0] == "m"`
 - Конкатенация создает новую строку: `"py" + "thon" == "python"`
+- Присваивание `text = "new"` меняет ссылку в переменной, а не существующий объект строки
 - Подробнее про индексы, срезы, методы и f-строки: [Операции со строками](./operatsii-so-strokami/)
 - Это неизменяемый тип
 
@@ -88,6 +105,18 @@ updatedAt: "2026-06-23"
 - Удобен, когда нужен набор уникальных значений без риска случайной мутации
 - Это неизменяемый тип
 
+## Range {#range}
+
+`range(3)` представляет последовательность чисел `0`, `1`, `2`, но не хранит готовый список этих значений.
+
+```python
+numbers = range(3)
+
+print(list(numbers))  # [0, 1, 2]
+```
+
+Границы и шаг существующего объекта `range` изменить нельзя, поэтому тип неизменяемый.
+
 ## Bytes {#bytes}
 
 `b"hello"` Аналогия с JS: ближе всего к `Uint8Array` или сырому бинарному буферу
@@ -96,6 +125,17 @@ updatedAt: "2026-06-23"
 - Обычно нужен для работы с файлами, сетью, бинарными протоколами, изображениями
 - Это неизменяемый тип
 - Подробнее: [Байты bytes](./bayty-bytes.md)
+
+## NoneType {#nonetype}
+
+У типа `NoneType` есть единственное значение `None`. Оно обозначает отсутствие значения и является неизменяемым.
+
+```python
+value = None
+
+print(type(value))  # <class 'NoneType'>
+print(value is None)  # True
+```
 
 ## Типичные ошибки {#tipichnye-oshibki}
 
@@ -117,11 +157,14 @@ updatedAt: "2026-06-23"
 | --- | --- | --- |
 | `int` | `42` | Большие целые без жесткого лимита |
 | `float` | `3.14` | Возможна неточность дробей |
+| `complex` | `3 + 4j` | Действительная и мнимая части |
 | `bool` | `True` | Связан с `int` |
 | `str` | `"python"` | Неизменяемая строка |
 | `tuple` | `(1, 2)` | Фиксированный набор значений |
+| `range` | `range(3)` | Неизменяемый диапазон чисел |
 | `frozenset` | `frozenset({1, 2})` | Только уникальные значения, без мутаций |
 | `bytes` | `b"abc"` | Бинарные данные |
+| `NoneType` | `None` | Отсутствие значения |
 
 ## Official docs {#official-docs}
 
@@ -140,6 +183,8 @@ updatedAt: "2026-06-23"
         { title: 'Кортежи tuple', href: '/python/yazyk-python/tipy-dannykh/kortezhi-tuple' },
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
         { title: 'Байты bytes', href: '/python/yazyk-python/tipy-dannykh/bayty-bytes' },
+        { title: 'Бинарные типы', href: '/python/yazyk-python/tipy-dannykh/binarnye-tipy-bytes-bytearray-memoryview' },
+        { title: 'Ссылки и копирование', href: '/python/yazyk-python/tipy-dannykh/ssylki-sravnenie-i-kopirovanie' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
     ]"

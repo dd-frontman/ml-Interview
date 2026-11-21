@@ -6,7 +6,7 @@ tags:
   - "core"
   - "data-types"
   - "bytes"
-updatedAt: "2026-07-25"
+updatedAt: "2026-11-21"
 ---
 ## Что такое `bytes` {#chto-takoe-bytes}
 
@@ -152,6 +152,8 @@ print(clean.endswith(b"admin"))  # True
 
 Подробнее про изменяемый аналог: [Изменяемые типы](./izmenyaemye-tipy.md#bytearray).
 
+Отдельное сравнение всех трёх бинарных типов: [`bytes`, `bytearray` и `memoryview`](./binarnye-tipy-bytes-bytearray-memoryview.md).
+
 ## Практический пример {#prakticheskiy-primer}
 
 Разбор бинарного заголовка фиксированной длины, например при чтении файла.
@@ -215,6 +217,7 @@ print(read_header(header))  # {'magic': b'PY01', 'version': 2, 'length': 256}
         { title: 'Неизменяемые типы', href: '/python/yazyk-python/tipy-dannykh/neizmenyaemye-tipy' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
         { title: 'Методы типов данных', href: '/python/yazyk-python/tipy-dannykh/metody-tipov-dannykh' },
+        { title: 'Бинарные типы', href: '/python/yazyk-python/tipy-dannykh/binarnye-tipy-bytes-bytearray-memoryview' },
         { title: 'Операции со строками', href: '/python/yazyk-python/tipy-dannykh/operatsii-so-strokami' },
         { title: 'Типы главная', href: '/python/yazyk-python/tipy-dannykh/tipy-glavnaya' },
     ]"

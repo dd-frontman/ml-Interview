@@ -346,6 +346,6 @@ def fight(*, first: Character, second: Character) -> Character:
         { title: 'Обзор классов', href: '/python/yazyk-python/klassy/klassy-glavnaya' },
         { title: 'Наследование и полиморфизм', href: '/python/yazyk-python/klassy/nasledovanie-i-polimorfizm' },
         { title: 'Property и super', href: '/python/yazyk-python/klassy/property-super-i-pereopredelenie' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
     ]"
 />

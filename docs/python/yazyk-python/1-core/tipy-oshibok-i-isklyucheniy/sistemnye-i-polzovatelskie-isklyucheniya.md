@@ -227,7 +227,7 @@ except InvalidAgeError as error:
 <RelatedTopics
     :items="[
         { title: 'Обзор типов ошибок', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'Генераторы', href: '/python/yazyk-python/iteratory-i-generatory/generatory-i-yield' },
     ]"
 />

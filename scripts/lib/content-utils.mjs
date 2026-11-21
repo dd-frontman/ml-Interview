@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { rewriteDocPath } from "./route-rewrites.mjs";
 
 export const cwd = process.cwd();
 export const docsRoot = path.join(cwd, "docs");
@@ -46,9 +47,14 @@ export function collectMarkdownFiles() {
 	return files.sort();
 }
 
-export function routeFromFilePath(filePath) {
+export function sourceRouteFromFilePath(filePath) {
 	const rel = toPosix(path.relative(docsRoot, filePath)).replace(/\.md$/, "");
 	return `/${rel}`;
+}
+
+export function routeFromFilePath(filePath) {
+	const sourcePath = toPosix(path.relative(docsRoot, filePath));
+	return `/${rewriteDocPath(sourcePath).replace(/\.md$/, "")}`;
 }
 
 export function splitFrontmatter(source) {

@@ -397,7 +397,7 @@ class Child(Parent):
     :items="[
         { title: 'Наследование и полиморфизм', href: '/python/yazyk-python/klassy/nasledovanie-i-polimorfizm' },
         { title: 'Практика: игровые персонажи', href: '/python/yazyk-python/klassy/praktika-igrovye-personazhi' },
-        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/obrabotka-isklyucheniy-try-except' },
+        { title: 'Обработка исключений', href: '/python/yazyk-python/1-core/tipy-oshibok-i-isklyucheniy/obrabotka-isklyucheniy-try-except' },
         { title: 'Изменяемые типы', href: '/python/yazyk-python/tipy-dannykh/izmenyaemye-tipy' },
     ]"
 />
